@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { ComingSoon } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -10,9 +11,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Ascenders | H.E.A.L</h1>
+        <ComingSoon />
       </main>
-      <footer></footer>
     </div>
   );
 };
