@@ -12,7 +12,7 @@ export const socialData: SocialData = {
     network: "facebook",
   },
   instagram: {
-    url: "https://instagram.com/@ascenders.in",
+    url: "https://instagram.com/ascenders.in",
     label: "@ascenders.in",
     network: "instagram",
   },
