@@ -16,3 +16,29 @@ export type SocialProfile = {
   url: string;
   network: "twitter" | "facebook" | "instagram";
 };
+
+export type UnitType = "INR" | "GBP" | "DAYS" | "PEOPLE";
+
+export type PriceType = MinMaxType & {
+  symbol: string;
+};
+
+export type MinMaxType = {
+  min: number | string;
+  max: number | string;
+  unit: UnitType;
+};
+
+export interface Journey {
+  id: string;
+  title: string;
+  content: string;
+  price: PriceType;
+  duration: MinMaxType;
+  level: [number, number];
+  locationId: string;
+  interestIds: string[];
+  permalink: string;
+  groupSize: MinMaxType;
+  thumbnail: string;
+}
