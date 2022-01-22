@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:server": "json-server --watch db.json",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -26,6 +27,7 @@
     "eslint-config-next": "11.1.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.2.4",
+    "json-server": "^0.17.0",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.42.1",
     "styled-components": "^5.3.3",
