@@ -17,9 +17,25 @@ export type SocialProfile = {
   network: "twitter" | "facebook" | "instagram";
 };
 
-export type UnitType = "INR" | "GBP" | "DAYS" | "PEOPLE";
+export type UnitType = "DAYS" | "PEOPLE";
 
-export type PriceType = MinMaxType & {
+export type PriceUnitType = "INR" | "GBP";
+
+export type ClimateType =
+  | "WARM"
+  | "COLD"
+  | "HOT"
+  | "SUNNY"
+  | "MILD"
+  | "HUMID"
+  | "DRY"
+  | "WET";
+
+export type AudienceType = "FIT" | "HEALTHY" | "ANY" | "YOUNG" | "OUTGOING";
+
+export type PriceType = {
+  cost: string;
+  unit: PriceUnitType;
   symbol: string;
 };
 
@@ -40,5 +56,15 @@ export interface Journey {
   interestIds: string[];
   permalink: string;
   groupSize: MinMaxType;
+  thumbnail: string;
+}
+
+export interface Interest {
+  id: string;
+  name: string;
+  content: "";
+  targetAudience: AudienceType[];
+  idealClimate: ClimateType[];
+  locationIds: string[];
   thumbnail: string;
 }
