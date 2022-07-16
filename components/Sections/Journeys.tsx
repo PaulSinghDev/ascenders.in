@@ -85,7 +85,7 @@ const StyledHeading = styled.div`
 const StyledJourneysWrapper = styled.div`
   padding: var(--padding-lg);
   display inline-flex;
-
+  max-width: 100%;
   overflow: auto;
 `;
 
