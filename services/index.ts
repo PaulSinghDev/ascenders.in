@@ -1,1 +1,2 @@
-export * from "services/LocalStorage/LocalStorage.service";
+export * from "./localStorage";
+export * from "./api";

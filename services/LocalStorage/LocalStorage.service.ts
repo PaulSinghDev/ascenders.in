@@ -1,7 +1,7 @@
 import { LocalStorageInterface } from "types";
 
 // Expose getters and setters for local storage
-export const LocalStorage: LocalStorageInterface = {
+export const localStorage: LocalStorageInterface = {
   get(key: string) {
     return window.localStorage.getItem(key);
   },
