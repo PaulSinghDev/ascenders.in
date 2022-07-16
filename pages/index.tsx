@@ -1,6 +1,7 @@
+import { Interests } from "@/components/Sections/Interests";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { ComingSoon } from "../components";
+import { Footer, Header, Journeys, WhyTravelWithUs } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -11,8 +12,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <ComingSoon />
+        <Header type="hero" pageType="home" />
+        <WhyTravelWithUs />
+        <Journeys />
+        <Interests />
       </main>
+      <Footer />
     </div>
   );
 };

@@ -12,15 +12,27 @@ export const GlobalStyles = createGlobalStyle`
   --off-grey: #C0C9B1;
   --off-blue: #607D8B;
   --light: #F5F5F7;
+  --light-grey: #ebebeb;
   --dark-blue: #546E7A;
   --vh: 1vh;
+  --padding-sm: 0.5rem;
+  --padding-md: 0.75rem;
+  --padding-lg: 1rem;
+  --margin-sm: 0.5rem;
+  --margin-md: 0.75rem;
+  --margin-lg: 1rem;
+  --margin-xl: 2rem;
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 2rem;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: open-sans,-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -30,6 +42,14 @@ ul,
 li {
   margin: 0;
   padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 ul {
@@ -45,7 +65,6 @@ html {
 }
 
 body {
-  letter-spacing: 1.5px;
   line-height: 1.2;
 }
 
@@ -55,6 +74,6 @@ a {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 `;
