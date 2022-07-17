@@ -14,16 +14,17 @@ const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         </div>
         <h2>Why Travel With Us</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
-          aliquam dignissimos eveniet maiores doloribus cum id amet natus
-          perspiciatis atque aspernatur nihil facere rem est, aperiam
-          repellendus nam doloremque beatae?
+          We offer conscious and self-transformative HEAL journeys that are all
+          about learning to care for Self-Health and Earth in a journey full of
+          Adventure and Love. Our journeys have been designed to engage you in
+          actions that help you go beyond who you already are.
         </p>
+        <h2>Why we do it</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
-          totam praesentium, voluptatem vero ea dolorem sapiente. Ad quibusdam
-          perspiciatis saepe, error cum provident qui harum sint voluptatibus
-          pariatur aut consequatur.
+          It's a step to promote conscious travel, improve health, generate
+          employment, empower women, free education, nature conservation,
+          sattvic life, Ayurveda, and self-enhancement. Let's take a HEAL
+          journey of a lifetime.
         </p>
       </TitleWrapper>
       <ContentWrapper>
