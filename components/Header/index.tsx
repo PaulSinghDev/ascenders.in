@@ -6,19 +6,6 @@ type HeaderProps = {
   pageType: "home";
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const Header: React.FC<HeaderProps> = ({
-  type,
-  pageType,
-  children,
-  ...rest
-}) => {
-  return (
-    <StyledHeader type={type} {...rest}>
-      <HomeHeader />
-    </StyledHeader>
-  );
-};
-
 const StyledHeader = styled.header<{ type: string }>`
   ${(props) => {
     const { type } = props;
@@ -48,5 +35,16 @@ const StyledHeader = styled.header<{ type: string }>`
     `;
   }}
 `;
+
+const Header: React.FC<HeaderProps> = ({
+  type,
+  pageType,
+  children,
+  ...rest
+}) => (
+  <StyledHeader type={type} {...rest}>
+    <HomeHeader />
+  </StyledHeader>
+);
 
 export { Header };

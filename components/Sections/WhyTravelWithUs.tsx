@@ -3,37 +3,6 @@ import { GiDeer } from "react-icons/gi";
 import styled from "styled-components";
 import Image from "next/image";
 import { Button } from "../Base";
-const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
-  ...rest
-}) => {
-  return (
-    <Section {...rest}>
-      <TitleWrapper>
-        <div data-type="icon">
-          <GiDeer size={50}></GiDeer>
-        </div>
-        <h2>Why Travel With Us</h2>
-        <p>
-          We offer conscious and self-transformative HEAL journeys that are all
-          about learning to care for Self-Health and Earth in a journey full of
-          Adventure and Love. Our journeys have been designed to engage you in
-          actions that help you go beyond who you already are.
-        </p>
-        <h2>Why we do it</h2>
-        <p>
-          It's a step to promote conscious travel, improve health, generate
-          employment, empower women, free education, nature conservation,
-          sattvic life, Ayurveda, and self-enhancement. Let's take a HEAL
-          journey of a lifetime.
-        </p>
-      </TitleWrapper>
-      <ContentWrapper>
-        <img src="/assets/images/logos/heal.png" />
-        <Button margin="xl">Learn more</Button>
-      </ContentWrapper>
-    </Section>
-  );
-};
 
 const Section = styled.section`
   min-height: 500px;
@@ -95,5 +64,40 @@ const ContentWrapper = styled.div`
     }
   }
 `;
+
+const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  ...rest
+}) => (
+  <Section {...rest}>
+    <TitleWrapper>
+      <div data-type="icon">
+        <GiDeer size={50} />
+      </div>
+      <h2>Why Travel With Us</h2>
+      <p>
+        We offer conscious and self-transformative HEAL journeys that are all
+        about learning to care for Self-Health and Earth in a journey full of
+        Adventure and Love. Our journeys have been designed to engage you in
+        actions that help you go beyond who you already are.
+      </p>
+      <h2>Why we do it</h2>
+      <p>
+        It&#39;s a step to promote conscious travel, improve health, generate
+        employment, empower women, free education, nature conservation, sattvic
+        life, Ayurveda, and self-enhancement. Let&#39;s take a HEAL journey of a
+        lifetime.
+      </p>
+    </TitleWrapper>
+    <ContentWrapper>
+      <Image
+        src="/assets/images/logos/heal.png"
+        alt="Green HEAL logo with initialisation definitions"
+        width={400}
+        height={200}
+      />
+      <Button margin="xl">Learn more</Button>
+    </ContentWrapper>
+  </Section>
+);
 
 export { WhyTravelWithUs };

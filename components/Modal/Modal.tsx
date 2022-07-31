@@ -1,41 +1,7 @@
 import styled from "styled-components";
-import React, {
-  forwardRef,
-  HTMLAttributes,
-  MutableRefObject,
-  RefObject,
-  useState,
-} from "react";
+import React, { forwardRef, HTMLAttributes, MutableRefObject } from "react";
 
 interface ModalProps extends HTMLAttributes<HTMLDivElement> {}
-
-const Modal = forwardRef<HTMLDivElement, ModalProps>(
-  (props, ref: React.Ref<HTMLElement>) => {
-    const modal = React.useRef<HTMLElement | null>(null);
-
-    const closeModal = () => {
-      modal.current?.setAttribute("aria-hidden", "true");
-    };
-
-    return (
-      <StyledModal
-        ref={(node) => {
-          modal.current = node;
-          if (typeof ref === "function") {
-            ref(node);
-          } else if (!!ref) {
-            (ref as MutableRefObject<HTMLElement | null>).current = node;
-          }
-        }}
-        aria-hidden={true}
-        {...props}
-      >
-        <button className="modal-underlay" onClick={closeModal}></button>
-        <div className="modal-container">{props.children}</div>
-      </StyledModal>
-    );
-  }
-);
 
 const StyledModal = styled.aside`
   position: fixed;
@@ -85,5 +51,41 @@ const StyledModal = styled.aside`
     border-radius: 25px;
   }
 `;
+
+const Modal = forwardRef<HTMLDivElement, ModalProps>(
+  (props, ref: React.Ref<HTMLElement>) => {
+    const modal = React.useRef<HTMLElement | null>(null);
+
+    const closeModal = () => {
+      modal.current?.setAttribute("aria-hidden", "true");
+    };
+
+    return (
+      <StyledModal
+        ref={(node) => {
+          modal.current = node;
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref) {
+            // eslint-disable-next-line no-param-reassign
+            (ref as MutableRefObject<HTMLElement | null>).current = node;
+          }
+        }}
+        aria-hidden
+        {...props}
+      >
+        <button
+          type="button"
+          className="modal-underlay"
+          aria-label="trigger-modal"
+          onClick={closeModal}
+        />
+        <div className="modal-container">{props.children}</div>
+      </StyledModal>
+    );
+  }
+);
+
+Modal.displayName = "Modal";
 
 export { Modal };

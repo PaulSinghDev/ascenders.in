@@ -1,20 +1,5 @@
 import styled from "styled-components";
 import { Button } from "../Base";
-import { TripSearch } from "../TripSearch";
-
-const HomeHeader: React.FC = () => {
-  return (
-    <HomeHeaderWrapper>
-      <TitleWrapper>
-        <h1>
-          Find your HEAL journey
-          <span>Re-establish a connection with yourself</span>
-        </h1>
-        <Button margin="sm">Discover</Button>
-      </TitleWrapper>
-    </HomeHeaderWrapper>
-  );
-};
 
 const HomeHeaderWrapper = styled.div`
   display: flex;
@@ -52,5 +37,17 @@ const TitleWrapper = styled.div`
     }
   }
 `;
+
+const HomeHeader: React.FC = () => (
+  <HomeHeaderWrapper>
+    <TitleWrapper>
+      <h1>
+        Find your HEAL journey
+        <span>Re-establish a connection with yourself</span>
+      </h1>
+      <Button margin="sm">Discover</Button>
+    </TitleWrapper>
+  </HomeHeaderWrapper>
+);
 
 export { HomeHeader };

@@ -1,58 +1,7 @@
-import { useState, HTMLAttributes, useEffect } from "react";
 import styled from "styled-components";
-import { Button, Modal } from "../";
 import { interests } from "data";
-
-interface InterestModalContentProps extends HTMLAttributes<HTMLDivElement> {
-  type: string;
-}
-
-const InterestModalContent: React.FC<InterestModalContentProps> = ({
-  type,
-  ...rest
-}) => {
-  return (
-    <StyledModalContent>
-      <h3>The interest</h3>
-    </StyledModalContent>
-  );
-};
-
-const StyledModalContent = styled.div``;
-
-const Interests: React.FC = () => {
-  return (
-    <StyledInterestsSection>
-      <StyledHeading>
-        <span>what to do</span>
-        <h2>Interests</h2>
-        <Button margin="lg" color="blue">
-          See all
-        </Button>
-      </StyledHeading>
-      <div className="interests-wrapper">
-        <ul className="interests-list">
-          {interests.map((interest) => {
-            return (
-              <li
-                className="interest-item"
-                key={Math.random().toString(36).substring(2, 7)}
-              >
-                <button data-id={interest.id}>
-                  <img src={interest.thumbnail} />
-                  <p>
-                    {interest.title}
-                    <span>{interest.level} level</span>
-                  </p>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </StyledInterestsSection>
-  );
-};
+import Image from "next/image";
+import { Button } from "..";
 
 const StyledInterestsSection = styled.section`
   padding-top: 80px;
@@ -151,4 +100,38 @@ const StyledHeading = styled.div`
   }
 `;
 
+const Interests: React.FC = () => (
+  <StyledInterestsSection>
+    <StyledHeading>
+      <span>what to do</span>
+      <h2>Interests</h2>
+      <Button margin="lg" color="blue">
+        See all
+      </Button>
+    </StyledHeading>
+    <div className="interests-wrapper">
+      <ul className="interests-list">
+        {interests.map((interest) => (
+          <li
+            className="interest-item"
+            key={Math.random().toString(36).substring(2, 7)}
+          >
+            <button type="button" data-id={interest.id}>
+              <Image
+                src={interest.thumbnail}
+                alt={interest.title}
+                width={300}
+                height={200}
+              />
+              <p>
+                {interest.title}
+                <span>{interest.level} level</span>
+              </p>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </StyledInterestsSection>
+);
 export { Interests };

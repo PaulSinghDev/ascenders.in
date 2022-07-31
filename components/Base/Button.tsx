@@ -5,19 +5,6 @@ type ButtonProps = {
   margin: "sm" | "md" | "lg" | "xl";
 } & React.HtmlHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({
-  color = "orange",
-  margin = "md",
-  children,
-  ...rest
-}) => {
-  return (
-    <StyledButton color={color} margin={margin} {...rest}>
-      {children}
-    </StyledButton>
-  );
-};
-
 const StyledButton = styled.button<{ color: string; margin: string }>`
   ${(props) => {
     const { color, margin } = props;
@@ -39,5 +26,16 @@ const StyledButton = styled.button<{ color: string; margin: string }>`
     }`;
   }}
 `;
+
+const Button: React.FC<ButtonProps> = ({
+  color = "orange",
+  margin = "md",
+  children,
+  ...rest
+}) => (
+  <StyledButton color={color} margin={margin} {...rest}>
+    {children}
+  </StyledButton>
+);
 
 export { Button };

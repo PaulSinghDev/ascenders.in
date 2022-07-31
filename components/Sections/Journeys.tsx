@@ -1,53 +1,7 @@
 import styled from "styled-components";
-import { Button } from "../Base";
 import { journeys } from "data/journeys";
-
-const Journeys: React.FC = () => {
-  return (
-    <StyledSection>
-      <StyledHeading>
-        <span>top journeys</span>
-        <h2>Journeys</h2>
-        <Button margin="lg" color="blue">
-          See all
-        </Button>
-      </StyledHeading>
-      <StyledJourneysWrapper>
-        {journeys.map((journey) => {
-          return (
-            <StyledJourneyCard>
-              <StyledJourneyThumb>
-                <img src={journey.thumbnail} width="300" />
-              </StyledJourneyThumb>
-              <StyledJourneyContent>
-                <StyledJourneyTitle>
-                  <span>Expedition</span>
-                  <h3>{journey.title}</h3>
-                  <span>{`${journey.duration.value} ${journey.duration.measurement} from ${journey.price.currency}${journey.price.from}`}</span>
-                </StyledJourneyTitle>
-                <StyledJourneyDetails>
-                  <div>
-                    <span>Activity level:</span>
-                    <span>Group Size:</span>
-                    <span>Location</span>
-                  </div>
-                  <div>
-                    <span>{journey.level}</span>
-                    <span>Max {journey.group.max} People</span>
-                    <span>{journey.location.label}</span>
-                  </div>
-                </StyledJourneyDetails>
-                <Button margin="md" color="blue">
-                  View
-                </Button>
-              </StyledJourneyContent>
-            </StyledJourneyCard>
-          );
-        })}
-      </StyledJourneysWrapper>
-    </StyledSection>
-  );
-};
+import Image from "next/image";
+import { Button } from "../Base";
 
 const StyledSection = styled.section`
   padding: calc(var(--padding-lg) * 8) calc(var(--padding-lg) * 2);
@@ -157,5 +111,56 @@ justify-content: space-between;
     }
   }
 `;
+
+const Journeys: React.FC = () => (
+  <StyledSection>
+    <StyledHeading>
+      <span>top journeys</span>
+      <h2>Journeys</h2>
+      <Button margin="lg" color="blue">
+        See all
+      </Button>
+    </StyledHeading>
+    <StyledJourneysWrapper>
+      {journeys.map((journey) => (
+        <StyledJourneyCard key={Math.random().toString(36).substring(2, 7)}>
+          <StyledJourneyThumb>
+            <Image
+              src={journey.thumbnail}
+              width={350}
+              height={250}
+              alt={journey.title}
+            />
+          </StyledJourneyThumb>
+          <StyledJourneyContent>
+            <StyledJourneyTitle>
+              <span>Expedition</span>
+              <h3>{journey.title}</h3>
+              <span>{`${journey.duration.value} ${journey.duration.measurement} from ${journey.price.currency}${journey.price.from}`}</span>
+            </StyledJourneyTitle>
+            <StyledJourneyDetails>
+              <div>
+                <span>Activity level:</span>
+                <span>Group Size:</span>
+                <span>Location</span>
+              </div>
+              <div>
+                <span>{journey.level}</span>
+                <span>
+                  Max
+                  {journey.group.max} People
+                </span>
+                <span>{journey.location.label}</span>
+              </div>
+            </StyledJourneyDetails>
+            <Button margin="md" color="blue">
+              View
+            </Button>
+          </StyledJourneyContent>
+        </StyledJourneyCard>
+      ))}
+    </StyledJourneysWrapper>
+  </StyledSection>
+);
 
 export { Journeys };

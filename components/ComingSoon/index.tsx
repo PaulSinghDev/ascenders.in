@@ -1,16 +1,6 @@
 import styled from "styled-components";
 import { SocialIcons } from "../SocialIcons";
-export const ComingSoon: React.FC = ({ children }) => {
-  return (
-    <StyledComingSoon>
-      <h1>
-        Ascenders <span>|</span> H.E.A.L
-      </h1>
-      <span>Coming soon</span>
-      <SocialIcons />
-    </StyledComingSoon>
-  );
-};
+
 const StyledComingSoon = styled.div`
   width: 100%;
   height: calc(var(--vh) * 100);
@@ -65,3 +55,15 @@ const StyledComingSoon = styled.div`
     border-radius: 10px;
   }
 `;
+
+export const ComingSoon: React.FC = () => (
+  <StyledComingSoon>
+    <h1>
+      Ascenders
+      <span>|</span>
+      H.E.A.L
+    </h1>
+    <span>Coming soon</span>
+    <SocialIcons />
+  </StyledComingSoon>
+);

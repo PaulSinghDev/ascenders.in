@@ -5,39 +5,6 @@ import { IconType } from "react-icons";
 import Link from "next/link";
 import { SocialData } from "types";
 
-const getNetworkIcon = (name: string): IconType => {
-  switch (name) {
-    case "twitter":
-      return FaTwitter;
-    case "facebook":
-      return FaFacebook;
-    case "instagram":
-      return FaInstagram;
-    default:
-      return FaTwitter;
-  }
-};
-
-export const SocialIcons: React.FC = () => {
-  return (
-    <StyledSocialIcons>
-      <ul>
-        {Object.keys(socialData).map((network, index) => {
-          const Icon = getNetworkIcon(network);
-          return (
-            <li key={`${network}-${index}-${Date.now()}`}>
-              <Link href={socialData[network as keyof SocialData].url}>
-                <a title={`Follow us on ${network}`}>
-                  <Icon size={30} color="var(--light)" />
-                </a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </StyledSocialIcons>
-  );
-};
 const StyledSocialIcons = styled.div`
   margin: 1.5rem 0;
 
@@ -63,3 +30,41 @@ const StyledSocialIcons = styled.div`
     }
   }
 `;
+
+const getNetworkIcon = (name: string): IconType => {
+  switch (name) {
+    case "twitter":
+      return FaTwitter;
+    case "facebook":
+      return FaFacebook;
+    case "instagram":
+      return FaInstagram;
+    default:
+      return FaTwitter;
+  }
+};
+
+export const SocialIcons: React.FC = () => (
+  <StyledSocialIcons>
+    <ul>
+      {Object.keys(socialData).map((network) => {
+        const Icon = getNetworkIcon(network);
+        return (
+          <li
+            key={`${network}-${Math.random()
+              .toString(36)
+              .substring(2, 7)}-${Date.now()}`}
+          >
+            <Link
+              title={`Follow us on ${network}`}
+              href={socialData[network as keyof SocialData].url}
+              passHref
+            >
+              <Icon size={30} color="var(--light)" />
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  </StyledSocialIcons>
+);
