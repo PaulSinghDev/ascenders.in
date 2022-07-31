@@ -1,7 +1,17 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals"],
-  "plugins": ["testing-library"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb/hooks",
+    "next",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "plugins": ["testing-library", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "overrides": [
     // Only uses Testing Library lint rules in test files
     {
@@ -11,5 +21,18 @@
       ],
       "extends": ["plugin:testing-library/react"]
     }
-  ]
+  ],
+  "rules": {
+    "object-curly-newline": "off",
+    "@typescript-eslint/quotes": ["error", "double"],
+    "import/prefer-default-export": "off",
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off"
+  }
 }
