@@ -1,15 +1,8 @@
-type Interest = {
-  title: string;
-  description: string[];
-  target: string[];
-  thumbnail: string;
-  gallery?: string[];
-  level: "small" | "medium" | "large";
-  id: string;
-};
+import { Interest } from "types/types";
 
 const interests: Interest[] = [
   {
+    slug: "expeditions",
     title: "Expeditions",
     description: ["some words"],
     target: ["fit", "adventurous"],
@@ -19,6 +12,7 @@ const interests: Interest[] = [
     id: Math.random().toString(36).substring(2, 7),
   },
   {
+    slug: "festivals",
     title: "Festivals",
     description: ["some words"],
     target: ["fit", "adventurous"],
@@ -28,6 +22,7 @@ const interests: Interest[] = [
     id: Math.random().toString(36).substring(2, 7),
   },
   {
+    slug: "history-archaeology",
     title: "History & Archaeology",
     description: ["some words"],
     target: ["fit", "adventurous"],
@@ -38,6 +33,7 @@ const interests: Interest[] = [
   },
   {
     title: "Photography",
+    slug: "photography",
     id: Math.random().toString(36).substring(2, 7),
     description: ["some words"],
     level: "small",
@@ -46,6 +42,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-photography.jpeg",
   },
   {
+    slug: "relaxation",
     title: "Relaxation",
     id: Math.random().toString(36).substring(2, 7),
     level: "medium",
@@ -55,6 +52,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-relaxation.jpeg",
   },
   {
+    slug: "sightseeing",
     title: "Sightseeing",
     id: Math.random().toString(36).substring(2, 7),
     level: "large",
@@ -64,6 +62,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-sightseeing.jpeg",
   },
   {
+    slug: "surfing",
     level: "small",
     id: Math.random().toString(36).substring(2, 7),
     title: "Surfing",
@@ -73,6 +72,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-surfing.jpeg",
   },
   {
+    slug: "trekking",
     level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Trekking",
@@ -82,6 +82,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-trekking.jpeg",
   },
   {
+    slug: "village-stay",
     level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Village Stay",
@@ -91,6 +92,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-village-stay.jpeg",
   },
   {
+    slug: "wildlife",
     level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Wildlife",
@@ -100,6 +102,7 @@ const interests: Interest[] = [
       "/assets/images/interests/thumbnails/ascenders-interests-wildlife.jpeg",
   },
   {
+    slug: "yoga",
     level: "large",
     id: Math.random().toString(36).substring(2, 7),
     title: "Yoga",
