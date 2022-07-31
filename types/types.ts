@@ -16,3 +16,14 @@ export type SocialProfile = {
   url: string;
   network: "twitter" | "facebook" | "instagram";
 };
+
+export type Interest = {
+  slug: string;
+  title: string;
+  description: string[];
+  target: string[];
+  thumbnail: string;
+  gallery?: string[];
+  level: "small" | "medium" | "large";
+  id: string;
+};
