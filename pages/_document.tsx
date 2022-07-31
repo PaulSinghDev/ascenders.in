@@ -1,12 +1,4 @@
-import { AppPropsType, AppType } from "next/dist/shared/lib/utils";
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-  DocumentInitialProps,
-} from "next/document";
+import Document, { DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
