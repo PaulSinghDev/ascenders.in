@@ -34,5 +34,11 @@
       }
     ],
     "react/jsx-props-no-spreading": "off"
-  }
+  },
+  "ignorePatterns": [
+    "next.config.js",
+    "jest.config.ts",
+    "jest.setup.ts",
+    "next-env.d.ts"
+  ]
 }
