@@ -1,9 +1,13 @@
-export interface LocalStorageInterface {
-  get: (key: string) => string | null;
-  set: (key: string, value: string) => string | null;
-  remove: (key: string) => void;
-  clear: () => void;
-}
+export type Interest = {
+  slug: string;
+  title: string;
+  description: string[];
+  target: string[];
+  thumbnail: string;
+  gallery?: string[];
+  level: "small" | "medium" | "large";
+  id: string;
+};
 
 export interface SocialData {
   twitter: SocialProfile;
@@ -19,7 +23,7 @@ export type SocialProfile = {
 
 export type UnitType = "DAYS" | "PEOPLE";
 
-export type PriceUnitType = "INR" | "GBP";
+export type PriceUnitType = "INR" | "GBP" | "USD" | "EUR";
 
 export type ClimateType =
   | "WARM"
@@ -56,15 +60,5 @@ export interface Journey {
   interestIds: string[];
   permalink: string;
   groupSize: MinMaxType;
-  thumbnail: string;
-}
-
-export interface Interest {
-  id: string;
-  name: string;
-  content: "";
-  targetAudience: AudienceType[];
-  idealClimate: ClimateType[];
-  locationIds: string[];
   thumbnail: string;
 }

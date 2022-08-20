@@ -9,13 +9,16 @@ const StyledInterestsSection = styled.section`
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   .interests-wrapper {
     overflow: hidden;
+
     .interests-list {
       display: flex;
       overflow: scroll;
+
       .interest-item {
         flex-grow: 1;
         flex-shrink: 0;
         margin: 1rem;
+        position: relative;
 
         button {
           appearance: none;
@@ -37,6 +40,7 @@ const StyledInterestsSection = styled.section`
             width: 100%;
             content: "";
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.6) 90%);
+            z-index: 1;
           }
 
           img {
@@ -57,6 +61,7 @@ const StyledInterestsSection = styled.section`
             color: #fff;
             font-weight: bold;
             font-size: 1.4rem;
+            z-index: 2;
 
             span {
               margin-top: 8px;
@@ -112,10 +117,7 @@ const Interests: React.FC = () => (
     <div className="interests-wrapper">
       <ul className="interests-list">
         {interests.map((interest) => (
-          <li
-            className="interest-item"
-            key={Math.random().toString(36).substring(2, 7)}
-          >
+          <li className="interest-item" key={interest.id}>
             <button type="button" data-id={interest.id}>
               <Image
                 src={interest.thumbnail}

@@ -45,27 +45,37 @@ const StyledJourneysWrapper = styled.div`
 
 const StyledJourneyCard = styled.div`
   border-radius: var(--border-radius-md);
+  overflow: hidden;
   background-color: var(--light);
-  max-width: 350px;
+  max-width: 300px;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   margin: 14px;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const StyledJourneyThumb = styled.div`
   > img {
     border-radius: var(--border-radius-md);
     width: 100%;
+    max-height: 250px;
+    object-fot: cover;
   }
 `;
 
 const StyledJourneyContent = styled.div`
   padding: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   > button {
-    font-size: 1rem;
-    padding: var(--padding-md);
+    margin-top: auto;
+    font-size: 12px;
+    padding: 8px;
     text-transform: capitalize;
-    min-width: 150px;
+    min-width: 100px;
+    align-self: center;
   }
 `;
 
@@ -73,29 +83,40 @@ const StyledJourneyTitle = styled.div`
   text-align: left;
   margin: var(--padding-md);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 24px;
+  padding-bottom: var(--padding-md);
+
   > span:first-of-type {
     text-transform: uppercase;
-    display: block;
-    margin-bottom: 12px;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 10px;
+    background-color: var(--blue);
+    padding: 4px;
+    border-radius: 4px;
+    color: #fff;
   }
+
   > h3 {
     color: var(--orange);
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
   > span:last-of-type {
     display: block;
-    margin-top: 12px;
     opacity: 0.6;
     text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
   }
 `;
 
 const StyledJourneyDetails = styled.div`
 display flex;
-margin: var(--padding-md);
+margin: 0 var(--padding-md);
 justify-content: space-between;
-> div {
+margin-bottom: var(--padding-md);
+
+  > div {
     text-align: left;
     display flex;
     flex-direction: column;
@@ -103,9 +124,11 @@ justify-content: space-between;
 
     &:first-of-type {
         font-weight: bold;
-    }
-
-    > span {
+        font-size: 12px;
+      }
+      
+      > span {
+      font-size: 12px;
         display: block;
         margin: 4px 0; 
     }

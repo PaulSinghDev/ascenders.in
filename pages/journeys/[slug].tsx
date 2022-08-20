@@ -1,6 +1,6 @@
 import { interests } from "data";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Interest } from "types/types";
+import { Interest } from "types/data.types";
 
 const InterestPage: React.FC<Interest> = ({
   target,
@@ -64,7 +64,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // Generate the static props to pass to the page component
 export const getStaticProps: GetStaticProps = async (context) => {
   const interestObject = interests.find(
-    (interest) => interest.slug === context?.params?.slug,
+    (interest) => interest.slug === context?.params?.slug
   );
   // No object so we don't need props for now
   if (!interestObject) {
