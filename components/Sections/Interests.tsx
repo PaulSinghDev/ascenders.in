@@ -1,58 +1,6 @@
-import { useState, HTMLAttributes, useEffect } from "react";
 import styled from "styled-components";
-import { Button, Modal } from "../";
-import { interests } from "data";
-
-interface InterestModalContentProps extends HTMLAttributes<HTMLDivElement> {
-  type: string;
-}
-
-const InterestModalContent: React.FC<InterestModalContentProps> = ({
-  type,
-  ...rest
-}) => {
-  return (
-    <StyledModalContent>
-      <h3>The interest</h3>
-    </StyledModalContent>
-  );
-};
-
-const StyledModalContent = styled.div``;
-
-const Interests: React.FC = () => {
-  return (
-    <StyledInterestsSection>
-      <StyledHeading>
-        <span>what to do</span>
-        <h2>Interests</h2>
-        <Button margin="lg" color="blue">
-          See all
-        </Button>
-      </StyledHeading>
-      <div className="interests-wrapper">
-        <ul className="interests-list">
-          {interests.map((interest) => {
-            return (
-              <li
-                className="interest-item"
-                key={Math.random().toString(36).substring(2, 7)}
-              >
-                <button data-id={interest.id}>
-                  <img src={interest.thumbnail} />
-                  <p>
-                    {interest.title}
-                    <span>{interest.level} level</span>
-                  </p>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </StyledInterestsSection>
-  );
-};
+import Link from "next/link";
+import { InterestCarousel } from "../InterestCarousel/InterestCarousel";
 
 const StyledInterestsSection = styled.section`
   padding-top: 80px;
@@ -60,13 +8,16 @@ const StyledInterestsSection = styled.section`
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   .interests-wrapper {
     overflow: hidden;
+
     .interests-list {
       display: flex;
       overflow: scroll;
+
       .interest-item {
         flex-grow: 1;
         flex-shrink: 0;
         margin: 1rem;
+        position: relative;
 
         button {
           appearance: none;
@@ -88,6 +39,7 @@ const StyledInterestsSection = styled.section`
             width: 100%;
             content: "";
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.6) 90%);
+            z-index: 1;
           }
 
           img {
@@ -108,6 +60,7 @@ const StyledInterestsSection = styled.section`
             color: #fff;
             font-weight: bold;
             font-size: 1.4rem;
+            z-index: 2;
 
             span {
               margin-top: 8px;
@@ -151,4 +104,20 @@ const StyledHeading = styled.div`
   }
 `;
 
+const Interests: React.FC = () => (
+  <StyledInterestsSection>
+    <StyledHeading>
+      <span>what to do</span>
+      <h2>Interests</h2>
+      <Link href="/interests" title="View all interests">
+        See all
+      </Link>
+    </StyledHeading>
+    <div className="interests-wrapper">
+      <div className="interests-list">
+        <InterestCarousel showAll disabledHeading />
+      </div>
+    </div>
+  </StyledInterestsSection>
+);
 export { Interests };

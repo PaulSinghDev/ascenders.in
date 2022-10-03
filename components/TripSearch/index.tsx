@@ -1,25 +1,6 @@
 import styled from "styled-components";
 import { Button, Select } from "../Base";
 
-const TripSearch: React.FC = () => {
-  return (
-    <TripSearchWrapper>
-      <TripSearchForm>
-        <Select>
-          <option>Destination</option>
-        </Select>
-        <Select>
-          <option>Interest</option>
-        </Select>
-        <Select>
-          <option>Location</option>
-        </Select>
-        <Button margin="lg">Search</Button>
-      </TripSearchForm>
-    </TripSearchWrapper>
-  );
-};
-
 const TripSearchWrapper = styled.div`
   max-width: 300px;
   margin: auto;
@@ -41,5 +22,22 @@ const TripSearchForm = styled.form`
     margin-bottom: var(--margin-lg);
   }
 `;
+
+const TripSearch = () => (
+  <TripSearchWrapper>
+    <TripSearchForm>
+      <Select>
+        <option>Destination</option>
+      </Select>
+      <Select>
+        <option>Interest</option>
+      </Select>
+      <Select>
+        <option>Location</option>
+      </Select>
+      <Button margin="lg">Search</Button>
+    </TripSearchForm>
+  </TripSearchWrapper>
+);
 
 export { TripSearch };

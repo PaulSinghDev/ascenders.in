@@ -1,65 +1,5 @@
+import Link from "next/link";
 import styled from "styled-components";
-
-const Footer: React.FC = () => {
-  return (
-    <StyledFooter>
-      <StyledFooterColumn>
-        <h4>Find a Journey</h4>
-        <ul>
-          <li>
-            <a href="">Find Journeys</a>
-          </li>
-          <li>
-            <a href="">Why Travel With Us</a>
-          </li>
-          <li>
-            <a href="">Jobs</a>
-          </li>
-          <li>
-            <a href="">Special Offers</a>
-          </li>
-        </ul>
-      </StyledFooterColumn>
-      <StyledFooterColumn>
-        <h4>Support</h4>
-        <ul>
-          <li>
-            <a href="">Call +91 9536017975</a>
-          </li>
-          <li>
-            <a href="">Contact Us</a>
-          </li>
-          <li>
-            <a href="">FAQ</a>
-          </li>
-          <li>
-            <a href="">Travel Insurance</a>
-          </li>
-        </ul>
-      </StyledFooterColumn>
-      <StyledFooterColumn>
-        <h4>Company</h4>
-        <ul>
-          <li>
-            <a href="">About US</a>
-          </li>
-          <li>
-            <a href="">Terms & Conditions</a>
-          </li>
-          <li>
-            <a href="">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="">Press Release</a>
-          </li>
-        </ul>
-      </StyledFooterColumn>
-      <StyledFooterColumn>
-        <h4>Follow Us</h4>
-      </StyledFooterColumn>
-    </StyledFooter>
-  );
-};
 
 const StyledFooter = styled.footer`
   background-color: var(--light-grey);
@@ -90,4 +30,88 @@ const StyledFooterColumn = styled.div`
     }
   }
 `;
+
+const Footer: React.FC = () => (
+  <StyledFooter>
+    <StyledFooterColumn>
+      <h4>Find a Journey</h4>
+      <ul>
+        <li>
+          <Link href="/" title="View our journeys">
+            Find Journeys
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="Why travel with us">
+            Why Travel With Us
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="Jobs">
+            Jobs
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="Special Offers">
+            Special Offers
+          </Link>
+        </li>
+      </ul>
+    </StyledFooterColumn>
+    <StyledFooterColumn>
+      <h4>Support</h4>
+      <ul>
+        <li>
+          <Link href="/" title="">
+            Call +91 9536017975
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            Contact Us
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            FAQ
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            Travel Insurance
+          </Link>
+        </li>
+      </ul>
+    </StyledFooterColumn>
+    <StyledFooterColumn>
+      <h4>Company</h4>
+      <ul>
+        <li>
+          <Link href="/" title="">
+            About US
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            Terms & Conditions
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            Privacy Policy
+          </Link>
+        </li>
+        <li>
+          <Link href="/" title="">
+            Press Release
+          </Link>
+        </li>
+      </ul>
+    </StyledFooterColumn>
+    <StyledFooterColumn>
+      <h4>Follow Us</h4>
+    </StyledFooterColumn>
+  </StyledFooter>
+);
+
 export { Footer };

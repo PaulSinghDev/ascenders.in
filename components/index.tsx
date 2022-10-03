@@ -1,4 +1,3 @@
-export * from "./ComingSoon";
 export * from "./Header";
 export * from "./TripSearch";
 export * from "./Base";

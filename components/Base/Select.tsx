@@ -3,17 +3,6 @@ import { AiFillCaretDown } from "react-icons/ai";
 
 type SelectProps = {} & React.HTMLAttributes<HTMLSelectElement>;
 
-const Select: React.FC<SelectProps> = ({ children, ...rest }) => {
-  return (
-    <StyledSelect>
-      <select {...rest}>{children}</select>
-      <div data-type="icon">
-        <AiFillCaretDown />
-      </div>
-    </StyledSelect>
-  );
-};
-
 const StyledSelect = styled.div`
   text-align: center;
   background-color: transparent;
@@ -64,5 +53,14 @@ const StyledSelect = styled.div`
     }
   }
 `;
+
+const Select: React.FC<SelectProps> = ({ children, ...rest }) => (
+  <StyledSelect>
+    <select {...rest}>{children}</select>
+    <div data-type="icon">
+      <AiFillCaretDown />
+    </div>
+  </StyledSelect>
+);
 
 export { Select };

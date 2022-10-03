@@ -29,4 +29,32 @@ export const GlobalFonts = createGlobalStyle`
         font-style: extra-bold;
         font-display: swap;
     }
+    @font-face {
+        font-family: eurosoft;
+        src: url("/assets/fonts/eurosoft/Eurosoft-Light.ttf");
+        font-weight: 100;
+        font-style: light;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: eurosoft;
+        src: url("/assets/fonts/eurosoft/Eurosoft-Regular.ttf");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: eurosoft;
+        src: url("/assets/fonts/eurosoft/Eurosoft-Semibold.ttf");
+        font-weight: 700;
+        font-style: bold;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: eurosoft;
+        src: url("/assets/fonts/eurosoft/Eurosoft-Bold.ttf");
+        font-weight: 900;
+        font-style: extra-bold;
+        font-display: swap;
+    }
 `;

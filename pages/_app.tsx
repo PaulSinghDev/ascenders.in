@@ -1,14 +1,16 @@
+import { MainNav } from "@/components/MainNav/MainNav";
 import type { AppProps } from "next/app";
 import { GlobalStyles, GlobalFonts } from "styles";
+import { Footer } from "../components";
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <>
-      <GlobalFonts />
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </>
-  );
-};
+const Ascenders = ({ Component, pageProps }: AppProps) => (
+  <>
+    <GlobalFonts />
+    <GlobalStyles />
+    <MainNav />
+    <Component {...pageProps} />
+    <Footer />
+  </>
+);
 
-export default MyApp;
+export default Ascenders;
