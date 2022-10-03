@@ -1,4 +1,4 @@
-import { Interest } from "types/types";
+import { Interest } from "types/data.types";
 
 const interests: Interest[] = [
   {
@@ -24,7 +24,7 @@ const interests: Interest[] = [
   {
     slug: "history-archaeology",
     title: "History & Archaeology",
-    description: ["some words"],
+    description: ["New description words"],
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-history-archaeology.jpeg",
@@ -106,6 +106,16 @@ const interests: Interest[] = [
     level: "large",
     id: Math.random().toString(36).substring(2, 7),
     title: "Yoga",
+    description: ["some words"],
+    target: ["fit", "adventurous"],
+    thumbnail:
+      "/assets/images/interests/thumbnails/ascenders-interests-yoga.jpeg",
+  },
+  {
+    slug: "mountains",
+    level: "large",
+    id: Math.random().toString(36).substring(2, 7),
+    title: "Mountains",
     description: ["some words"],
     target: ["fit", "adventurous"],
     thumbnail:
