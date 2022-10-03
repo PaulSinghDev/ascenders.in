@@ -8,7 +8,6 @@ const interests: Interest[] = [
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-expeditions.jpeg",
-    level: "medium",
     id: Math.random().toString(36).substring(2, 7),
   },
   {
@@ -18,7 +17,6 @@ const interests: Interest[] = [
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-festivals.jpeg",
-    level: "large",
     id: Math.random().toString(36).substring(2, 7),
   },
   {
@@ -28,7 +26,6 @@ const interests: Interest[] = [
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-history-archaeology.jpeg",
-    level: "small",
     id: Math.random().toString(36).substring(2, 7),
   },
   {
@@ -36,7 +33,6 @@ const interests: Interest[] = [
     slug: "photography",
     id: Math.random().toString(36).substring(2, 7),
     description: ["some words"],
-    level: "small",
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-photography.jpeg",
@@ -45,7 +41,6 @@ const interests: Interest[] = [
     slug: "relaxation",
     title: "Relaxation",
     id: Math.random().toString(36).substring(2, 7),
-    level: "medium",
     description: ["some words"],
     target: ["fit", "adventurous"],
     thumbnail:
@@ -55,7 +50,6 @@ const interests: Interest[] = [
     slug: "sightseeing",
     title: "Sightseeing",
     id: Math.random().toString(36).substring(2, 7),
-    level: "large",
     description: ["some words"],
     target: ["fit", "adventurous"],
     thumbnail:
@@ -63,7 +57,6 @@ const interests: Interest[] = [
   },
   {
     slug: "surfing",
-    level: "small",
     id: Math.random().toString(36).substring(2, 7),
     title: "Surfing",
     description: ["some words"],
@@ -73,7 +66,6 @@ const interests: Interest[] = [
   },
   {
     slug: "trekking",
-    level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Trekking",
     description: ["some words"],
@@ -83,7 +75,6 @@ const interests: Interest[] = [
   },
   {
     slug: "village-stay",
-    level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Village Stay",
     description: ["some words"],
@@ -93,7 +84,6 @@ const interests: Interest[] = [
   },
   {
     slug: "wildlife",
-    level: "medium",
     id: Math.random().toString(36).substring(2, 7),
     title: "Wildlife",
     description: ["some words"],
@@ -103,7 +93,6 @@ const interests: Interest[] = [
   },
   {
     slug: "yoga",
-    level: "large",
     id: Math.random().toString(36).substring(2, 7),
     title: "Yoga",
     description: ["some words"],
@@ -113,7 +102,6 @@ const interests: Interest[] = [
   },
   {
     slug: "mountains",
-    level: "large",
     id: Math.random().toString(36).substring(2, 7),
     title: "Mountains",
     description: ["some words"],
