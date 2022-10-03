@@ -1,52 +1,50 @@
+import { Header } from "@/components/Header";
 import { interests } from "data";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Interest } from "types/data.types";
+import { getRelatedJourneys } from "services/journey.service";
+import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
+import { SectionHeading } from "@/components/Base/SectionHeading";
+import styled from "styled-components";
 
-const InterestPage: React.FC<Interest> = ({
-  target,
+interface InterestPageProps extends Interest {
+  count?: number;
+}
+
+const GridWrapper = styled.div`
+  border-radius: var(--border-radius-xl);
+  padding: calc(var(--padding-lg) * 1.8);
+  margin: var(--margin-xl);
+
+  > div:first-child {
+    margin: 0;
+  }
+`;
+
+const InterestPage: React.FC<InterestPageProps> = ({
   thumbnail,
   title,
   slug,
   description,
-  gallery,
-  level,
-  id,
-}) => (
-  <div>
-    <p>
-      Title:
-      {title}
-    </p>
-    <p>
-      Slug:
-      {slug}
-    </p>
-    <p>
-      ID:
-      {id}
-    </p>
-    <p>
-      Description:
-      {description}
-    </p>
-    <p>
-      Level:
-      {level}
-    </p>
-    <p>
-      Thumbnail:
-      {thumbnail}
-    </p>
-    <p>
-      Target:
-      {target}
-    </p>
-    <p>
-      Gallery:
-      {gallery}
-    </p>
-  </div>
-);
+  count,
+}) => {
+  const journeys = getRelatedJourneys([slug]) || [];
+  return (
+    <div>
+      <Header
+        type="hero"
+        pageType="plp"
+        heading={title}
+        subheading={`Get inspired to take a ${title.toLowerCase()} journey. Showing a total of ${count} journeys.`}
+        backgroundUrl={thumbnail}
+      />
+      <GridWrapper>
+        <SectionHeading title={`${title} Journeys`} copy={description} />
+        <JourneysGrid journeys={journeys} />
+      </GridWrapper>
+    </div>
+  );
+};
 
 export default InterestPage;
 
@@ -66,10 +64,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const interestObject = interests.find(
     (interest) => interest.slug === context?.params?.slug
   );
+  const journeys = getRelatedJourneys([`${context?.params?.slug}`]);
   // No object so we don't need props for now
   if (!interestObject) {
     return {
-      props: {},
+      props: {
+        count: journeys.length,
+      },
     };
   }
   // Got object so pass it down as a prop
