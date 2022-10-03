@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { interests } from "data";
-import Image from "next/image";
-import { Button } from "..";
+import Link from "next/link";
+import { InterestCarousel } from "../InterestCarousel/InterestCarousel";
 
 const StyledInterestsSection = styled.section`
   padding-top: 80px;
@@ -110,29 +109,14 @@ const Interests: React.FC = () => (
     <StyledHeading>
       <span>what to do</span>
       <h2>Interests</h2>
-      <Button margin="lg" color="blue">
+      <Link href="/interests" title="View all interests">
         See all
-      </Button>
+      </Link>
     </StyledHeading>
     <div className="interests-wrapper">
-      <ul className="interests-list">
-        {interests.map((interest) => (
-          <li className="interest-item" key={interest.id}>
-            <button type="button" data-id={interest.id}>
-              <Image
-                src={interest.thumbnail}
-                alt={interest.title}
-                width={300}
-                height={200}
-              />
-              <p>
-                {interest.title}
-                <span>{interest.level} level</span>
-              </p>
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="interests-list">
+        <InterestCarousel showAll disabledHeading />
+      </div>
     </div>
   </StyledInterestsSection>
 );

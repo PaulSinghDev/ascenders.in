@@ -2,7 +2,7 @@ import React from "react";
 import { GiDeer } from "react-icons/gi";
 import styled from "styled-components";
 import Image from "next/image";
-import { Button } from "../Base";
+import { Button, Text } from "../Base";
 
 const Section = styled.section`
   min-height: 500px;
@@ -47,10 +47,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  > img {
-    width: 80%;
-    max-width: 400px;
-  }
+
   > button {
     background-color: transparent;
     color: var(--green);
@@ -65,6 +62,16 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const ImageWrapper = styled.div`
+  width: 80%;
+  max-width: 300px;
+  height: 150px;
+  text-align: center;
+  position: relative;
+  > img {
+  }
+`;
+
 const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   ...rest
 }) => (
@@ -74,27 +81,32 @@ const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         <GiDeer size={50} />
       </div>
       <h2>Why Travel With Us</h2>
-      <p>
-        We offer conscious and self-transformative HEAL journeys that are all
+      <Text
+        lines={[
+          `We offer conscious and self-transformative HEAL journeys that are all
         about learning to care for Self-Health and Earth in a journey full of
         Adventure and Love. Our journeys have been designed to engage you in
-        actions that help you go beyond who you already are.
-      </p>
+        actions that help you go beyond who you already are.`,
+        ]}
+      />
       <h2>Why we do it</h2>
-      <p>
-        It&#39;s a step to promote conscious travel, improve health, generate
+      <Text
+        lines={[
+          `It's a step to promote conscious travel, improve health, generate
         employment, empower women, free education, nature conservation, sattvic
-        life, Ayurveda, and self-enhancement. Let&#39;s take a HEAL journey of a
-        lifetime.
-      </p>
+        life, Ayurveda, and self-enhancement. Let's take a HEAL journey of a
+        lifetime.`,
+        ]}
+      />
     </TitleWrapper>
     <ContentWrapper>
-      <Image
-        src="/assets/images/logos/heal.png"
-        alt="Green HEAL logo with initialisation definitions"
-        width={400}
-        height={200}
-      />
+      <ImageWrapper>
+        <Image
+          src="/assets/images/logos/heal-logo.svg"
+          alt="Green HEAL logo with initialisation definitions"
+          layout="fill"
+        />
+      </ImageWrapper>
       <Button margin="xl">Learn more</Button>
     </ContentWrapper>
   </Section>
