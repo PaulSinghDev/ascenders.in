@@ -13,11 +13,20 @@ import { Journey } from "types/data.types";
 import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
 
 const testLinks = [
-  { label: "Overview", url: "#overview", title: "A url" },
-  { label: "Gallery", url: "#gallery", title: "A url" },
-  { label: "Itinerary", url: "#itinerary", title: "A url" },
-  { label: "FAQs", url: "#faqs", title: "A url" },
-  { label: "HEAL", url: "#heal", title: "A url" },
+  { label: "Overview", url: "#overview", title: "Skip to the overview" },
+  { label: "Gallery", url: "#gallery", title: "Skip to the gallery" },
+  { label: "Itinerary", url: "#itinerary", title: "Skip to the itinerary" },
+  {
+    label: "Important Information",
+    url: "#important-information",
+    title: "Skip to the important information section",
+  },
+  { label: "HEAL", url: "#heal", title: "Skip to the HEAL section" },
+  {
+    label: "What to bring",
+    url: "#what-to-bring",
+    title: "Skip to the what to bring section",
+  },
 ];
 
 const JourneyPage: React.FC<Journey> = ({
@@ -83,7 +92,7 @@ const JourneyPage: React.FC<Journey> = ({
       <JourneyStaffCarousel staff={staff} />
       <Accordion
         title={inclusions.title}
-        id="inclusions"
+        id="what-to-bring"
         description={inclusions.description}
         items={inclusions.items}
       />
