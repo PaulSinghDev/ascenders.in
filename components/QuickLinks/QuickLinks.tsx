@@ -15,13 +15,14 @@ interface QuickLinksProps {
 const StyledLinks = styled.div`
   padding: var(--padding-md);
   display: flex;
-  justify-content: space-around;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-left: none;
   border-right: none;
   margin: var(--margin-xl) calc(var(--margin-sm) * 1.5);
+  overflow: auto;
 
   a {
+    white-space: nowrap;
     font-weight: bold;
     color: var(--dark-blue);
     padding: var(--padding-sm);

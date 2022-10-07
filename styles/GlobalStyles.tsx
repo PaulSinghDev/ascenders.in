@@ -31,6 +31,10 @@ export const GlobalStyles = createGlobalStyle`
   --main-nav-height: 60px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
