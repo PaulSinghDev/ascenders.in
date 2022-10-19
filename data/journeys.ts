@@ -520,7 +520,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
   },
   {
     inclusions: {
-      title: "Inclusions",
+      title: "Inclusions/Exclusions",
       description: [
         "Use the following tabs to prepare a checklist of what you need to bring.",
         "We have provided information about what is included with your booking and what is not.",
@@ -528,152 +528,210 @@ Any kind of entry fees anywhere if not mentioned \n`,
       items: [
         {
           title: "Included",
-          content: "### This is included \n Yaay",
+          content:
+            "- Accommodation as per package\n- Meals as indicated in the Itinerary\n- Transfers upon arrival and departure \n- Transportation provided on-trip\n- All toll tax, parking, fuel and driver allowances\n- Personal Guide\n- Photography",
         },
         {
           title: "Not Included",
-          content: "### This is Nno included \n Boo",
+          content:
+            "- Horse / Paalki / Helicopter for Trekking at Kedarnath\n- Anything not mentioned under 'Package Inclusions\n- All personal expenses, optional tours, and extra meals\n-   Any kind of entry fees anywhere if not mentioned\n-   Tips, travel insurance, medical insurance, laundry charges, liquors, mineral water, telephone charges\n- Porter, pony, horse, cable car, boat, train tickets, air tickets charges",
         },
       ],
     },
-    staff,
+    staff: staff.filter((person) => /shivam|saurav/gi.test(person.slug)),
     accommodation: {
       type: ["camping", "homestay"],
     },
-    title: "Kedarnath Yatra",
+    title: "Kedarnath Yatra: Shiva's Home",
     overviewBullets: [
-      "some words abotu this place.",
-      "some words abotu this place.",
-      "some words abotu this place.",
-      "some words abotu this place.",
+      "A journey to the holy abode of Lord Shiva - Kedarnath Temple",
+      "One of the four major sites in India's Chota Char Dham pilgrimage",
+      "Venture to the Vasuki Lake flanked by snow-clad mountain peaks",
+      "Sleep under the shadow of mighty Himalayan peaks ",
+      "Pray at Gaurikund Temple on your way to Kedarnath",
     ],
-    tagline: "This is a tagline space",
+    tagline: "The Best Dose of Spirituality",
     slug: "kedarnath-yatra",
     gallery: [
       {
-        src: "/assets/images/journeys/thumbnails/ascenders-journeys-ali-bugyal-trek.jpg",
-        title: "Gallery Image 1",
-        alt: "The alt for the image",
-        interest: ["trekking", "soghtseeing"],
-        description: ["This is line one", "This is line two"],
+        src: "/assets/images/journeys/galleries/kedarnath-yatra/brahma-kamal.jpg",
+        title: "Brahma Flower",
+        alt: "Close up picture of a brahma flower",
+        interest: ["trekking", "nature"],
+        description: [
+          "Brahma Kamal is a rare shrub found only along the high Himalayan ridges.",
+          "It is famed for its auspicious, divine, and therapeutic properties.",
+          "It is also Uttarakhand's state flower.",
+        ],
       },
       {
-        src: "/assets/images/journeys/thumbnails/ascenders-journeys-deoriatal-chandrashilla-trek.jpg",
-        title: "Gallery Image2",
-        alt: "The alt for the image",
-        interest: ["trekking", "soghtseeing"],
-        description: ["This is line one", "This is line two"],
+        src: "/assets/images/journeys/galleries/kedarnath-yatra/vasuki-tal.jpg",
+        title: "Vasuki Lake",
+        alt: "Vasuki lake with a mountain backdrop",
+        interest: ["trekking", "sightseeing", "nature"],
+        description: [
+          "Vasuki Tal located above Kedarnath at a height of 4,135 metres, is a blue icy lake that provides a spectacular base for Mt Satopanth and Mt Vasuki.",
+          "Both spiritual and thrill seekers visit the lake.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/kedarnath-yatra/kedarnath-valley.jpg",
+        title: "Kedarnath Valley",
+        alt: "View of Kedarnath Valley mountain range",
+        interest: ["trekking", "sightseeing", "nature"],
+        description: [
+          "This valley is filled with the divine mysticism of Yogis, with the Kedarnath peak(6,940m) overlooking the temple and enhancing the surroundings.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/kedarnath-yatra/kedarnath-temple-3.jpg",
+        title: "Kedarnath Template",
+        alt: "View of Kedarnath temple",
+        interest: ["trekking", "sightseeing", "nature", "spirituality"],
+        description: [
+          "The most revered temple of the first Yogi Shiva, situated in a remote Himalayan town.",
+          "Surrounded by magnificent snow-capped mountains in the Indian state of Uttarkhand.",
+          "This is an immensely sacred site of spirituality.",
+        ],
       },
     ],
-    description: ["some words"],
+    description: [
+      "Kedarnath is synonymous with Shiva: The first Yogi.",
+      "It is home to one of the country's most revered Shiva temples, India's centuries-old Char Dham pilgrimage sites.",
+      "A place that attracts thousands of Yogis, and millions of Devotees every year.",
+    ],
     thumbnail:
       "/assets/images/journeys/thumbnails/ascenders-journeys-kedarnath-yatra.jpg",
     id: Math.random().toString(36).substring(2, 7),
     level: {
-      min: "very easy",
+      min: "easy",
+      max: "medium",
     },
     duration: {
-      value: 5,
+      value: 6,
       measurement: "days",
     },
-    interest: ["trekking", "camping"],
+    interest: ["trekking", "heal", "spirituality", "adventure"],
     price: {
-      from: 14990,
-      value: 14990,
+      from: 17999,
+      value: 17990,
       currency: "₹",
       measurement: "person",
     },
     group: {
-      min: 2,
-      max: 7,
+      min: 5,
+      max: 12,
       measurement: "people",
     },
     location: { label: "Uttarakhand" },
     type: "Spiritual",
     itinerary: {
-      title: "This is the Journey",
+      title: "Detailed Itinerary",
       description: [
-        "This is the first line of the description for this itinerary.",
-        "This is the second line of the itinerary description.",
+        "Take a look at our comprehensive day-by-day breakdown of the Kedarnath HEAL journey.",
+        "Please note that the very essence of exploration lies in a flexible schedule which allows us to adapt to the unexpected and take advantage of new opportunities as they arise.",
       ],
       days: [
         {
           meals: [],
           day: 1,
-          title: "Day 1: This is day 1",
+          title: "Day 1: Guptkashi",
           content:
-            "## heading \n Some words \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            "### Pickup \nUpon your arrival in Rishikesh, a representative of our company will pick you up at 5:30 in the morning. As a precaution, be sure to arrive in Rishikesh the day before and get enough rest the night before the journey. Our destination for the day is Guptkashi. \n### The Hidden Kashi \nDo you know what Kashi (Varanasi) is? Kashi is one of the oldest cities of learning and the holiest of all sacred cities. At any given time, hundreds of enlightened beings dwelt here. Agasthyamuni visited this area and may have even visited this shrine.  So Kashi and Guptkashi share the same importance. It is a hidden Kashi in the Himalayas. A number of other ancient shrines can be found in Guptkashi, among them the ancient Guptkashi Vishwanath Temple, which bears many similarities with the Kashi Vishwanath Temple in Varanasi. It is an ancient place to start your pilgrimage before visiting Kedarnath Valley.",
         },
         {
           meals: [],
           day: 2,
-          title: "Day 2: This is day 2",
+          title: "Day 2: Kedarnath Trek",
           content:
-            "## heading 2 \n Some words 2 \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            "### 16 km trek\nWe will arrive at Gaurikund early in the morning to begin our Kedarnath trek. We have a 16-kilometre trek ahead of us. Our goal should be to reach Kedarnath temple before sunset and participate in evening Puja; if we are lucky, we may even have Darshana. Upon reaching Kedarnath temple's base camp, settle down, enjoy strong ginger tea, delicious dinner, and rest.",
         },
         {
           meals: [],
           day: 3,
-          title: "Day 3: This is day 3",
+          title: "Day 3: Kedarnath Temple",
           content:
-            "## heading 3 \n Some words 3 \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            '### Centre of Spiritualtiy\nKedarnath, which is located in this isolated valley of Uttarkhand, is the most significant source of spirituality for thousands of Yogis and billions of devotees anywhere on the globe. The valley where holy people and sages resided and attained Nirvana has served as a core of spirituality for approximately 25-50 thousand years. According to legends, Parvati and Shiva occasionally visited this location. Shiva- The first Yogi plunged into rapture and danced all over the mountains or remained still.### Seed of Enlightenment \nThe Sanskrit words kedara ("field") and natha ("lord") are the sources of the name "Kedarnath," which means "the lord of the field". According to the scripture Kashi Kedara Mahatmya, this is where "the seed of enlightenment" sprouts. The site is one of India\'s 12 jyotirlingas. Along with other peaks, the towering Kedarnath peak (6,940 metres) looms behind the temple and accentuates the surrounding landscape. The place\'s energy permeates the body, mind, and heart even from a distance.',
+        },
+        {
+          meals: [],
+          day: 4,
+          title: "Day 4: Vasuki Tal / Kanti Sarovar",
+          content:
+            "### Kanti Sarovar - Lake of Grace \nOn this morning's hike, we will visit a glacier lake about an hour away from Kedarnath Temple. It was on the banks of Kanti Sarovar, where Shiva, the first Yoga Guru, taught these inner technologies to the Sapta Rishis, the first seven disciples of Yoga. Allow your mind to be filled with peace, harmony, and purity as you climb, ascend, and enjoy the breathtaking desolation of the area. \n### Vasuki Tal\nAnother option is to trek to this lake that is about 8 km from Kedarnath. 4135 meters above sea level, this high-altitude lake offers glorious views of Chaukhamba peaks amidst towering Himalayan pinnacles. The entire lake is dotted with a delightful Himalayan flower called Brahma Kamal which is only discovered at high elevations.  This lake is believed to have been visited by Lord Vishnu at the auspicious festival of Raksha Bandhan. Either of these destinations can be visited during your stay at Kedarnath temple. \n",
+        },
+        {
+          meals: [],
+          day: 5,
+          title: "Day 5: Guptkashi",
+          content:
+            "### Descent \nThis is the fifth day, and we have given ourselves the time and space to fill our hearts and souls with the spiritual infusion of the temple, lakes, and mystic valley. Our day will begin with a robust breakfast, followed by a descent to Gaurikund, and then a drive to Guptkashi. Check in to the lodge, have some dinner, and enjoy the evening with the group after completing the Kedarnath Yatra.\n",
+        },
+        {
+          meals: [],
+          day: 6,
+          title: "Day 6: Rishikesh",
+          content:
+            "### Catch you later \nWe will have breakfast to start the day. After gathering our belongings, we will return to Rishikesh, where we will physically separate.",
         },
       ],
     },
     heal: {
       h: {
         title: "Health",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: [
+          "Yoga",
+          "Asana",
+          "Dhyana",
+          "Pranayama",
+          "Ayurveda",
+          "Sattvic food",
+        ],
       },
       e: {
         title: "Earth",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Environmental", "awareness", "workshop"],
       },
       a: {
         title: "Adventure",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Camping", "Trekking", "Day-hiking"],
       },
       l: {
         title: "Love",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Festivities", "homestay", "sightseeing", "Guide"],
       },
     },
     importantInformation: {
       title: "Information",
       description: [
-        "This is some information about this section",
-        "This is more information about this section",
+        "The following tabs contain information regarding your transportation, accommodations, other services you will receive, and important items to bring and things to prepare in advance for your journey.",
       ],
       items: [
         {
-          icon: "expect",
-          content: "## This is some content \n these are some *bold* words",
-          title: "What to expect",
+          content:
+            "**Accommodations:** The majority of our nights will be spent in comfortable camps and homestays based on double or single or group occupancy. The accommodations on this journey offer the best location to explore the incredible natural wonders of the area. \n**Guides:** Experienced experts will travel with you the entire journey, and share their insights.\n",
+          title: "Accommodations",
         },
         {
-          icon: "essentials",
-          content: "## This is some content 2 \n these are some *bold* words",
-          title: "Essentials to bring",
+          content:
+            "**Pick-up point - Rishikesh:** In accordance with your travel itinerary, we have arranged for all of your transportation requirements from Rishikesh to Kedarnath including drop-off.  Our trip may be affected by poor road conditions and travel delays, and some days will require long transfers by road, rail, or air.\n**How to reach:** You can book a flight to Jolly Grant Airport in Dehradun, which is around 239 kilometres from Delhi  Airport. From the Dehradun airport to Rishikesh, taxis are available. Visitors can board regular buses, trains or cabs from Delhi to Rishikesh.",
+          title: "Transportation",
         },
         {
-          icon: "fitness",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Fitness",
+          content:
+            "**Difficulty Level:** The activity level for this journey is light to medium, thus fit travellers are recommended. This Journey may require walking on paths with steep ascents and descents, traversing uneven terrain, and ascending hills without handrails. There are a variety of itinerary variations, from easy to medium activities that suit you.\n**Fitness:** You may start by going for daily jogs, performing Surya namaskara, and squats a few weeks before the journey. The journey is suitable for people aged 18 to 60 years old.\n**Height:** You start from an altitude of 340 metres at Rishikesh and reach the highest point of 4,315 metres at Vasuki Tal.",
+          title: "Activity Level & Fitness",
         },
         {
-          icon: "temperature",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Temperature",
+          content:
+            "**Winter:** Rucksack bag, trekking shoes/walking shoes, track pants, a windproof jacket, light woollen clothing, a sun cap, sunglasses, sunscreen lotion, lip balm, torch/flashlight, a walking stick, water bottle, dry fruits and personal toiletries. \n**Monsoon:** A backpack with a rain cover, waterproof trekking/hiking shoes, trekking pants, windproof/waterproof jacket, thick fleece, woollen clothing, waterproof gloves, thick woollen socks, walking stick, raincoat/poncho, torch/flashlight, and toiletries \n**General Items:** ID Card(Driver’s license/Passport/Aadhar Card), Medical Certificate, Mobile phone, camera, diary, books, cash, debit card, emergency numbers, personal medicines(Digene, ORS, Diamox), etc. \n",
+          title: "What to carry",
         },
         {
           icon: "map",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "How to reach",
-        },
-        {
-          icon: "safety",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Health and safety",
+          content:
+            'For details on our health and safety procedures, including what will be expected of you and what you may anticipate from us throughout your trip, please click the "Learn More" button below. \nBefore leaving, please read through these updated procedures to ensure you are familiar with them. \nThis covers details on personal hygiene and wellness, as well as fresh policies we\'ve implemented for things like facial coverings, washing, and more.',
+          title: "Health and Safety",
         },
       ],
     },
