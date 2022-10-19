@@ -199,3 +199,9 @@ export type AvailableIcons =
   | "home"
   | "leaf"
   | "menu";
+
+export interface Destination {
+  title: string;
+  slug: string;
+  thumbnail: ImageType;
+}
