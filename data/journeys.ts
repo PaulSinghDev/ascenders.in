@@ -357,57 +357,146 @@ Any kind of entry fees anywhere if not mentioned \n`,
     staff,
   },
   {
-    staff,
+    staff: staff.filter((person) => /shivam|saurav/gi.test(person.slug)),
     accommodation: {
       type: ["camping", "homestay"],
     },
     title: "Ali Bedni Bugyal",
     overviewBullets: [
-      "Ascend Devariya Tal set amidst elevated alpine meadows",
-      "Explore the geological wonderland, Kedarnath Musk Deer Sanctuary",
-      "Seek blessings from Tungnath temple which is dedicated to Shiva",
-      "Experience Chandrashilla peak",
-      "Behold the glory of Shaneshwar Temple",
+      "Embrace the feel of green-blanketed meadow Ali Bugyal under your feet",
+      "Take a whiff of the wild mountain air and breathe in the scent of birch, and oak forests",
+      "Capture spectacular dusk and dawn, shooting alongside an Ascenders photographer",
+      "Enjoy the presence of Mt. Trishul that towers over you with unrelenting grace",
     ],
-    tagline: "This is a tagline space",
+    tagline: "Encounter the vast grasslands",
     heal: {
       h: {
         title: "Health",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: [
+          "Yoga",
+          "Asana",
+          "Dhyana",
+          "Pranayama",
+          "Ayurveda",
+          "Sattvic food",
+        ],
       },
       e: {
         title: "Earth",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Environmental Awareness Workshop"],
       },
       a: {
         title: "Adventure",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Camping", "Trekking", "Day-hiking"],
       },
       l: {
         title: "Love",
-        copy: ["Hatha yoga, Dhyana classes, Sattvic food"],
+        copy: ["Homestay", "Sightseeing", "Guide"],
       },
     },
     gallery: [
       {
-        src: "/assets/images/journeys/thumbnails/ascenders-journeys-ali-bugyal-trek.jpg",
-        title: "Gallery Image 1",
-        interest: ["trekking", "soghtseeing"],
-        alt: "The alt for the image",
-        description: ["This is line one", "This is line two"],
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal.jpg",
+        title: "Ali Bugyal",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Three people standing on the top of a mountain",
+        description: [
+          "At 3500 meters, India's most beautiful meadow lies beneath the icy summits of the world's highest mountains.",
+          "Feel the soft grass of Ali Bugyal's meadow beneath your feet",
+        ],
       },
       {
-        src: "/assets/images/journeys/thumbnails/ascenders-journeys-deoriatal-chandrashilla-trek.jpg",
-        title: "Gallery Image2",
-        interest: ["trekking", "soghtseeing"],
-        alt: "The alt for the image",
-        description: ["This is line one", "This is line two"],
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal-morning.jpg",
+        title: "Sunrise",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Golden sunlight shining on snowcapped mountains",
+        description: [
+          "Golden rays of dawn pierce the crowns of snow-covered peaks in the early morning hours.",
+          "It's moments like these that lift the spirit and instil positivity.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal-sunset.jpg",
+        title: "Sunset",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Orange sunlight crowning distant mountains",
+        description: [
+          "Seeing the sun paint the tops of the peaks pink and orange in the evening is a magical experience for nature lovers.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal-ridgelines.jpg",
+        title: "Ridgelines",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Long shot from the top of a snowy mountain",
+        description: [
+          "The sheer grandeur of this vast grassland surrounded by stunning ridgelines creates a serene Himalayan landscape. Although no camera can capture the full magnitude and sublimity of the great Himalayas.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal-top.jpg",
+        title: "Mt. Trishul",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Dirt path leading to the top of Mt. Trishul",
+        description: [
+          "This is the beauty point of the meadow that offers an incredible landscape of the region.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/chaukhamba.jpg",
+        title: "Icy Summits",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Snow capped mountains at sunset",
+        description: [
+          "This meadow offers views of icy, towering mountains.",
+          "You are flanked by the unrelenting grace of Mt. Trishul, Mt. Nanda Ghunti, and Mt. Chaukhamba.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/roopkund-lake.jpg",
+        title: "Snow Blanketed",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Bright sunlight, clear blue sky and mountain tops",
+        description: [
+          "The snow blankets the green grassland during the winter months between October and March, burying the paths under snow and making the trek more difficult.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/icy-desert.jpg",
+        title: "Icy Desert",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Footprints in the snow with a clouded sun",
+        description: [
+          "One's heart pumps out of thrill when regular paths of the meadow are buried by snowfall and there is no certainty to reach the destination but that's what adds thrills to the journey.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal-campsite.jpg",
+        title: "Boundless Accommodation",
+        interest: ["trekking", "sightseeing", "mountains"],
+        alt: "Autumnal grass on a mountain top",
+        description: [
+          "No other place can compare to the feeling of a campsite in the middle of the wilderness.",
+          "Camp, stay alive, come to your senses, and take it easy.",
+        ],
+      },
+      {
+        src: "/assets/images/journeys/galleries/ali-bedni-bugyal/forest.jpg",
+        title: "The Scent and Stillness",
+        interest: ["trekking", "sightseeing", "mountains", "forests"],
+        alt: "Two people hiking in a snowy forest",
+        description: [
+          "In this jungle, your senses are completely seized by the sublime taste of stillness and the smell of the soothing aroma. Sunlight beams cutting through the trees create a dramatic scene of highlights and shadows.",
+        ],
       },
     ],
     slug: "ali-bedni-bugyal",
-    description: ["some words"],
+    description: [
+      "Embark on a journey into the heart of the Himalayas to discover vast grasslands and diverse wildlife.",
+      "Discover the mesmerizing beauty of the densest jungles, icy peaks, and gushing streams on guided excursions.",
+    ],
     thumbnail:
-      "/assets/images/journeys/thumbnails/ascenders-journeys-ali-bugyal-trek.jpg",
+      "/assets/images/journeys/galleries/ali-bedni-bugyal/ali-bugyal.jpg",
     id: Math.random().toString(36).substring(2, 7),
     level: {
       min: "easy",
@@ -418,90 +507,112 @@ Any kind of entry fees anywhere if not mentioned \n`,
       measurement: "days",
     },
     type: "Expedition",
-    interest: ["trekking", "camping"],
+    interest: ["heal", "trekking"],
     price: {
-      from: 16990,
-      value: 16990,
+      from: 17990,
+      value: 17990,
       currency: "₹",
       measurement: "person",
     },
     group: {
-      min: 2,
-      max: 7,
+      min: 5,
+      max: 12,
       measurement: "people",
     },
     location: { label: "Uttarakhand" },
     itinerary: {
-      title: "This is the Journey",
+      title: "Detailed Itinerary",
       description: [
-        "This is the first line of the description for this itinerary.",
-        "This is the second line of the itinerary description.",
+        "See our detailed day-by-day itinerary for the Kedarnath HEAL journey.",
+        "This itinerary may change due to circumstances outside our control and to take advantage of new opportunities.",
       ],
       days: [
         {
           meals: [],
           day: 1,
-          title: "Day 1: This is day 1",
+          title: "Day 1: Lohajung",
           content:
-            "# heading \n Some words \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            "### Pickup: Rishikesh \nYou will be picked up early in the morning from Rishikesh. Please make sure that you get there a day before the journey.  Arrive at Lohajung, and settle into your camps. Later, hear tales of the Roopkund Trek from our experts. Gather for a welcome reception at dinner in the evening. The next day awaits taking in the stillness of dense forests.  \n",
         },
         {
           meals: [],
           day: 2,
-          title: "Day 2: This is day 2",
+          title: "Day 2: Didina Village",
           content:
-            "# heading 2 \n Some words 2 \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            "### Forest Walk\nTake a deep breath and begin your first step of the journey towards India's most beautiful grassland nestled at an altitude of 3500 meters. It is surrounded by Almora, Nainital, Gwaldam, and Kausani hill stations. As we initially head downhill, birds, forests, and wildlife provide soothing sounds. We stop for lunch on a beautiful river before starting our ascent to the village. Located near a stream, Didina village is the perfect location to get to know the welcoming residents, spend quality time with them, and learn about their way of life.\n",
         },
         {
           meals: [],
           day: 3,
-          title: "Day 3: This is day 3",
+          title: "Days 3: Ali Bugyal (Day 1)",
           content:
-            "# heading 3 \n Some words 3 \n ![image](/assets/images/journeys/goa-sunset.jpeg)",
+            "### The Second Ascent\nEnjoy breakfast in Didina before a visit to another thrilling day. In this dark forest adorned with oaks, birch and rhododendrons, we set off to explore the beautiful meadow while hiking on a brown carpet of leaves. \n",
+        },
+        {
+          meals: [],
+          day: 4,
+          title: "Days 4: Ali Bugyal (Day 2)",
+          content:
+            "### The Descent \nEnjoy the hike down to Didina village. Take stunning photos of the meadows and the snow-clad peaks in the distance as you walk on the top of the Grassland. Return to Didina mid-afternoon and grab a delicious sattvic lunch. \n",
+        },
+        {
+          meals: [],
+          day: 5,
+          title: "Days 5: Back to Didina",
+          content:
+            "### The vast meadow \nFollowing the trail for a few hours, you are suddenly greeted by the vast meadows of Ali Bugyal, icy Mt. Trishul, and endless ridgelines. Allow yourself to experience the grassland on your toes by taking off your shoes. The green meadow stretches out in every direction from the mountaintop, engulfing you in miles of vastness. Mother Nature creates bright, hazy strokes to depict the towering mountain peaks. After a day of hiking and exploration, the peaceful campsite near a forest is the perfect place for unwinding.\n",
+        },
+        {
+          meals: [],
+          day: 6,
+          title: "Day 6: Descent to Lohanjung",
+          content:
+            "### Descent \nThis is the 6th day, and we have let ourselves be filled with the wilderness of spectacular Himalayan Grassland. Our day will begin with a robust breakfast, followed by a descent to Lohajung. Check in to the lodge, have some dinner, and enjoy the evening with the group after completing the journey.\n",
+        },
+        {
+          meals: [],
+          day: 7,
+          title: "Day 7: Rishikesh",
+          content:
+            "### Catch you later \nWe will have breakfast to start the day. After gathering our belongings, we will return to Rishikesh to connect with your flight/cab home. \n ",
         },
       ],
     },
     importantInformation: {
       title: "Information",
       description: [
-        "This is some information about this section",
-        "This is more information about this section",
+        "The following tabs contain information regarding your transportation, accommodations, other services you will receive, and important items to bring and things to prepare in advance for your journey.",
       ],
       items: [
         {
-          icon: "expect",
-          content: "## This is some content \n these are some *bold* words",
-          title: "What to expect",
+          content:
+            "**Accommodations:** The majority of our nights will be spent in comfortable camps based on double or single or group occupancy. The accommodations on this journey offer the best location to explore the incredible natural wonders of the area.\n**Guides:** Experienced experts will travel with you the entire journey, and share their insights.\n",
+          title: "Accommodations",
         },
         {
-          icon: "essentials",
-          content: "## This is some content 2 \n these are some *bold* words",
-          title: "Essentials to bring",
+          content:
+            "**Pick-up & Drop-off: Rishikesh:** In accordance with your travel itinerary, we have arranged for all of your transportation requirements from Rishikesh to Lohanjung including drop-off.  Our trip may be affected by poor road conditions and travel delays, and some days will require long transfers by road, rail, or air. \n  **How to reach:** You can book a flight to Jolly Grant Airport in Dehradun, which is around 239 kilometers from Delhi  Airport. From the Dehradun airport to Rishikesh, taxis are available. Visitors can board regular buses, trains, or cabs from Delhi to Rishikesh. \n",
+          title: "Transportation",
         },
         {
-          icon: "fitness",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Fitness",
+          content:
+            "**Difficulty Level:** The activity level for this journey is light to medium, thus fit travellers are recommended. This Journey may require walking on paths with steep ascents and descents, traversing uneven terrain, and ascending hills without handrails.\n  **Fitness:** You may start by going for daily jogs, performing Surya namaskara, and squats a few weeks before the journey. The journey is suitable for people aged 18 to 60 years old.\n**Height:** You start from an altitude of 340 meters in Rishikesh and reach the highest point of 3,355 meters at Ali Bugyal.\n",
+          title: "Activity Level & Fitnes",
         },
         {
-          icon: "temperature",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Temperature",
+          content:
+            "**Winter:** Rucksack bag, trekking shoes/walking shoes, track pants, a windproof jacket, light woolen clothing, a sun cap, sunglasses, sunscreen lotion, lip balm, torch/flashlight, a walking stick, water bottle, dry fruits, and personal toiletries. \n**Monsoon:** A backpack with a rain cover, waterproof trekking/hiking shoes, trekking pants, windproof/waterproof jacket, thick fleece, woolen clothing, waterproof gloves, woolen socks, walking stick, raincoat/poncho, torch/flashlight, toiletries \n**General Items:** Mobile phone, camera, diary, books, cash, debit card, emergency numbers, personal medicine, etc. \n",
+          title: "What to carry",
         },
         {
-          icon: "map",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "How to reach",
-        },
-        {
-          icon: "safety",
-          content: "## This is some content 3 \n these are some *bold* words",
-          title: "Health and safety",
+          content:
+            'For details on our health and safety procedures, including what will be expected of you and what you may anticipate from us throughout your trip, please click the "Learn More" button below. \nBefore leaving, please read through these updated procedures to ensure you are familiar with them. \nThis covers details on personal hygiene and wellness, as well as fresh policies we\'ve implemented for things like facial coverings, washing, and more. \n ',
+          title: "Health and Safety",
         },
       ],
     },
     inclusions: {
-      title: "Inclusions",
+      title: "Inclusions/Exclusions",
       description: [
         "Use the following tabs to prepare a checklist of what you need to bring.",
         "We have provided information about what is included with your booking and what is not.",
@@ -509,11 +620,13 @@ Any kind of entry fees anywhere if not mentioned \n`,
       items: [
         {
           title: "Included",
-          content: "### This is included \n Yaay",
+          content:
+            "- Accommodation as per package\n- Meals as indicated in the Itinerary\n- Transfers upon arrival and departure \n- Transportation provided on-trip\n- Personal Guide\n- Photography\n",
         },
         {
           title: "Not Included",
-          content: "### This is Nno included \n Boo",
+          content:
+            "- All toll tax, parking, fuel, and driver allowances\n- Anything not mentioned under 'Package Inclusions\n- All personal expenses, optional tours, and extra meals\n- Any kind of entry fees anywhere if not mentioned\n- Tips, travel insurance, medical insurance, laundry charges, liquors, mineral water, telephone charges\n- Porter, pony, horse, cable car, boat, train tickets, air tickets charges\n",
         },
       ],
     },
