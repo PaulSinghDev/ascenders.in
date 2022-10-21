@@ -15,7 +15,7 @@ const StyledJourneysWrapper = styled.div`
 `;
 
 const JourneysPage: React.FC = () => (
-  <div>
+  <main>
     <Head>
       <title>Ascenders | H.E.A.L | Our Journeys</title>
       <meta name="description" content="Ascenders | H.E.A.L | Journeys" />
@@ -30,7 +30,7 @@ const JourneysPage: React.FC = () => (
     <StyledJourneysWrapper>
       <JourneysGrid journeys={journeys} />
     </StyledJourneysWrapper>
-  </div>
+  </main>
 );
 
 export default JourneysPage;

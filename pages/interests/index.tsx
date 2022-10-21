@@ -116,7 +116,7 @@ const InterestsGrid = styled.div`
 `;
 
 const InterestsPage: React.FC = () => (
-  <div>
+  <main>
     <Head>
       <title>Ascenders | H.E.A.L | Our Interests</title>
       <meta name="description" content="Ascenders | H.E.A.L | Interests" />
@@ -160,7 +160,7 @@ const InterestsPage: React.FC = () => (
         })}
       </InterestsGrid>
     </InterestsWrapper>
-  </div>
+  </main>
 );
 
 export default InterestsPage;

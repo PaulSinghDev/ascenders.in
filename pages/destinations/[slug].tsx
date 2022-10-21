@@ -21,7 +21,7 @@ const GridWrapper = styled.div`
 `;
 
 const DestinationPage: React.FC<DestinationPageProps> = ({ title, count }) => (
-  <div>
+  <main>
     <Header
       type="hero"
       pageType="plp"
@@ -31,7 +31,7 @@ const DestinationPage: React.FC<DestinationPageProps> = ({ title, count }) => (
     <GridWrapper>
       <SectionHeading title={title} />
     </GridWrapper>
-  </div>
+  </main>
 );
 
 export default DestinationPage;

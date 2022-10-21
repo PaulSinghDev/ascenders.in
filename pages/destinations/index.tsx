@@ -116,7 +116,7 @@ const DestinationsGrid = styled.div`
 `;
 
 const DestinationsPage: React.FC = () => (
-  <div>
+  <main>
     <Head>
       <title>Ascenders | H.E.A.L | Our Destinations</title>
       <meta name="description" content="Ascenders | H.E.A.L | Destinations" />
@@ -160,7 +160,7 @@ const DestinationsPage: React.FC = () => (
         })}
       </DestinationsGrid>
     </DestinationsWrapper>
-  </div>
+  </main>
 );
 
 export default DestinationsPage;

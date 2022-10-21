@@ -11,7 +11,7 @@ const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
 }) => {
   console.log(journeys);
   return (
-    <div>
+    <main>
       <Head>
         <title>Ascenders | H.E.A.L | Our Journeys | Search</title>
         <meta
@@ -27,7 +27,7 @@ const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
         subheading={`Showing a total of ${journeys.length} journeys matching your query`}
       />
       <JourneysGrid journeys={journeys} />
-    </div>
+    </main>
   );
 };
 

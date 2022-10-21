@@ -96,4 +96,9 @@ p {
   font-family: inherit;
   line-height: inherit;
 }
+
+main {
+  max-width: 1024px;
+  margin: auto;
+}
 `;
