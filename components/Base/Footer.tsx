@@ -92,7 +92,7 @@ const Footer: React.FC = () => (
           </Link>
         </li>
         <li>
-          <Link href="/" title="">
+          <Link href="/terms-conditions" title="View our terms and conditions">
             Terms & Conditions
           </Link>
         </li>
