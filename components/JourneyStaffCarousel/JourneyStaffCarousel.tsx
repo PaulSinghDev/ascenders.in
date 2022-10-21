@@ -15,6 +15,11 @@ const JourneyStaffCardsWrapper = styled.div`
 const JourneyStaffCards = styled.div`
   display: flex;
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const JourneyStaffCard = styled.div`

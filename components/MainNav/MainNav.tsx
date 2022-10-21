@@ -65,6 +65,11 @@ const NavDrawerHeader = styled.header`
 
 const NavDrawerContent = styled.div`
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const NavDrawerFooter = styled.footer``;

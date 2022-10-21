@@ -24,6 +24,11 @@ const JourneysCarouselContainer = styled.div`
   display inline-flex;
   max-width: 100%;
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const JourneysCarouselWrapper = styled.div`

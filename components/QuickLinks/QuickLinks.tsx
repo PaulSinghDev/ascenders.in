@@ -20,6 +20,11 @@ const StyledLinks = styled.div`
   border-right: none;
   margin: var(--margin-xl) calc(var(--margin-sm) * 1.5);
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   a {
     white-space: nowrap;

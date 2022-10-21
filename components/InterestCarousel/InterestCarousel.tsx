@@ -24,6 +24,11 @@ const InterestCarouselContainer = styled.div`
   display inline-flex;
   max-width: calc(100% - calc(var(--padding-lg) * 2));
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display:none;
+  }
 `;
 
 const InterestCarouselWrapper = styled.div`
