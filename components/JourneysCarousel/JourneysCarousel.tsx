@@ -20,9 +20,9 @@ const JourneyHeading = styled.div`
 `;
 
 const JourneysCarouselContainer = styled.div`
-  padding: var(--padding-lg);
+  padding-bottom: var(--padding-lg);
   display inline-flex;
-  max-width: calc(100% - calc(var(--padding-lg) * 2));
+  max-width: 100%;
   overflow: auto;
 `;
 

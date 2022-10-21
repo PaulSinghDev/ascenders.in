@@ -5,7 +5,7 @@ interface TextProps {
 }
 
 const StyledTextWrapper = styled.div`
-  padding: calc(var(--padding-md) * 2) calc(var(--padding-md) * 4);
+  padding: calc(2 * var(--padding-lg)) var(--padding-sm);
   color: var(--dark-blue);
 `;
 
