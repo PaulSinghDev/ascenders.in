@@ -16,8 +16,9 @@ const JourneyCardWrapper = styled.div`
 `;
 
 const JourneyCardThumb = styled.div`
-  > img {
-    border-radius: var(--border-radius-md);
+  overflow: hidden;
+  img {
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
     width: 100%;
     max-height: 250px;
     object-fot: cover;

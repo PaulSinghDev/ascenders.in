@@ -61,6 +61,7 @@ const InterestCard = styled.div`
       content: "";
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.6) 90%);
       z-index: 1;
+      border-radius: 24px;
     }
 
     img {
