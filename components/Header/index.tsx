@@ -1,11 +1,12 @@
 import { HomeHeader } from "./Home";
 import { PlpHeader } from "./Plp";
 import { PdpHeader, PdpHeaderProps } from "./Pdp";
+import { InfoHeader } from "./Info";
 
 interface HeaderProps {
-  type: "hero" | "normal";
+  type?: "hero" | "normal";
   heading?: string;
-  pageType: "home" | "plp" | "pdp";
+  pageType: "home" | "plp" | "pdp" | "info";
   subheading?: string;
   backgroundUrl?: string;
 }
@@ -45,6 +46,9 @@ const Header: React.FC<HeaderProps & PdpHeaderProps> = ({
         backgroundImg={backgroundUrl}
       />
     );
+  }
+  if (pageType === "info") {
+    return <InfoHeader heading={heading} subheading={subheading} />;
   }
   return null;
 };
