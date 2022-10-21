@@ -3,7 +3,7 @@ import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel
 import Link from "next/link";
 
 const StyledSection = styled.section`
-  padding: calc(var(--padding-lg) * 8) calc(var(--padding-lg) * 2);
+  padding: calc(var(--padding-lg) * 4) var(--padding-lg);
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 `;
@@ -36,7 +36,6 @@ const StyledHeading = styled.div`
 `;
 
 const StyledJourneysWrapper = styled.div`
-  padding: var(--padding-lg);
   display inline-flex;
   max-width: 100%;
 
