@@ -4,6 +4,7 @@ import { journeys } from "data/journeys";
 import Head from "next/head";
 import styled from "styled-components";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
+import { Section } from "@/components/Base/Section";
 
 const StyledJourneysWrapper = styled.div`
   padding: var(--padding-lg);
@@ -22,11 +23,13 @@ const JourneysPage: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header type="hero" pageType="plp" />
-    <Text
-      lines={[
-        "For travellers looking to get fully immersed in the lap of the might Himalayas, out hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded sel transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
-      ]}
-    />
+    <Section>
+      <Text
+        lines={[
+          "For travellers looking to get fully immersed in the lap of the might Himalayas, out hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded sel transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
+        ]}
+      />
+    </Section>
     <StyledJourneysWrapper>
       <JourneysGrid journeys={journeys} />
     </StyledJourneysWrapper>

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { getRelatedJourneys } from "services/journey.service";
+import { Section } from "@/components/Base/Section";
 
 const DestinationsWrapper = styled.div`
   padding: var(--padding-lg);
@@ -129,11 +130,13 @@ const DestinationsPage: React.FC = () => (
       subheading="Get inspired"
       backgroundUrl="/assets/images/journeys/goa-sunset.jpeg"
     />
-    <Text
-      lines={[
-        "For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
-      ]}
-    />
+    <Section>
+      <Text
+        lines={[
+          "For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
+        ]}
+      />
+    </Section>
     <DestinationsWrapper>
       <DestinationsGrid>
         {interests.map((interest) => {
