@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 const AscendersLogoWrapper = styled.div<{ size?: "small" }>`
   text-align: center;
   padding: var(--padding-sm);
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-  > span:first-child {
+  span:first-child {
     font-family: eurosoft;
     font-weight: bold;
     text-transform: lowercase;
@@ -17,7 +20,8 @@ const AscendersLogoWrapper = styled.div<{ size?: "small" }>`
     margin: 0;
     line-height: 1.1;
   }
-  > span:last-child {
+
+  span:last-child {
     line-height: 1;
     margin: 0;
     font-family: open-sans;
@@ -33,8 +37,12 @@ const AscendersLogo: React.FC<{ className?: string; size?: "small" }> = ({
   size,
 }) => (
   <AscendersLogoWrapper size={size} className={className}>
-    <span>Ascenders</span>
-    <span>Go Beyond</span>
+    <Link href="/" title="Go to home page">
+      <a href="/" title="Go to home page">
+        <span>Ascenders</span>
+        <span>Go Beyond</span>
+      </a>
+    </Link>
   </AscendersLogoWrapper>
 );
 
