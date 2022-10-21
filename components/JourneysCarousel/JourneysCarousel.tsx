@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { JourneyCard } from "../JourneyCard/JourneyCard";
 
 const JourneyHeading = styled.div`
-  margin: var(--margin-xl);
+  margin: var(--margin-xl) var(--margin-lg);
   h2 {
     margin-top: 0;
     margin-bottom: var(--margin-lg);

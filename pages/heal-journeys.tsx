@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { getIcon } from "utils/getIcon";
 import { Header, Text } from "../components";
 
-const HealWrapper = styled.div``;
+const HealWrapper = styled.main``;
 
 const HealLogoWrapper = styled.div`
   margin-top: calc(var(--margin-xl) * 2);

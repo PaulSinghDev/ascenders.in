@@ -11,6 +11,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { Journey } from "types/data.types";
 import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
+import { Section } from "@/components/Base/Section";
 
 const testLinks = [
   { label: "Overview", url: "#overview", title: "Skip to the overview" },
@@ -48,7 +49,7 @@ const JourneyPage: React.FC<Journey> = ({
 }) => {
   console.log(tagline);
   return (
-    <div>
+    <main>
       <Head>
         <title>Ascenders | H.E.A.L | Our Journeys | {`${title}`}</title>
         <meta
@@ -68,8 +69,10 @@ const JourneyPage: React.FC<Journey> = ({
         description={tagline}
         backgroundUrl={thumbnail}
       />
-      <Text lines={description} />
-      <QuickLinks links={testLinks} />
+      <Section>
+        <Text lines={description} />
+        <QuickLinks links={testLinks} />
+      </Section>
       <JourneyOverview
         id="overview"
         bulletPoints={overviewBullets}
@@ -96,8 +99,14 @@ const JourneyPage: React.FC<Journey> = ({
         description={inclusions.description}
         items={inclusions.items}
       />
-      <JourneysCarousel interest={interest} level={level} location={location} />
-    </div>
+      <Section id="journeys">
+        <JourneysCarousel
+          interest={interest}
+          level={level}
+          location={location}
+        />
+      </Section>
+    </main>
   );
 };
 

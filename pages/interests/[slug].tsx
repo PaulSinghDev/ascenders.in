@@ -30,7 +30,7 @@ const InterestPage: React.FC<InterestPageProps> = ({
 }) => {
   const journeys = getRelatedJourneys([slug]) || [];
   return (
-    <div>
+    <main>
       <Header
         type="hero"
         pageType="plp"
@@ -42,7 +42,7 @@ const InterestPage: React.FC<InterestPageProps> = ({
         <SectionHeading title={`${title} Journeys`} copy={description} />
         <JourneysGrid journeys={journeys} />
       </GridWrapper>
-    </div>
+    </main>
   );
 };
 

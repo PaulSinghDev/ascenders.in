@@ -1,3 +1,3 @@
-const OurTeamPage: React.FC = () => <div>Team</div>;
+const OurTeamPage: React.FC = () => <main>Team</main>;
 
 export default OurTeamPage;
