@@ -14,13 +14,6 @@ const BadgeWrapper = styled.div<{ color: string }>`
   color: #fff;
   text-transform: capitalize;
   font-size: 12px;
-
-  &:first-child {
-    margin-left: 0;
-  }
-  &:last-child {
-    margin-left: 0;
-  }
 `;
 
 const Badge: React.FC<BadgeProps> = ({ label, color }) => (

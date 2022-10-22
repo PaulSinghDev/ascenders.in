@@ -79,34 +79,31 @@ const JourneyStaffInfo = styled.div`
   }
 `;
 
-const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => {
-  console.log(staff);
-  return (
-    <JourneyStaffWrapper>
-      <SectionHeading title="Experts On The Trip" />
-      <JourneyStaffCardsWrapper>
-        <JourneyStaffCards>
-          {staff.map((person) => (
-            <JourneyStaffCard key={Math.random().toString(36).substring(2, 9)}>
-              <JourneyStaffThumb>
-                <Image
-                  width={200}
-                  height={200}
-                  layout="fill"
-                  alt={person.image.alt}
-                  src={person.image.src}
-                />
-              </JourneyStaffThumb>
-              <JourneyStaffInfo>
-                <span>{person.name}</span>
-                <span>{person.role}</span>
-              </JourneyStaffInfo>
-            </JourneyStaffCard>
-          ))}
-        </JourneyStaffCards>
-      </JourneyStaffCardsWrapper>
-    </JourneyStaffWrapper>
-  );
-};
+const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => (
+  <JourneyStaffWrapper>
+    <SectionHeading title="Experts On The Trip" />
+    <JourneyStaffCardsWrapper>
+      <JourneyStaffCards>
+        {staff.map((person) => (
+          <JourneyStaffCard key={Math.random().toString(36).substring(2, 9)}>
+            <JourneyStaffThumb>
+              <Image
+                width={200}
+                height={200}
+                layout="fill"
+                alt={person.image.alt}
+                src={person.image.src}
+              />
+            </JourneyStaffThumb>
+            <JourneyStaffInfo>
+              <span>{person.name}</span>
+              <span>{person.role}</span>
+            </JourneyStaffInfo>
+          </JourneyStaffCard>
+        ))}
+      </JourneyStaffCards>
+    </JourneyStaffCardsWrapper>
+  </JourneyStaffWrapper>
+);
 
 export { JourneyStaffCarousel };

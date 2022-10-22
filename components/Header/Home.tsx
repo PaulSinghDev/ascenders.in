@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button } from "../Base";
+import Link from "next/link";
 
 const HomeHeaderWrapper = styled.div`
   display: flex;
@@ -22,7 +22,10 @@ const TitleWrapper = styled.div`
     }
   }
 
-  > button {
+  > a {
+    display: inline-block;
+    color: var(--light);
+    border-radius: var(--border-radius-lg);
     background: transparent;
     border: 1px solid #fff;
     font-size: 1rem;
@@ -75,7 +78,9 @@ const HomeHeader: React.FC = () => (
           Ascenders
           <span>Re-establish a connection with yourself</span>
         </h1>
-        <Button margin="sm">Discover</Button>
+        <Link href="/journeys" title="View all journeys">
+          Discover
+        </Link>
       </TitleWrapper>
     </HomeHeaderWrapper>
   </StyledHeader>

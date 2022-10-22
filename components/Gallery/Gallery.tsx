@@ -125,6 +125,7 @@ const ContentWrapper = styled.div`
   margin: 0 0 calc(var(--margin-lg) * 2) 0;
   border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
   display: flex;
+  overflow: hidden;
 `;
 
 const ContentDescription = styled.div`

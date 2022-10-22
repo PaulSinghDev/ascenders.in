@@ -1,4 +1,3 @@
-import { Text } from "@/components/Base";
 import { Header } from "@/components/Header";
 import { interests } from "data/interests";
 import Head from "next/head";
@@ -6,7 +5,6 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { getRelatedJourneys } from "services/journey.service";
-import { Section } from "@/components/Base/Section";
 
 const InterestsWrapper = styled.div`
   padding: var(--padding-lg);
@@ -34,6 +32,10 @@ const InterestCard = styled.div`
   max-width: 500px;
   min-width: 200px;
   height: 300px;
+
+  img {
+    border-radius: var(--border-radius-md);
+  }
 
   a {
     position: absolute;
@@ -106,6 +108,7 @@ const InterestCard = styled.div`
       position: absolute;
       opacity: 0;
       transition: 0.3s ease;
+      border-radius: var(--border-radius-md);
     }
   }
 `;
@@ -124,19 +127,10 @@ const InterestsPage: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header
-      type="hero"
-      pageType="plp"
+      pageType="info"
       heading="All Interests"
-      subheading="Get inspired"
-      backgroundUrl="/assets/images/journeys/goa-sunset.jpeg"
+      subheading="For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!"
     />
-    <Section>
-      <Text
-        lines={[
-          "For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
-        ]}
-      />
-    </Section>
     <InterestsWrapper>
       <InterestsGrid>
         {interests.map((interest) => {

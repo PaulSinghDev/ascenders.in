@@ -21,7 +21,7 @@ const mainNavLinks: BasicNavLink[] = [
   },
   {
     title: "Read about our HEAL philosophy",
-    href: "/heal-journeys",
+    href: "/about/heal",
     label: "Heal",
     icon: "leaf",
   },

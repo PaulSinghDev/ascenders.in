@@ -2,7 +2,8 @@ import React from "react";
 import { GiDeer } from "react-icons/gi";
 import styled from "styled-components";
 import Image from "next/image";
-import { Button, Text } from "../Base";
+import Link from "next/link";
+import { Text } from "../Base";
 
 const Section = styled.section`
   min-height: 500px;
@@ -48,7 +49,10 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  > button {
+  > a {
+    border-radius: var(--border-radius-lg);
+    margin-top: calc(var(--margin-xl) * 2);
+    display: inline-block;
     background-color: transparent;
     color: var(--green);
     border: 2px solid var(--green);
@@ -107,7 +111,9 @@ const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
           layout="fill"
         />
       </ImageWrapper>
-      <Button margin="xl">Learn more</Button>
+      <Link href="/about/heal" title="Read about our HEAL philosophy">
+        Learn more
+      </Link>
     </ContentWrapper>
   </Section>
 );

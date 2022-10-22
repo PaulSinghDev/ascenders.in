@@ -10,8 +10,7 @@ const StyledHeader = styled.header`
   border-radius: 40px;
   overflow: hidden;
   margin: var(--padding-lg);
-
-  color: var(--dark);
+  color: var(--dark-blue);
 `;
 
 const InfoHeaderWrapper = styled.div`
@@ -59,7 +58,7 @@ const InfoHeader: React.FC<{
     <InfoHeaderWrapper>
       <TitleWrapper>
         <h1>{heading || "All Journeys"}</h1>
-        <span>{subheading || "Visit the new you"}</span>
+        <span>{subheading || null}</span>
       </TitleWrapper>
     </InfoHeaderWrapper>
   </StyledHeader>
