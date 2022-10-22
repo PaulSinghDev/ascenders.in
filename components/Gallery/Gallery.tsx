@@ -13,10 +13,10 @@ interface GalleryProps {
 }
 
 const GalleryWrapper = styled.section`
-  margin: var(--margin-xl) 0;
+  margin: var(--margin-xl) calc(var(--margin-lg) * 2);
 
   > div:first-child {
-    margin: var(--margin-xl);
+    margin: var(--margin-xl) 0;
   }
 `;
 
@@ -26,6 +26,7 @@ const SlidesWrapper = styled.div`
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
 `;
 
 const Slides = styled.div<{ slide: number }>`
@@ -122,6 +123,7 @@ const ContentWrapper = styled.div`
   padding: var(--padding-lg);
   text-align: center;
   margin: 0 0 calc(var(--margin-lg) * 2) 0;
+  border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
 `;
 
 const ContentDescription = styled.div`

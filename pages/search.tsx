@@ -11,7 +11,7 @@ const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
 }) => {
   console.log(journeys);
   return (
-    <main>
+    <main role="main">
       <Head>
         <title>Ascenders | H.E.A.L | Our Journeys | Search</title>
         <meta
@@ -21,8 +21,7 @@ const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header
-        type="hero"
-        pageType="plp"
+        pageType="info"
         heading={`You searched for '${searchTerm}'`}
         subheading={`Showing a total of ${journeys.length} journeys matching your query`}
       />
@@ -51,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     queryRegex.lastIndex = 0;
 
     const matchingInterest = !!journey?.interest?.find((interest) =>
-      queryRegex.test(interest)
+      queryRegex.test(interest.slug)
     );
     queryRegex.lastIndex = 0;
 

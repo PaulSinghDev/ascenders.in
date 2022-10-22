@@ -137,7 +137,7 @@ export interface AccordionSection {
 export interface Journey {
   title: string;
   itinerary: ItineraryInterface;
-  interest: string[];
+  interest: Interest[];
   tagline: string;
   staff: Staff[];
   heal: HealOverview;

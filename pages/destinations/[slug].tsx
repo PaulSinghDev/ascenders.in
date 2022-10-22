@@ -21,7 +21,7 @@ const GridWrapper = styled.div`
 `;
 
 const DestinationPage: React.FC<DestinationPageProps> = ({ title, count }) => (
-  <main>
+  <main role="main">
     <Header
       type="hero"
       pageType="plp"
@@ -52,7 +52,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const interestObject = interests.find(
     (interest) => interest.slug === context?.params?.slug
   );
-  const journeys = getRelatedJourneys([`${context?.params?.slug}`]);
+
+  const journeys = getRelatedJourneys(interestObject ? [interestObject] : []);
   // No object so we don't need props for now
   if (!interestObject) {
     return {

@@ -13,7 +13,6 @@ interface InterestPageProps extends Interest {
 
 const GridWrapper = styled.div`
   border-radius: var(--border-radius-xl);
-  padding: calc(var(--padding-lg) * 1.8);
   margin: var(--margin-xl);
 
   > div:first-child {
@@ -28,9 +27,10 @@ const InterestPage: React.FC<InterestPageProps> = ({
   description,
   count,
 }) => {
-  const journeys = getRelatedJourneys([slug]) || [];
+  const interest = interests.find((i) => i.slug === slug);
+  const journeys = interest ? getRelatedJourneys([interest]) : [];
   return (
-    <main>
+    <main role="main">
       <Header
         type="hero"
         pageType="plp"
@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const interestObject = interests.find(
     (interest) => interest.slug === context?.params?.slug
   );
-  const journeys = getRelatedJourneys([`${context?.params?.slug}`]);
+  const journeys = getRelatedJourneys(interestObject ? [interestObject] : []);
   // No object so we don't need props for now
   if (!interestObject) {
     return {

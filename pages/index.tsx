@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Header, JourneysSection, WhyTravelWithUs } from "../components";
 
 const Home: NextPage = () => (
-  <main>
+  <main role="main">
     <Head>
       <title>Ascenders | H.E.A.L</title>
       <meta name="description" content="Ascenders | H.E.A.L" />

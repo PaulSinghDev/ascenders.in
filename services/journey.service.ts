@@ -1,8 +1,8 @@
 import { journeys } from "data";
-import { Difficulty, Journey } from "../types";
+import { Difficulty, Interest, Journey } from "../types";
 
 const getRelatedJourneys = (
-  interests: string[],
+  interests: Interest[],
   location?: { label: string },
   level?: { min: Difficulty; max?: Difficulty }
 ) =>
@@ -18,7 +18,8 @@ const getRelatedJourneys = (
     if (!!level?.max && level.max === journey.level.max) levelPoints += 1;
     // matching interest?
     interests.forEach((_interest) => {
-      if (journey.interest.includes(_interest)) interestPoints += 1;
+      if (JSON.stringify(journey.interest).includes(JSON.stringify(_interest)))
+        interestPoints += 1;
     });
     // basic algo, if any match then they are related
     // we can change in the future

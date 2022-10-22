@@ -1,3 +1,3 @@
-const AboutPage: React.FC = () => <main>About</main>;
+const AboutPage: React.FC = () => <main role="main">About</main>;
 
 export default AboutPage;

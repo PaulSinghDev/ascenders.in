@@ -2,109 +2,49 @@ import { Interest } from "types/data.types";
 
 const interests: Interest[] = [
   {
-    slug: "expeditions",
-    title: "Expeditions",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-expeditions.jpeg",
-    id: Math.random().toString(36).substring(2, 7),
-  },
-  {
-    slug: "festivals",
-    title: "Festivals",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-festivals.jpeg",
-    id: Math.random().toString(36).substring(2, 7),
-  },
-  {
-    slug: "history-archaeology",
-    title: "History & Archaeology",
-    description: ["New description words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-history-archaeology.jpeg",
-    id: Math.random().toString(36).substring(2, 7),
-  },
-  {
-    title: "Photography",
-    slug: "photography",
-    id: Math.random().toString(36).substring(2, 7),
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-photography.jpeg",
-  },
-  {
-    slug: "relaxation",
-    title: "Relaxation",
-    id: Math.random().toString(36).substring(2, 7),
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-relaxation.jpeg",
-  },
-  {
-    slug: "sightseeing",
-    title: "Sightseeing",
-    id: Math.random().toString(36).substring(2, 7),
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-sightseeing.jpeg",
-  },
-  {
-    slug: "surfing",
-    id: Math.random().toString(36).substring(2, 7),
-    title: "Surfing",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-surfing.jpeg",
-  },
-  {
     slug: "trekking",
     id: Math.random().toString(36).substring(2, 7),
     title: "Trekking",
-    description: ["some words"],
+    description: [
+      "The following journeys are for the long distance walkers out there.",
+      "If you enjoy packing up a bag and just setting off into the unknown these journeys are for you.",
+    ],
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-trekking.jpeg",
   },
   {
-    slug: "village-stay",
+    slug: "heal",
     id: Math.random().toString(36).substring(2, 7),
-    title: "Village Stay",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
+    title: "HEAL",
+    description: [
+      "The following journeys embody Ascenders' HEAL philosophy.",
+      "These journeys will teach you how to HEAL yourself and the earth by providing you with workshops ranging from inner engineering to environmental awareness.",
+    ],
+    target: ["heal-conscious", "nature-aware"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-village-stay.jpeg",
   },
   {
-    slug: "wildlife",
+    slug: "spirituality",
     id: Math.random().toString(36).substring(2, 7),
-    title: "Wildlife",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
+    title: "Spirituality",
+    description: [
+      "The following journeys are carefully selected for people whom are seeking a spiritual awakening.",
+      "If you are seeking a close, more intimate, connection between your spiritual self and Mother Nature these are for you.",
+    ],
+    target: ["spiritual", "peaceful"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-wildlife.jpeg",
   },
   {
-    slug: "yoga",
+    slug: "adventure",
     id: Math.random().toString(36).substring(2, 7),
-    title: "Yoga",
-    description: ["some words"],
-    target: ["fit", "adventurous"],
-    thumbnail:
-      "/assets/images/interests/thumbnails/ascenders-interests-yoga.jpeg",
-  },
-  {
-    slug: "mountains",
-    id: Math.random().toString(36).substring(2, 7),
-    title: "Mountains",
-    description: ["some words"],
+    title: "Adventure",
+    description: [
+      "The following journeys are hand picked for those people whom seek adventure at every turn.",
+      "These journeys will seek to provide you with a taste of freedom like you have never experienced before.",
+    ],
     target: ["fit", "adventurous"],
     thumbnail:
       "/assets/images/interests/thumbnails/ascenders-interests-yoga.jpeg",

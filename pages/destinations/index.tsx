@@ -117,7 +117,7 @@ const DestinationsGrid = styled.div`
 `;
 
 const DestinationsPage: React.FC = () => (
-  <main>
+  <main role="main">
     <Head>
       <title>Ascenders | H.E.A.L | Our Destinations</title>
       <meta name="description" content="Ascenders | H.E.A.L | Destinations" />
@@ -140,7 +140,7 @@ const DestinationsPage: React.FC = () => (
     <DestinationsWrapper>
       <DestinationsGrid>
         {interests.map((interest) => {
-          const relatedArticles = getRelatedJourneys([interest.slug]);
+          const relatedArticles = getRelatedJourneys([interest]);
           return (
             <DestinationCard key={Math.random().toString(36).substring(2, 7)}>
               <Image

@@ -4,7 +4,7 @@ import Head from "next/head";
 import { terms } from "data/terms";
 
 const Search: React.FC<{}> = () => (
-  <main>
+  <main role="main">
     <Head>
       <title>Ascenders | H.E.A.L | Our Journeys | Search</title>
       <meta

@@ -1,4 +1,4 @@
-import { Difficulty, Journey } from "@/types/data.types";
+import { Difficulty, Interest, Journey } from "@/types/data.types";
 import { journeys } from "data";
 import { getRelatedJourneys } from "services/journey.service";
 import styled from "styled-components";
@@ -36,7 +36,7 @@ const JourneysCarouselWrapper = styled.div`
   overflow: hidden;
 `;
 interface JourneysProps {
-  interest?: string[];
+  interest?: Interest[];
   level?: {
     min: Difficulty;
     max?: Difficulty;

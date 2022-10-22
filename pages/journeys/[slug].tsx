@@ -49,7 +49,7 @@ const JourneyPage: React.FC<Journey> = ({
 }) => {
   console.log(tagline);
   return (
-    <main>
+    <main role="main">
       <Head>
         <title>Ascenders | H.E.A.L | Our Journeys | {`${title}`}</title>
         <meta

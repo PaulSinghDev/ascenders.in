@@ -14,23 +14,22 @@ const JourneysGridContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-
-  > div {
-    margin: var(--margin-lg);
-  }
 `;
 
-const JourneysGrid: React.FC<{ journeys?: Journey[] }> = ({ journeys }) => (
-  <JourneysGridWrapper>
-    <JourneysGridContainer>
-      {(journeys || allJourneys).map((journey) => (
-        <JourneyCard
-          journey={journey}
-          key={Math.random().toString(36).substring(2, 7)}
-        />
-      ))}
-    </JourneysGridContainer>
-  </JourneysGridWrapper>
-);
+const JourneysGrid: React.FC<{ journeys?: Journey[] }> = ({ journeys }) => {
+  journeys?.map((journey) => journey.interest.map((i) => console.log(i)));
+  return (
+    <JourneysGridWrapper>
+      <JourneysGridContainer>
+        {(journeys || allJourneys).map((journey) => (
+          <JourneyCard
+            journey={journey}
+            key={Math.random().toString(36).substring(2, 7)}
+          />
+        ))}
+      </JourneysGridContainer>
+    </JourneysGridWrapper>
+  );
+};
 
 export default JourneysGrid;

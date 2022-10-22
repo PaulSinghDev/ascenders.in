@@ -1,5 +1,6 @@
 import { Journey } from "types/data.types";
 import { staff } from "data/staff";
+import { interests } from "./interests";
 
 const journeys: Journey[] = [
   {
@@ -153,7 +154,11 @@ const journeys: Journey[] = [
         ],
       },
     ],
-    interest: ["trekking", "HEAL"],
+    interest: [
+      ...interests.filter((interest) =>
+        /(?:trekking|heal)/.test(interest.slug)
+      ),
+    ],
     overviewBullets: [
       "Ascend Devariya Tal set amidst elevated alpine meadows",
       "Explore the geological wonderland, Kedarnath Musk Deer Sanctuary",
@@ -507,7 +512,11 @@ Any kind of entry fees anywhere if not mentioned \n`,
       measurement: "days",
     },
     type: "Expedition",
-    interest: ["heal", "trekking"],
+    interest: [
+      ...interests.filter((interest) =>
+        /(?:trekking|heal)/.test(interest.slug)
+      ),
+    ],
     price: {
       from: 17990,
       value: 17990,
@@ -724,7 +733,11 @@ Any kind of entry fees anywhere if not mentioned \n`,
       value: 6,
       measurement: "days",
     },
-    interest: ["trekking", "heal", "spirituality", "adventure"],
+    interest: [
+      ...interests.filter((interest) =>
+        /(?:trekking|heal|spirituality|adventure)/.test(interest.slug)
+      ),
+    ],
     price: {
       from: 17999,
       value: 17990,

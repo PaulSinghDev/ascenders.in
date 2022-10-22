@@ -117,7 +117,7 @@ const InterestsGrid = styled.div`
 `;
 
 const InterestsPage: React.FC = () => (
-  <main>
+  <main role="main">
     <Head>
       <title>Ascenders | H.E.A.L | Our Interests</title>
       <meta name="description" content="Ascenders | H.E.A.L | Interests" />
@@ -140,7 +140,7 @@ const InterestsPage: React.FC = () => (
     <InterestsWrapper>
       <InterestsGrid>
         {interests.map((interest) => {
-          const relatedArticles = getRelatedJourneys([interest.slug]);
+          const relatedArticles = getRelatedJourneys([interest]);
           return (
             <InterestCard key={Math.random().toString(36).substring(2, 7)}>
               <Image

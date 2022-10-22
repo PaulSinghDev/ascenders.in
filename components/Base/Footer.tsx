@@ -7,6 +7,7 @@ const StyledFooter = styled.footer`
   color: var(--dark);
   display: flex;
   flex-wrap: wrap;
+  margin-top: calc(var(--margin-xl) * 2);
 `;
 
 const StyledFooterColumn = styled.div`

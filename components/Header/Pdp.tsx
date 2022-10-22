@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BsSpeedometer2, BsPeople } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { FaMountain } from "react-icons/fa";
-import { Difficulty } from "@/types/data.types";
+import { Difficulty, Interest } from "@/types/data.types";
 
 const StyledHeader = styled.header<{ type?: string; backgroundImg?: string }>`
   ${(props) => {
@@ -101,7 +101,7 @@ const HeaderIcon = styled.div`
 export interface PdpHeaderProps {
   heading?: string;
   description?: string;
-  interests?: string[];
+  interests?: Interest[];
   groupSize?: {
     min: number;
     max: number;
@@ -150,11 +150,13 @@ const PdpHeader: React.FC<PdpHeaderProps> = ({
           <span>Location</span>
           <span>{location}</span>
         </HeaderIcon>
-        <HeaderIcon>
-          <FaMountain size={30} />
-          <span>Interests</span>
-          <span>{interests?.join(", ")}</span>
-        </HeaderIcon>
+        {!!interests && interests.length > 0 ? (
+          <HeaderIcon>
+            <FaMountain size={30} />
+            <span>Interests</span>
+            <span>{interests.map((i) => i.slug)?.join(", ")}</span>
+          </HeaderIcon>
+        ) : null}
       </IconsWrapper>
     </PdpHeaderWrapper>
   </StyledHeader>
