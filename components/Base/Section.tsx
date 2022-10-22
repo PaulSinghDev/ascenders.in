@@ -6,7 +6,7 @@ interface SectionProps {
 }
 
 const StyledSection = styled.section`
-  margin: var(--margin-lg);
+  margin: calc(var(--margin-lg) * 2);
 `;
 
 export const Section: React.FC<SectionProps> = ({ children }) => (

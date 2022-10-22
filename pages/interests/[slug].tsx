@@ -4,7 +4,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { Interest } from "types/data.types";
 import { getRelatedJourneys } from "services/journey.service";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
-import { SectionHeading } from "@/components/Base/SectionHeading";
 import styled from "styled-components";
 
 interface InterestPageProps extends Interest {
@@ -21,25 +20,20 @@ const GridWrapper = styled.div`
 `;
 
 const InterestPage: React.FC<InterestPageProps> = ({
-  thumbnail,
   title,
   slug,
   description,
-  count,
 }) => {
   const interest = interests.find((i) => i.slug === slug);
   const journeys = interest ? getRelatedJourneys([interest]) : [];
   return (
     <main role="main">
       <Header
-        type="hero"
-        pageType="plp"
-        heading={title}
-        subheading={`Get inspired to take a ${title.toLowerCase()} journey. Showing a total of ${count} journeys.`}
-        backgroundUrl={thumbnail}
+        pageType="info"
+        heading={`${title} Journeys`}
+        subheading={description.join(" ")}
       />
       <GridWrapper>
-        <SectionHeading title={`${title} Journeys`} copy={description} />
         <JourneysGrid journeys={journeys} />
       </GridWrapper>
     </main>

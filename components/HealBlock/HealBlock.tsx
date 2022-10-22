@@ -67,10 +67,12 @@ const HealContent = styled.div`
   }
 `;
 
-const JourneyHealBlock: React.FC<{ heal: HealOverview; id?: string }> = ({
-  heal: { h, e, a, l },
-  id,
-}) => (
+const HealBlock: React.FC<{
+  title?: string;
+  subtitle?: string;
+  heal: HealOverview;
+  id?: string;
+}> = ({ heal: { h, e, a, l }, id, title, subtitle }) => (
   <HealSection id={id}>
     <HealHeading>
       <Image
@@ -79,10 +81,10 @@ const JourneyHealBlock: React.FC<{ heal: HealOverview; id?: string }> = ({
         height="100px"
         alt="The letter h from the heal logo"
       />
-      <h2>Activities of this journey</h2>
+      <h2>{title || "Activities of this journey"}</h2>
       <p>
-        This heal journey offers activities based on your preferences and can be
-        tailored to suit your needs.
+        {subtitle ||
+          "This heal journey offers activities based on your preferences and can be tailored to suit your needs."}
       </p>
     </HealHeading>
     <HealLetters>
@@ -118,4 +120,4 @@ const JourneyHealBlock: React.FC<{ heal: HealOverview; id?: string }> = ({
   </HealSection>
 );
 
-export { JourneyHealBlock };
+export { HealBlock };

@@ -1,6 +1,6 @@
 import { Accordion } from "@/components/Accordion/Accordion";
 import { Gallery } from "@/components/Gallery/Gallery";
-import { JourneyHealBlock } from "@/components/JourneyHealBlock/JourneyHealBlock";
+import { HealBlock } from "@/components/HealBlock/HealBlock";
 import { JourneyOverview } from "@/components/JourneyOverview/JourneyOverview";
 import { JourneyStaffCarousel } from "@/components/JourneyStaffCarousel/JourneyStaffCarousel";
 import { QuickLinks } from "@/components/QuickLinks/QuickLinks";
@@ -46,69 +46,62 @@ const JourneyPage: React.FC<Journey> = ({
   interest,
   thumbnail,
   overviewBullets,
-}) => {
-  console.log(tagline);
-  return (
-    <main role="main">
-      <Head>
-        <title>Ascenders | H.E.A.L | Our Journeys | {`${title}`}</title>
-        <meta
-          name="description"
-          content={`Ascenders | H.E.A.L | Ascenders | H.E.A.L | Our Journeys | ${title}`}
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header
-        type="hero"
-        pageType="pdp"
-        heading={title}
-        location={location.label}
-        groupSize={group}
-        level={level}
-        interests={interest}
-        description={tagline}
-        backgroundUrl={thumbnail}
+}) => (
+  <main role="main">
+    <Head>
+      <title>Ascenders | H.E.A.L | Our Journeys | {`${title}`}</title>
+      <meta
+        name="description"
+        content={`Ascenders | H.E.A.L | Ascenders | H.E.A.L | Our Journeys | ${title}`}
       />
-      <Section>
-        <Text lines={description} />
-        <QuickLinks links={testLinks} />
-      </Section>
-      <JourneyOverview
-        id="overview"
-        bulletPoints={overviewBullets}
-        brochureUrl="some-url"
-      />
-      <Gallery images={gallery} id="gallery" />
-      <Accordion
-        title={itinerary.title}
-        id="itinerary"
-        description={itinerary.description}
-        items={itinerary.days}
-      />
-      <JourneyHealBlock heal={heal} id="heal" />
-      <Accordion
-        title={importantInformation.title}
-        id="important-information"
-        description={importantInformation.description}
-        items={importantInformation.items}
-      />
-      <JourneyStaffCarousel staff={staff} />
-      <Accordion
-        title={inclusions.title}
-        id="what-to-bring"
-        description={inclusions.description}
-        items={inclusions.items}
-      />
-      <Section id="journeys">
-        <JourneysCarousel
-          interest={interest}
-          level={level}
-          location={location}
-        />
-      </Section>
-    </main>
-  );
-};
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Header
+      type="hero"
+      pageType="pdp"
+      heading={title}
+      location={location.label}
+      groupSize={group}
+      level={level}
+      interests={interest}
+      description={tagline}
+      backgroundUrl={thumbnail}
+    />
+    <Section>
+      <Text lines={description} />
+      <QuickLinks links={testLinks} />
+    </Section>
+    <JourneyOverview
+      id="overview"
+      bulletPoints={overviewBullets}
+      brochureUrl="some-url"
+    />
+    <Gallery images={gallery} id="gallery" />
+    <Accordion
+      title={itinerary.title}
+      id="itinerary"
+      description={itinerary.description}
+      items={itinerary.days}
+    />
+    <HealBlock heal={heal} id="heal" />
+    <Accordion
+      title={importantInformation.title}
+      id="important-information"
+      description={importantInformation.description}
+      items={importantInformation.items}
+    />
+    <JourneyStaffCarousel staff={staff} />
+    <Accordion
+      title={inclusions.title}
+      id="what-to-bring"
+      description={inclusions.description}
+      items={inclusions.items}
+    />
+    <Section id="journeys">
+      <JourneysCarousel interest={interest} level={level} location={location} />
+    </Section>
+  </main>
+);
 
 export default JourneyPage;
 

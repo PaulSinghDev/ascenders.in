@@ -2,6 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 import { Button } from "../Base";
+import { Section } from "../Base/Section";
 
 interface ImageCtaProps {
   title: string;
@@ -38,6 +39,7 @@ const ImageCtaWrapper = styled.div`
   max-height: 500px;
   min-height: 300px;
   display: flex;
+  border-radius: var(--border-radius-xl);
 `;
 
 const ImageCtaImageWrapper = styled.div`
@@ -51,6 +53,7 @@ const ImageCtaImageWrapper = styled.div`
   img {
     object-fit: cover;
     object-position: center;
+    border-radius: var(--border-radius-xl);
   }
 `;
 
@@ -96,21 +99,23 @@ const ImageCta: React.FC<ImageCtaWithLink | ImageCtaWithButton> = ({
   alt,
   cta,
 }) => (
-  <ImageCtaWrapper>
-    <ImageCtaImageWrapper>
-      <Image layout="fill" src={backgroundImg} alt={alt} />
-    </ImageCtaImageWrapper>
-    <ImageCtaContentWrapper>
-      <h3>{title}</h3>
-      {cta.href ? (
-        <Link title={cta.title} href={cta.href}>
-          {cta.label}
-        </Link>
-      ) : (
-        <Button title={cta.title} onClick={cta.callback} />
-      )}
-    </ImageCtaContentWrapper>
-  </ImageCtaWrapper>
+  <Section>
+    <ImageCtaWrapper>
+      <ImageCtaImageWrapper>
+        <Image layout="fill" src={backgroundImg} alt={alt} />
+      </ImageCtaImageWrapper>
+      <ImageCtaContentWrapper>
+        <h3>{title}</h3>
+        {cta.href ? (
+          <Link title={cta.title} href={cta.href}>
+            {cta.label}
+          </Link>
+        ) : (
+          <Button title={cta.title} onClick={cta.callback} />
+        )}
+      </ImageCtaContentWrapper>
+    </ImageCtaWrapper>
+  </Section>
 );
 
 export { ImageCta };
