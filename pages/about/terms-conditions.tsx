@@ -3,14 +3,11 @@ import { Header } from "components/Header";
 import Head from "next/head";
 import { terms } from "data/terms";
 
-const Search: React.FC<{}> = () => (
+const TermsConditions: React.FC<{}> = () => (
   <main role="main">
     <Head>
-      <title>Ascenders | H.E.A.L | Our Journeys | Search</title>
-      <meta
-        name="description"
-        content="Ascenders | H.E.A.L | Ascenders | H.E.A.L | Our Journeys | Search"
-      />
+      <title>Terms & Conditions | Ascenders</title>
+      <meta name="description" content="Terms & Conditions | Ascenders" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header
@@ -22,4 +19,4 @@ const Search: React.FC<{}> = () => (
   </main>
 );
 
-export default Search;
+export default TermsConditions;
