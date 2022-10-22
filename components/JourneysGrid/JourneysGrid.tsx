@@ -4,12 +4,11 @@ import { Journey } from "@/types/data.types";
 import { JourneyCard } from "../JourneyCard/JourneyCard";
 
 const JourneysGridWrapper = styled.div`
-  padding: var(--padding-lg);
   display flex;
   max-width: 100%;
   overflow: auto;
-
 `;
+
 const JourneysGridContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +16,7 @@ const JourneysGridContainer = styled.div`
   width: 100%;
 
   > div {
-    margin: var(--margin-xl);
+    margin: var(--margin-lg);
   }
 `;
 

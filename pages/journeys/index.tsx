@@ -7,7 +7,6 @@ import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
 import { Section } from "@/components/Base/Section";
 
 const StyledJourneysWrapper = styled.div`
-  padding: var(--padding-lg);
   display flex;
   max-width: 100%;
   overflow: auto;

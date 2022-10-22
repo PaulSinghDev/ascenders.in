@@ -30,13 +30,22 @@ const JourneyCardContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  > button {
+  > a {
+    background: var(--blue);
+    border-radius: var(--border-radius-md);
+    color: var(--light);
+    text-align: center;
+    font-weight: 400;
     margin-top: auto;
-    font-size: 12px;
-    padding: 8px;
+    font-size: 16px;
+    padding: 4px 8px;
     text-transform: capitalize;
     min-width: 100px;
     align-self: center;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: var(--teal);
+    }
   }
 `;
 
