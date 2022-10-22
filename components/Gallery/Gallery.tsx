@@ -124,6 +124,7 @@ const ContentWrapper = styled.div`
   text-align: center;
   margin: 0 0 calc(var(--margin-lg) * 2) 0;
   border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
+  display: flex;
 `;
 
 const ContentDescription = styled.div`
@@ -145,6 +146,27 @@ const ContentDescription = styled.div`
 const ContentPills = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  flex-wrap: wrap;
+`;
+
+const ContentContainer = styled.div`
+  flex-shrink: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+
+  &[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+    order: 2;
+  }
+  &[aria-hidden="false"] {
+    order: 1;
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
@@ -186,21 +208,28 @@ const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
         <div className="pagination" />
       </SlidesWrapper>
       <ContentWrapper>
-        <ContentDescription>
-          <h3>{images[activeSlide].title}</h3>
-          {images[activeSlide].description.map((line) => (
-            <p key={Math.random().toString(36).substring(2, 9)}>{line}</p>
-          ))}
-        </ContentDescription>
-        <ContentPills>
-          {images[activeSlide].interest.map((label) => (
-            <Badge
-              color="blue"
-              key={Math.random().toString(36).substring(2, 9)}
-              label={label}
-            />
-          ))}
-        </ContentPills>
+        {images.map((image, index) => (
+          <ContentContainer
+            key={Math.random().toString(36).substring(2, 9)}
+            aria-hidden={index !== activeSlide}
+          >
+            <ContentDescription>
+              <h3>{image.title}</h3>
+              {image.description.map((line) => (
+                <p key={Math.random().toString(36).substring(2, 9)}>{line}</p>
+              ))}
+            </ContentDescription>
+            <ContentPills>
+              {images[activeSlide].interest.map((label) => (
+                <Badge
+                  color="blue"
+                  key={Math.random().toString(36).substring(2, 9)}
+                  label={label}
+                />
+              ))}
+            </ContentPills>
+          </ContentContainer>
+        ))}
       </ContentWrapper>
     </GalleryWrapper>
   );
