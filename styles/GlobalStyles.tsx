@@ -94,7 +94,7 @@ p {
 }
 
 main {
-  max-width: 1024px;
+  max-width: 1280px;
   margin: auto;
 }
 
