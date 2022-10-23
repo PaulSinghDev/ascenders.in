@@ -1,6 +1,7 @@
-import { Journey } from "types/data.types";
+import { Destination, Journey } from "types/data.types";
 import { staff } from "data/staff";
 import { interests } from "./interests";
+import { destinations } from "./destinations";
 
 const journeys: Journey[] = [
   {
@@ -177,7 +178,9 @@ const journeys: Journey[] = [
       max: 12,
       measurement: "people",
     },
-    location: { label: "Uttarakhand" },
+    location: destinations.find((destination) =>
+      /uttarakhand/gi.test(destination.slug)
+    ) as Destination,
     type: "Expedition",
     itinerary: {
       title: "Itinerary",
@@ -528,7 +531,9 @@ Any kind of entry fees anywhere if not mentioned \n`,
       max: 12,
       measurement: "people",
     },
-    location: { label: "Uttarakhand" },
+    location: destinations.find((destination) =>
+      /uttarakhand/gi.test(destination.slug)
+    ) as Destination,
     itinerary: {
       title: "Detailed Itinerary",
       description: [
@@ -749,7 +754,9 @@ Any kind of entry fees anywhere if not mentioned \n`,
       max: 12,
       measurement: "people",
     },
-    location: { label: "Uttarakhand" },
+    location: destinations.find((destination) =>
+      /uttarakhand/gi.test(destination.slug)
+    ) as Destination,
     type: "Spiritual",
     itinerary: {
       title: "Detailed Itinerary",

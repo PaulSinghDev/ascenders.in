@@ -6,7 +6,7 @@ import { Header, JourneysSection, WhyTravelWithUs } from "../components";
 const Home: NextPage = () => (
   <main role="main">
     <Head>
-      <title>Ascenders | H.E.A.L</title>
+      <title>Home | Ascenders | Go Beyond | H.E.A.L</title>
       <meta name="description" content="Ascenders | H.E.A.L" />
       <link rel="icon" href="/favicon.ico" />
     </Head>

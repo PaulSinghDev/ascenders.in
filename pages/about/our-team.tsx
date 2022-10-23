@@ -6,7 +6,7 @@ const OurTime: React.FC<{}> = () => (
   <main role="main">
     <Head>
       <title>Our Team | Ascenders</title>
-      <meta name="description" content="Privacy Policy | Ascenders" />
+      <meta name="description" content="Our Team | Ascenders" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header

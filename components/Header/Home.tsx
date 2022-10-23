@@ -41,7 +41,7 @@ const TitleWrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  height: 80vh;
+  height: 550px;
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   background-color: var(--light-teal);

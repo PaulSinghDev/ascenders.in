@@ -20,6 +20,12 @@ const mainNavLinks: BasicNavLink[] = [
     icon: "fitness",
   },
   {
+    title: "View all of our Destinations",
+    href: "/destinations",
+    label: "Destinations",
+    icon: "location",
+  },
+  {
     title: "Read about our HEAL philosophy",
     href: "/about/heal",
     label: "Heal",

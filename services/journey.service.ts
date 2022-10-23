@@ -1,9 +1,9 @@
 import { journeys } from "data";
-import { Difficulty, Interest, Journey } from "../types";
+import { Destination, Difficulty, Interest, Journey } from "../types";
 
 const getRelatedJourneys = (
   interests: Interest[],
-  location?: { label: string },
+  location?: Destination,
   level?: { min: Difficulty; max?: Difficulty }
 ) =>
   journeys.reduce((output: Journey[], journey) => {
@@ -11,11 +11,14 @@ const getRelatedJourneys = (
     let levelPoints = 0;
     let locationPoints = 0;
     // is it a matching location or level
-    if (location?.label && journey.location.label === location.label)
+    if (location?.slug && journey.location.slug === location.slug)
       locationPoints += 1;
+
     if (!!journey?.level?.min && level?.min && journey.level.min === level.min)
       levelPoints += 1;
+
     if (!!level?.max && level.max === journey.level.max) levelPoints += 1;
+
     // matching interest?
     interests.forEach((_interest) => {
       if (JSON.stringify(journey.interest).includes(JSON.stringify(_interest)))

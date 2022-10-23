@@ -1,4 +1,4 @@
-import { Difficulty, Interest, Journey } from "@/types/data.types";
+import { Destination, Difficulty, Interest, Journey } from "@/types/data.types";
 import { journeys } from "data";
 import { getRelatedJourneys } from "services/journey.service";
 import styled from "styled-components";
@@ -41,7 +41,7 @@ interface JourneysProps {
     min: Difficulty;
     max?: Difficulty;
   };
-  location?: { label: string };
+  location?: Destination;
   title?: string;
   disabledHeading?: boolean;
   showAll?: boolean;

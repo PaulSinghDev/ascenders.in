@@ -5,6 +5,7 @@ import { Interest } from "types/data.types";
 import { getRelatedJourneys } from "services/journey.service";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
 import styled from "styled-components";
+import Head from "next/head";
 
 interface InterestPageProps extends Interest {
   count?: number;
@@ -28,6 +29,14 @@ const InterestPage: React.FC<InterestPageProps> = ({
   const journeys = interest ? getRelatedJourneys([interest]) : [];
   return (
     <main role="main">
+      <Head>
+        <title>{`Journeys related to ${title} | Ascenders`}</title>
+        <meta
+          name="description"
+          content={`Journeys related to ${title} | Ascenders`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header
         pageType="info"
         heading={`${title} Journeys`}

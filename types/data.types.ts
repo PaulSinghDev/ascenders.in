@@ -163,9 +163,7 @@ export interface Journey {
     max: number;
     measurement: "people" | "couples";
   };
-  location: {
-    label: string;
-  };
+  location: Destination;
   accommodation: Accommodation;
   price: {
     value: number;
@@ -196,6 +194,7 @@ export type AvailableIcons =
   | "heal-h"
   | "heal"
   | "book"
+  | "location"
   | "home"
   | "leaf"
   | "menu";

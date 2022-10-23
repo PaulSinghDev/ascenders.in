@@ -16,8 +16,8 @@ const HealWrapper = styled.main`
 const AboutHeal: React.FC = () => (
   <HealWrapper>
     <Head>
-      <title>Ascenders | H.E.A.L | HEAL Journeys</title>
-      <meta name="description" content="Ascenders | H.E.A.L" />
+      <title>About HEAL | Ascenders</title>
+      <meta name="description" content="About HEAL | Ascenders" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header pageType="info" heading="About HEAL" />

@@ -49,10 +49,10 @@ const JourneyPage: React.FC<Journey> = ({
 }) => (
   <main role="main">
     <Head>
-      <title>Ascenders | H.E.A.L | Our Journeys | {`${title}`}</title>
+      <title>{`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}</title>
       <meta
         name="description"
-        content={`Ascenders | H.E.A.L | Ascenders | H.E.A.L | Our Journeys | ${title}`}
+        content={`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
@@ -60,7 +60,7 @@ const JourneyPage: React.FC<Journey> = ({
       type="hero"
       pageType="pdp"
       heading={title}
-      location={location.label}
+      location={location.slug}
       groupSize={group}
       level={level}
       interests={interest}

@@ -122,8 +122,8 @@ const InterestsGrid = styled.div`
 const InterestsPage: React.FC = () => (
   <main role="main">
     <Head>
-      <title>Ascenders | H.E.A.L | Our Interests</title>
-      <meta name="description" content="Ascenders | H.E.A.L | Interests" />
+      <title>Interests | Ascenders</title>
+      <meta name="description" content="Interests | Ascenders" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header

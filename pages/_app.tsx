@@ -9,10 +9,7 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleHashRouteChange = (
-      url: string,
-      { shallow }: { shallow: boolean }
-    ) => {
+    const handleHashRouteChange = () => {
       const handleHashRouteEnd = () => {
         const timer = setTimeout(() => {
           clearTimeout(timer);
@@ -20,11 +17,6 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
           router.events.off("hashChangeComplete", handleHashRouteEnd);
         }, 500);
       };
-      console.log(
-        `App is changing to ${url} ${
-          shallow ? "with" : "without"
-        } shallow routing`
-      );
 
       document.documentElement.style.setProperty(
         "scroll-behavior",
@@ -36,8 +28,11 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
 
     const handleRouteChange = () => {
       const handleRouteChangeComplete = () => {
-        document.documentElement.classList.remove("loading");
         router.events.off("routeChangeComplete", handleRouteChangeComplete);
+        const timer = setTimeout(() => {
+          clearTimeout(timer);
+          document.documentElement.classList.remove("loading");
+        }, 500);
       };
       document.documentElement.classList.add("loading");
       router.events.on("routeChangeComplete", handleRouteChangeComplete);

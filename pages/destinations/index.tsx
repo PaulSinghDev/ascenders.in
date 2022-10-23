@@ -1,12 +1,10 @@
-import { Text } from "@/components/Base";
 import { Header } from "@/components/Header";
-import { interests } from "data/interests";
+import { destinations } from "data/destinations";
 import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { getRelatedJourneys } from "services/journey.service";
-import { Section } from "@/components/Base/Section";
 
 const DestinationsWrapper = styled.div`
   padding: var(--padding-lg);
@@ -32,7 +30,7 @@ const DestinationCard = styled.div`
   position: relative;
   width: 90%;
   max-width: 500px;
-  min-width: 200px;
+  min-width: 180px;
   height: 300px;
 
   a {
@@ -114,45 +112,37 @@ const DestinationsGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-grow: 1;
 `;
 
 const DestinationsPage: React.FC = () => (
   <main role="main">
     <Head>
-      <title>Ascenders | H.E.A.L | Our Destinations</title>
-      <meta name="description" content="Ascenders | H.E.A.L | Destinations" />
+      <title>Destinations | Ascenders</title>
+      <meta name="description" content="Destinations | Ascenders" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header
-      type="hero"
-      pageType="plp"
+      pageType="info"
       heading="All Destinations"
-      subheading="Get inspired"
-      backgroundUrl="/assets/images/journeys/goa-sunset.jpeg"
+      subheading="For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!"
     />
-    <Section>
-      <Text
-        lines={[
-          "For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded self transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!",
-        ]}
-      />
-    </Section>
     <DestinationsWrapper>
       <DestinationsGrid>
-        {interests.map((interest) => {
-          const relatedArticles = getRelatedJourneys([interest]);
+        {destinations.map((destination) => {
+          const relatedArticles = getRelatedJourneys([], destination);
           return (
             <DestinationCard key={Math.random().toString(36).substring(2, 7)}>
               <Image
-                src={interest.thumbnail}
+                src={destination.thumbnail.src}
                 alt=""
                 layout="fill"
                 objectFit="cover"
               />
-              <Link href={`/interests/${interest.slug}`} passHref>
-                <a href={`/interests/${interest.slug}`}>
+              <Link href={`/destinations/${destination.slug}`} passHref>
+                <a href={`/destinations/${destination.slug}`}>
                   <span>
-                    {interest.title}
+                    {destination.title}
                     <span>({relatedArticles.length})</span>
                   </span>
                   <span>Click for more info</span>

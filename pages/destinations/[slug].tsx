@@ -1,46 +1,43 @@
 import { Header } from "@/components/Header";
-import { interests } from "data";
+import { destinations } from "data/destinations";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Destination } from "types/data.types";
+import { Destination, Journey } from "types/data.types";
 import { getRelatedJourneys } from "services/journey.service";
-import { SectionHeading } from "@/components/Base/SectionHeading";
-import styled from "styled-components";
+import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
+import Head from "next/head";
 
 interface DestinationPageProps extends Destination {
-  count?: number;
+  journeys: Journey[];
 }
 
-const GridWrapper = styled.div`
-  border-radius: var(--border-radius-xl);
-  padding: calc(var(--padding-lg) * 1.8);
-  margin: var(--margin-xl);
-
-  > div:first-child {
-    margin: 0;
-  }
-`;
-
-const DestinationPage: React.FC<DestinationPageProps> = ({ title, count }) => (
+const DestinationPage: React.FC<DestinationPageProps> = ({
+  title,
+  journeys,
+}) => (
   <main role="main">
+    <Head>
+      <title>{`Journeys in ${title} | Ascenders`}</title>
+      <meta name="description" content={`Journeys in ${title} | Ascenders`} />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <Header
-      type="hero"
-      pageType="plp"
+      pageType="info"
       heading={title}
-      subheading={`Get inspired to take a ${title.toLowerCase()} journey. Showing a total of ${count} journeys.`}
+      subheading={`Get inspired to take a journey in ${title.toLowerCase()}. Showing a total of ${
+        journeys.length
+      } journeys.`}
     />
-    <GridWrapper>
-      <SectionHeading title={title} />
-    </GridWrapper>
+    <JourneysGrid journeys={journeys} />
   </main>
 );
 
 export default DestinationPage;
 
-// Generate all our static paths using our interests and their slugs
+// Generate all our static paths using our destinations and their slugs
 export const getStaticPaths: GetStaticPaths = async () => {
   const output = {
-    paths: interests.map((interest) => ({
-      params: { slug: interest.slug },
+    paths: destinations.map((destination) => ({
+      params: { slug: destination.slug },
     })),
     fallback: false,
   };
@@ -49,23 +46,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // Generate the static props to pass to the page component
 export const getStaticProps: GetStaticProps = async (context) => {
-  const interestObject = interests.find(
-    (interest) => interest.slug === context?.params?.slug
+  const destinationObject = destinations.find(
+    (destination) => destination.slug === context?.params?.slug
   );
 
-  const journeys = getRelatedJourneys(interestObject ? [interestObject] : []);
+  const journeys = getRelatedJourneys([], destinationObject) || [];
   // No object so we don't need props for now
-  if (!interestObject) {
+  if (!destinationObject) {
     return {
       props: {
-        count: journeys.length,
+        journeys,
       },
     };
   }
   // Got object so pass it down as a prop
   return {
     props: {
-      ...interestObject,
+      ...destinationObject,
+      journeys,
     },
   };
 };

@@ -3,6 +3,7 @@ import { HealSvg } from "@/components/CustomIcons/HealSvg";
 import { BsBookFill, BsFillBookmarkStarFill } from "react-icons/bs";
 import { MdMenu } from "react-icons/md";
 import {
+  FaLocationArrow,
   FaMinus,
   FaPlus,
   FaPassport,
@@ -45,6 +46,8 @@ const getIcon = (name: AvailableIcons, size?: number): React.ReactNode => {
       return <FaLeaf size={size} />;
     case "menu":
       return <MdMenu size={size} />;
+    case "location":
+      return <FaLocationArrow size={size} />;
     default:
       throw new Error("You can only use the specified names");
   }

@@ -8,27 +8,24 @@ import { Journey } from "../types";
 const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
   journeys,
   searchTerm,
-}) => {
-  console.log(journeys);
-  return (
-    <main role="main">
-      <Head>
-        <title>Ascenders | H.E.A.L | Our Journeys | Search</title>
-        <meta
-          name="description"
-          content="Ascenders | H.E.A.L | Ascenders | H.E.A.L | Our Journeys | Search"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header
-        pageType="info"
-        heading={`You searched for '${searchTerm}'`}
-        subheading={`Showing a total of ${journeys.length} journeys matching your query`}
+}) => (
+  <main role="main">
+    <Head>
+      <title>{`You searched for '${searchTerm}' | Ascenders`}</title>
+      <meta
+        name="description"
+        content={`You searched for '${searchTerm}' | Ascenders`}
       />
-      <JourneysGrid journeys={journeys} />
-    </main>
-  );
-};
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Header
+      pageType="info"
+      heading={`You searched for '${searchTerm}'`}
+      subheading={`Showing a total of ${journeys.length} journeys matching your query`}
+    />
+    <JourneysGrid journeys={journeys} />
+  </main>
+);
 
 export default Search;
 
@@ -54,7 +51,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     );
     queryRegex.lastIndex = 0;
 
-    const matchingLocation = queryRegex.test(journey.location.label);
+    const matchingLocation = queryRegex.test(journey.location.slug);
     queryRegex.lastIndex = 0;
 
     return (
