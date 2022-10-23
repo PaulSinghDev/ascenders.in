@@ -111,7 +111,11 @@ const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
           layout="fill"
         />
       </ImageWrapper>
-      <Link href="/about/heal" title="Read about our HEAL philosophy">
+      <Link
+        href="/about/heal"
+        title="Read about our HEAL philosophy"
+        scroll={false}
+      >
         Learn more
       </Link>
     </ContentWrapper>

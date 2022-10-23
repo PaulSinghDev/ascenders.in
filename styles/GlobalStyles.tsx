@@ -31,10 +31,6 @@ export const GlobalStyles = createGlobalStyle`
   --main-nav-height: 60px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html,
 body {
   padding: 0;
@@ -100,5 +96,50 @@ p {
 main {
   max-width: 1024px;
   margin: auto;
+}
+
+
+html.loading {
+  #loader {
+    opacity:1;
+    z-index: 99999999;
+    visibility: visible;
+    &::before {
+      animation 2s linear spin infinite;
+    }
+  }
+}
+#loader {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  content: "";
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  transition: 0.2s ease;
+  &::before {
+    position: absolute;
+    top: calc(50% - 37.5px);
+    left: calc(50% - 37.5px);
+    width: 75px;
+    height: 75px;
+    border: 8px solid var(--blue);
+    border-bottom-color: var(--light);
+    border-radius: 50%;
+    content: "";
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
 }
 `;
