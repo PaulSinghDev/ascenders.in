@@ -17,9 +17,8 @@ const DestinationCard = styled.div`
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background-color: var(--light);
-  max-width: 90%;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
-  margin: 14px;
+  margin: 8px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -27,10 +26,10 @@ const DestinationCard = styled.div`
   flex-grow: 1;
   display: block;
   position: relative;
-  width: 90%;
-  max-width: 500px;
-  min-width: 180px;
-  height: 300px;
+  width: calc(50% - 16px);
+  height: calc(50vw - 16px);
+  max-height: 300px;
+  max-width: 300px;
 
   a {
     position: absolute;
@@ -47,10 +46,11 @@ const DestinationCard = styled.div`
 
     &:hover {
       > span:first-of-type {
-        top: 50%;
+        bottom: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
       }
+
       > span:last-of-type {
         opacity: 1;
         transition-delay: 0.3s;
@@ -61,21 +61,25 @@ const DestinationCard = styled.div`
     }
 
     > span {
-      font-size: 16px;
+      font-size: 14px;
       position: absolute;
       z-index: 2;
       transition: 0.3s ease;
       text-align: center;
+      max-width: calc(100% - 16px);
+      overflow: hidden;
       white-space: nowrap;
+      text-overflow: ellipsis;
 
       &:first-of-type {
-        display: inline-flex;
+        display: inline-block;
         align-items: center;
-        top: calc(100% - 3rem);
-        left: 1rem;
+        bottom: 8px;
+        left: 8px;
         background-color: var(--blue);
         padding: 0 var(--padding-sm);
         border-radius: 5px;
+        height: calc(14px + var(--padding-sm));
 
         > span {
           font-weight: normal;
@@ -85,7 +89,7 @@ const DestinationCard = styled.div`
 
       &:last-of-type {
         transition-delay: 0s;
-        top: calc(50% + 36px);
+        top: calc(50% + calc(14px + var(--padding-sm)));
         left: 50%;
         transform: translate(-50%, -50%);
         font-weight: normal;
