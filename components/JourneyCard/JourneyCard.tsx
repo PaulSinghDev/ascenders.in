@@ -130,7 +130,7 @@ const JourneyCard: React.FC<{ journey: Journey }> = ({
             Max
             {group.max} People
           </span>
-          <span>{location.label}</span>
+          <span>{location.title}</span>
         </div>
       </JourneyCardDetails>
       <Link href={`/journeys/${slug}`} title={`View ${title}`}>
