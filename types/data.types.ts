@@ -103,10 +103,16 @@ export type ImageType = {
 
 export interface Staff {
   name: string;
-  role: string;
+  role: Role;
   image: ImageType;
   slug: string;
   alias?: string;
+  content: string;
+  interests: Interest[];
+  favourites: {
+    destination: Destination;
+    journey: string;
+  };
 }
 
 export type Difficulty =
@@ -203,4 +209,20 @@ export interface Destination {
   title: string;
   slug: string;
   thumbnail: ImageType;
+}
+
+export const roles = [
+  "founder",
+  "journey-guide",
+  "yoga-instructor",
+  "webmaster",
+  "photographer",
+  "nursing-assistant",
+  "social-media-manager",
+] as const;
+export type RoleType = typeof roles[number];
+export interface Role {
+  slug: RoleType;
+  id: RoleType;
+  label: string;
 }

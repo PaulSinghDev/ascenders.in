@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Staff } from "@/types/data.types";
 import styled from "styled-components";
+import Link from "next/link";
 import { SectionHeading } from "../Base/SectionHeading";
 
 const JourneyStaffWrapper = styled.section`
@@ -20,22 +21,24 @@ const JourneyStaffCards = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  > a {
+    display: inline-block;
+    margin: var(--margin-md);
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 `;
 
-const JourneyStaffCard = styled.div`
+const JourneyStaffCard = styled(Link)`
   flex-shrink: 0;
   min-width: 200px;
-  margin: var(--margin-md);
   display: flex;
   flex-direction: column;
-
-  &:first-of-type {
-    margin-left: 0;
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
 `;
 
 const JourneyStaffThumb = styled.picture`
@@ -85,20 +88,30 @@ const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => (
     <JourneyStaffCardsWrapper>
       <JourneyStaffCards>
         {staff.map((person) => (
-          <JourneyStaffCard key={Math.random().toString(36).substring(2, 9)}>
-            <JourneyStaffThumb>
-              <Image
-                width={200}
-                height={200}
-                layout="fill"
-                alt={person.image.alt}
-                src={person.image.src}
-              />
-            </JourneyStaffThumb>
-            <JourneyStaffInfo>
-              <span>{person.name}</span>
-              <span>{person.role}</span>
-            </JourneyStaffInfo>
+          <JourneyStaffCard
+            href={`/team/${person.slug}`}
+            key={Math.random().toString(36).substring(2, 9)}
+            title={`View ${person.name}'s profile`}
+            passHref
+          >
+            <a
+              href={`/team/${person.slug}`}
+              title={`View ${person.name}'s profile`}
+            >
+              <JourneyStaffThumb>
+                <Image
+                  width={200}
+                  height={200}
+                  layout="fill"
+                  alt={person.image.alt}
+                  src={person.image.src}
+                />
+              </JourneyStaffThumb>
+              <JourneyStaffInfo>
+                <span>{person.name}</span>
+                <span>{person.role.label}</span>
+              </JourneyStaffInfo>
+            </a>
           </JourneyStaffCard>
         ))}
       </JourneyStaffCards>

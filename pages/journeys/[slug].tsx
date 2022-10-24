@@ -67,6 +67,7 @@ const JourneyPage: React.FC<Journey> = ({
       description={tagline}
       backgroundUrl={thumbnail}
     />
+
     <Section>
       <Text lines={description} />
       <QuickLinks links={testLinks} />
