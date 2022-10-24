@@ -65,6 +65,7 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
   image,
   content,
   favourites,
+  interests,
 }) => (
   <main role="main">
     <Head>
@@ -100,7 +101,6 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
           <MetaInfo>
             <span>Top Trip:</span>
             <span>
-              {" "}
               <Link
                 href={`/journeys/${favourites.journey}`}
                 title={`Read about ${
@@ -119,7 +119,17 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
           </MetaInfo>
           <MetaInfo>
             <span>Interests:</span>
-            <span>{`${name}`}</span>
+            <span>
+              {interests.map((i) => (
+                <Link
+                  key={Math.random().toString(36).substring(2, 9)}
+                  href={`/interests/${i.slug}`}
+                  title={`View journeys related to ${i.title}`}
+                >
+                  {i.title}
+                </Link>
+              ))}
+            </span>
           </MetaInfo>
         </MetaWrapper>
       </PersonCard>

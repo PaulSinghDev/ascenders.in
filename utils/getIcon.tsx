@@ -1,6 +1,10 @@
 import { HealHSvg } from "@/components/CustomIcons/HealHSvg";
 import { HealSvg } from "@/components/CustomIcons/HealSvg";
-import { BsBookFill, BsFillBookmarkStarFill } from "react-icons/bs";
+import {
+  BsBookFill,
+  BsFillBookmarkStarFill,
+  BsPeopleFill,
+} from "react-icons/bs";
 import { MdMenu } from "react-icons/md";
 import {
   FaLocationArrow,
@@ -48,6 +52,8 @@ const getIcon = (name: AvailableIcons, size?: number): React.ReactNode => {
       return <MdMenu size={size} />;
     case "location":
       return <FaLocationArrow size={size} />;
+    case "people":
+      return <BsPeopleFill size={size} />;
     default:
       throw new Error("You can only use the specified names");
   }

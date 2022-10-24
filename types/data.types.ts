@@ -197,6 +197,7 @@ export type AvailableIcons =
   | "temperature"
   | "map"
   | "safety"
+  | "people"
   | "heal-h"
   | "heal"
   | "book"

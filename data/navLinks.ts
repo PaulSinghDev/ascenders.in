@@ -32,10 +32,10 @@ const mainNavLinks: BasicNavLink[] = [
     icon: "leaf",
   },
   {
-    title: "Read stories from our previous guests",
-    href: "/stories",
-    label: "Stories",
-    icon: "book",
+    title: "Read more about our team",
+    href: "/team",
+    label: "Team",
+    icon: "people",
   },
 ];
 
