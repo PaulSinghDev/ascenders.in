@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import { SectionHeading } from "../Base/SectionHeading";
 
-const JourneyStaffWrapper = styled.section`
+const JourneyStaffWrapper = styled.div`
   padding: calc(var(--padding-lg) * 2);
   border-bottom: 1px solid rba(0, 0, 0, 0.1);
 `;
@@ -82,9 +82,13 @@ const JourneyStaffInfo = styled.div`
   }
 `;
 
+const StaffHeading = styled(SectionHeading)`
+  margin-top: 0;
+`;
+
 const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => (
   <JourneyStaffWrapper>
-    <SectionHeading title="Experts On The Trip" />
+    <StaffHeading title="Experts On The Trip" />
     <JourneyStaffCardsWrapper>
       <JourneyStaffCards>
         {staff.map((person) => (

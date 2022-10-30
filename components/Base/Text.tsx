@@ -7,6 +7,9 @@ interface TextProps {
 const StyledTextWrapper = styled.div`
   margin: calc(2 * var(--margin-lg)) var(--margin-sm);
   color: var(--dark-blue);
+  font-size: 16px;
+  color: var(--dark-blue);
+  line-height: 1.9;
 `;
 
 const Text: React.FC<TextProps> = ({ lines }) => (

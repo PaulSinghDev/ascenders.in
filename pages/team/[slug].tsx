@@ -9,6 +9,7 @@ import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import { journeys } from "data";
+import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
 
 interface TeamMemberPageProps extends Staff {}
 
@@ -18,17 +19,26 @@ const PersonCard = styled.div`
   border-radius: var(--border-radius-lg);
   display: flex;
   flex-wrap: wrap;
+  margin: var(--margin-xl);
+  align-self: flex-start;
+  flex-grow: 1;
+  max-width: 600px;
+
+  @media screen and (min-width: 1256px) {
+    position: sticky;
+    top: 70px;
+  }
 `;
 
 const ImageWrapper = styled.picture`
   display: block;
   overflow: hidden;
   position: relative;
-  width: 100%;
-  width: 200px;
+  width: 50%;
   height: 200px;
   border-radius: var(--border-radius-lg);
   flex-grow: 1;
+  flex-basis: 200px;
   img {
     object-fit: cover;
     display: block;
@@ -37,7 +47,9 @@ const ImageWrapper = styled.picture`
 
 const MetaWrapper = styled.div`
   margin: var(--margin-lg);
+  width: 40%;
   flex-grow: 1;
+  flex-basis: 200px;
 `;
 
 const MetaInfo = styled.div`
@@ -59,6 +71,53 @@ const MetaInfo = styled.div`
   }
 `;
 
+const TeamMemberSection = styled(Section)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  > header {
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: block;
+    @media screen and (min-width: 1258px) {
+      display: none;
+    }
+  }
+`;
+
+const JourneySection = styled(Section)`
+  display: inline-flex;
+  margin: auto;
+  max-width: 100%;
+  padding: var(--margin-xl);
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 700px;
+  margin: var(--margin-xl);
+  flex-shrink: 1;
+  > header {
+    width: 100%;
+    flex-basis: 100%;
+    display: none;
+    @media screen and (min-width: 1258px) {
+      display: block;
+    }
+  }
+
+  > p {
+    font-size: 16px;
+    color: var(--dark-blue);
+    line-height: 1.9;
+  }
+`;
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+`;
+
 const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
   name,
   role,
@@ -66,79 +125,105 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
   content,
   favourites,
   interests,
-}) => (
-  <main role="main">
-    <Head>
-      <title>{`About ${name} | ${role.label} | Staff | Ascenders | Go Beyond | H.E.A.L`}</title>
-      <meta
-        name="description"
-        content={`About ${name} | ${role} | Staff | Ascenders | Go Beyond | H.E.A.L`}
-      />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <Header pageType="info" heading={name} />
-    <Section>
-      <PersonCard>
-        <ImageWrapper>
-          <Image src={image.src} layout="fill" alt={`Image of ${name}`} />
-        </ImageWrapper>
-        <MetaWrapper>
-          <MetaInfo>
-            <span>Name:</span>
-            <span>{`${name}`}</span>
-          </MetaInfo>
-          <MetaInfo>
-            <span>Top Place:</span>
-            <span>
-              <Link
-                href={`/destinations/${favourites.destination.slug}`}
-                title={`Read about ${favourites.destination.title}`}
-              >
-                {`${favourites.destination.title}`}
-              </Link>
-            </span>
-          </MetaInfo>
-          <MetaInfo>
-            <span>Top Trip:</span>
-            <span>
-              <Link
-                href={`/journeys/${favourites.journey}`}
-                title={`Read about ${
-                  journeys.find(
-                    (journey) => journey.slug === favourites.journey
-                  )?.title
-                }`}
-              >
-                {`${
-                  journeys.find(
-                    (journey) => journey.slug === favourites.journey
-                  )?.title
-                }`}
-              </Link>
-            </span>
-          </MetaInfo>
-          <MetaInfo>
-            <span>Interests:</span>
-            <span>
-              {interests.map((i) => (
+  slug,
+}) => {
+  const memberJourneys = journeys.filter((journey) =>
+    journey.staff.find((member) => member.slug === slug)
+  );
+  console.log(memberJourneys);
+  return (
+    <Main role="main">
+      <Head>
+        <title>{`About ${name} | ${role.label} | Staff | Ascenders | Go Beyond | H.E.A.L`}</title>
+        <meta
+          name="description"
+          content={`About ${name} | ${role} | Staff | Ascenders | Go Beyond | H.E.A.L`}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <TeamMemberSection>
+        <Header pageType="info" heading={name} />
+        <PersonCard>
+          <ImageWrapper>
+            <Image src={image.src} layout="fill" alt={`Image of ${name}`} />
+          </ImageWrapper>
+          <MetaWrapper>
+            <MetaInfo>
+              <span>Name:</span>
+              <span>{`${name}`}</span>
+            </MetaInfo>
+            <MetaInfo>
+              <span>Top Place:</span>
+              <span>
                 <Link
-                  key={Math.random().toString(36).substring(2, 9)}
-                  href={`/interests/${i.slug}`}
-                  title={`View journeys related to ${i.title}`}
+                  href={`/destinations/${favourites.destination.slug}`}
+                  title={`Read about ${favourites.destination.title}`}
                 >
-                  {i.title}
+                  {`${favourites.destination.title}`}
                 </Link>
-              ))}
-            </span>
-          </MetaInfo>
-        </MetaWrapper>
-      </PersonCard>
-    </Section>
-    <Section>
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </Section>
-  </main>
-);
+              </span>
+            </MetaInfo>
+            <MetaInfo>
+              <span>Top Trip:</span>
+              <span>
+                <Link
+                  href={`/journeys/${favourites.journey}`}
+                  title={`Read about ${
+                    journeys.find(
+                      (journey) => journey.slug === favourites.journey
+                    )?.title
+                  }`}
+                >
+                  {`${
+                    journeys.find(
+                      (journey) => journey.slug === favourites.journey
+                    )?.title
+                  }`}
+                </Link>
+              </span>
+            </MetaInfo>
+            <MetaInfo>
+              <span>Interests:</span>
+              <span>
+                {interests.map((i) => (
+                  <Link
+                    key={Math.random().toString(36).substring(2, 9)}
+                    href={`/interests/${i.slug}`}
+                    title={`View journeys related to ${i.title}`}
+                  >
+                    {i.title}
+                  </Link>
+                ))}
+              </span>
+            </MetaInfo>
+          </MetaWrapper>
+        </PersonCard>
+        <ContentWrapper>
+          <Header pageType="info" heading={name} />
+          <ReactMarkdown>{content}</ReactMarkdown>
+        </ContentWrapper>
+      </TeamMemberSection>
+      <JourneySection>
+        {memberJourneys.length > 0 ? (
+          <JourneysCarousel
+            title={`Journeys with ${name}`}
+            overrideJourneys={memberJourneys}
+            description={[
+              `The following journeys have ${name} listed as a member of the team which is travelling on it.`,
+              "While we aim to stick to the listed guides please note that the team members on any trip may change.",
+            ]}
+          />
+        ) : (
+          <JourneysCarousel
+            description={[
+              "Have a browse of our available journeys. All of our journeys are staffed with highly trained trek leaders.",
+            ]}
+          />
+        )}
+      </JourneySection>
+    </Main>
+  );
+};
 
 export default TeamMemberPage;
 

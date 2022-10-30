@@ -7,20 +7,29 @@ const JourneyCardWrapper = styled.div`
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background-color: var(--light);
-  max-width: 300px;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   margin: 14px;
   flex-shrink: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
+  
+  @media screen and (min-width: 700px) {
+    flex-direction: row;
+
+  }
 `;
 
 const JourneyCardThumb = styled.div`
   overflow: hidden;
+  position: relative;
+  width: 300px;
+  min-height: 200px;
+  height: 100%;
+
   img {
-    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    border-radius: var(--border-radius-md);
     width: 100%;
-    max-height: 250px;
+    height: 100%;
     object-fot: cover;
   }
 `;
@@ -30,6 +39,8 @@ const JourneyCardContent = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 300px;
+
   > a {
     background: var(--blue);
     border-radius: var(--border-radius-md);
@@ -99,8 +110,8 @@ margin-bottom: var(--padding-md);
       
       > span {
       font-size: 12px;
-        display: block;
-        margin: 4px 0; 
+      display: block;
+      margin: 4px 8px 4px 0; 
     }
   }
 `;
@@ -110,7 +121,7 @@ const JourneyCard: React.FC<{ journey: Journey }> = ({
 }) => (
   <JourneyCardWrapper>
     <JourneyCardThumb>
-      <Image src={thumbnail} width={350} height={250} alt={title} />
+      <Image src={thumbnail} alt={title} layout="fill"/>
     </JourneyCardThumb>
     <JourneyCardContent>
       <JourneyCardTitle>

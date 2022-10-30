@@ -7,7 +7,11 @@ import { Button } from "../Base";
 import { SectionHeading } from "../Base/SectionHeading";
 
 const AccordionWrapper = styled.section`
-  margin: var(--margin-xl);
+  margin: calc(var(--margin-xl) * 3) var(--margin-xl);
+  max-width: 800px;
+  @media screen and (min-width: calc(850px)) {
+    margin: calc(var(--margin-xl) * 2) auto;
+  }
 `;
 
 const Content = styled.div<{ height?: number }>`

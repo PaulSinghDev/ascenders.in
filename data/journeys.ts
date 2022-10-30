@@ -362,7 +362,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
         },
       ],
     },
-    staff,
+    staff: staff.filter((member) => /shivam|shantanu|saurav/.test(member.slug)),
   },
   {
     staff: staff.filter((person) => /shivam|saurav/gi.test(person.slug)),

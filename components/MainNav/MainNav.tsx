@@ -16,7 +16,7 @@ const MainNavDrawerWrapper = styled.div`
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 10;
+  z-index: 1001;
 
   &[aria-hidden="true"] {
     display: none;
@@ -78,9 +78,9 @@ const MainNavBar = styled.nav`
   width: 100%;
   background: #fff;
   position: fixed;
+  z-index: 1001;
   top: 0;
   left: 0;
-  z-index: 9;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   height: var(--main-nav-height);
   display: flex;

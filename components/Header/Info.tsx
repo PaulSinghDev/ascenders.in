@@ -9,8 +9,9 @@ const StyledHeader = styled.header`
   z-index: 0;
   border-radius: 40px;
   overflow: hidden;
-  margin: var(--padding-lg);
+  margin: var(--padding-lg) auto;
   color: var(--dark-blue);
+  max-width: 700px;
 `;
 
 const InfoHeaderWrapper = styled.div`
@@ -46,6 +47,9 @@ const TitleWrapper = styled.div`
     padding-top: var(--padding-lg);
     display: block;
     font-size: 16px;
+    color: var(--dark-blue);
+    max-width: 700px;
+    line-height: 1.9;
   }
 `;
 

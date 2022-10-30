@@ -22,6 +22,7 @@ const StyledLinks = styled.div`
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  justify-content: center;
   &::-webkit-scrollbar {
     display: none;
   }

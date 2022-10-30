@@ -1,8 +1,10 @@
 import { HealOverview } from "types/data.types";
 import styled from "styled-components";
 import Image from "next/image";
+import { Section } from "components/Base/Section";
+import Link from "next/link";
 
-const HealSection = styled.section`
+const HealCard = styled.div`
   margin: var(--margin-xl);
   padding: var(--padding-lg);
   background-color: var(--light-grey);
@@ -13,6 +15,10 @@ const HealSection = styled.section`
 const HealHeading = styled.div`
   margin: var(--margin-lg) 0 calc(var(--margin-lg) * 3) 0;
   padding: 0 calc(var(--padding-lg) * 2);
+
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
 
   h2 {
     color: var(--dark-green);
@@ -27,6 +33,8 @@ const HealHeading = styled.div`
     font-weight: 100;
   }
 `;
+
+const HealCardImageWrapper = styled.div``;
 
 const HealLetters = styled.div``;
 
@@ -67,18 +75,60 @@ const HealContent = styled.div`
   }
 `;
 
+const HealSection = styled(Section)`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const HealDescription = styled.div`
+  max-width: 500px;
+  width: 50%;
+  display: none;
+  @media screen and (min-width: 800px) {
+    display: block;
+  }
+
+  h2 {
+    color: var(--dark-green);
+    margin-bottom: var(--margin-sm);
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.3;
+    color: var(--dark);
+    font-weight: 100;
+  }
+
+  a {
+    margin-left: 0;
+    margin-top: var(--margin-lg);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-lg);
+    background-color: var(--blue);
+    color: var(--light);
+    display: inline-block;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: var(--teal);
+    }
+  }
+`;
+
 const HealBlock: React.FC<{
   title?: string;
   subtitle?: string;
+  description?: string[];
   heal: HealOverview;
   id?: string;
-}> = ({ heal: { h, e, a, l }, id, title, subtitle }) => (
-  <HealSection id={id}>
-    <HealHeading>
+}> = ({ heal: { h, e, a, l }, id, title, subtitle, description }) => (
+  <HealSection>
+    <HealDescription>
       <Image
         src="/assets/images/logos/heal-logo.svg"
-        width="150px"
-        height="100px"
+        width="250px"
+        height="150px"
         alt="The letter h from the heal logo"
       />
       <h2>{title || "Activities of this journey"}</h2>
@@ -86,37 +136,60 @@ const HealBlock: React.FC<{
         {subtitle ||
           "This heal journey offers activities based on your preferences and can be tailored to suit your needs."}
       </p>
-    </HealHeading>
-    <HealLetters>
-      <HealLetterWrapper>
-        <HealLetter>H</HealLetter>
-        <HealContent>
-          <h3>{h.title}</h3>
-          <p>{h.copy.join(", ")}</p>
-        </HealContent>
-      </HealLetterWrapper>
-      <HealLetterWrapper>
-        <HealLetter>E</HealLetter>
-        <HealContent>
-          <h3>{e.title}</h3>
-          <p>{e.copy.join(", ")}</p>
-        </HealContent>
-      </HealLetterWrapper>
-      <HealLetterWrapper>
-        <HealLetter>A</HealLetter>
-        <HealContent>
-          <h3>{a.title}</h3>
-          <p>{a.copy.join(", ")}</p>
-        </HealContent>
-      </HealLetterWrapper>
-      <HealLetterWrapper>
-        <HealLetter>L</HealLetter>
-        <HealContent>
-          <h3>{l.title}</h3>
-          <p>{l.copy.join(", ")}</p>
-        </HealContent>
-      </HealLetterWrapper>
-    </HealLetters>
+      {description?.map((p) => (
+        <p key={Math.random().toString(36).substring(2, 9)}>{p}</p>
+      ))}
+      <Link href="/about/heal" title="Read more about our HEAL philosophy">
+        More Information
+      </Link>
+    </HealDescription>
+    <HealCard id={id}>
+      <HealHeading>
+        <HealCardImageWrapper>
+          <Image
+            src="/assets/images/logos/heal-logo.svg"
+            width="150px"
+            height="100px"
+            alt="The letter h from the heal logo"
+          />
+        </HealCardImageWrapper>
+        <h2>{title || "Activities of this journey"}</h2>
+        <p>
+          {subtitle ||
+            "This heal journey offers activities based on your preferences and can be tailored to suit your needs."}
+        </p>
+      </HealHeading>
+      <HealLetters>
+        <HealLetterWrapper>
+          <HealLetter>H</HealLetter>
+          <HealContent>
+            <h3>{h.title}</h3>
+            <p>{h.copy.join(", ")}</p>
+          </HealContent>
+        </HealLetterWrapper>
+        <HealLetterWrapper>
+          <HealLetter>E</HealLetter>
+          <HealContent>
+            <h3>{e.title}</h3>
+            <p>{e.copy.join(", ")}</p>
+          </HealContent>
+        </HealLetterWrapper>
+        <HealLetterWrapper>
+          <HealLetter>A</HealLetter>
+          <HealContent>
+            <h3>{a.title}</h3>
+            <p>{a.copy.join(", ")}</p>
+          </HealContent>
+        </HealLetterWrapper>
+        <HealLetterWrapper>
+          <HealLetter>L</HealLetter>
+          <HealContent>
+            <h3>{l.title}</h3>
+            <p>{l.copy.join(", ")}</p>
+          </HealContent>
+        </HealLetterWrapper>
+      </HealLetters>
+    </HealCard>
   </HealSection>
 );
 

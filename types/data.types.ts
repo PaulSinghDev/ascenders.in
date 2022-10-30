@@ -210,6 +210,12 @@ export interface Destination {
   title: string;
   slug: string;
   thumbnail: ImageType;
+  mapData: {
+    lng: number,
+    lat: number,
+    tooltip: string,
+    zoom: number
+  }
 }
 
 export const roles = [

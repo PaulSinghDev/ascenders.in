@@ -27,6 +27,11 @@ const SlidesWrapper = styled.div`
   overflow: hidden;
   position: relative;
   border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  @media screen and (min-width: 700px) {
+    margin-bottom: 0;
+    border-radius: var(--border-radius-xl) 0 0 var(--border-radius-xl);
+    width: 50%;
+  }
 `;
 
 const Slides = styled.div<{ slide: number }>`
@@ -126,6 +131,11 @@ const ContentWrapper = styled.div`
   border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
   display: flex;
   overflow: hidden;
+  @media screen and (min-width: 700px) {
+    margin-bottom: 0;
+    border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
+      width: 50%;
+  }
 `;
 
 const ContentDescription = styled.div`
@@ -142,6 +152,10 @@ const ContentDescription = styled.div`
     font-size: 16px;
     color: var(--dark-blue);
   }
+
+  @media screen and (min-width: 700px) {
+    margin-top: auto;
+  }
 `;
 
 const ContentPills = styled.div`
@@ -157,6 +171,7 @@ const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   transition: 0.3s ease;
+  width: 100%;
 
   &[aria-hidden="true"] {
     opacity: 0;
@@ -170,68 +185,77 @@ const ContentContainer = styled.div`
   }
 `;
 
+const SliderContainer = styled.div`
+  @media screen and (min-width: 700px) {
+    display: flex;
+    height: 400px;
+  }
+`
+
 const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   return (
     <GalleryWrapper id={id}>
       <SectionHeading title="Gallery" />
-      <SlidesWrapper>
-        <Slides slide={activeSlide}>
-          {images.map((image) => (
-            <Slide key={Math.random().toString(36).substring(2, 7)}>
-              <Image
-                src={image.src}
-                height={300}
-                width={400}
-                layout="fixed"
-                alt={image.alt}
-              />
-            </Slide>
-          ))}
-        </Slides>
-        <SlideCount>{`${activeSlide + 1} / ${images.length}`}</SlideCount>
-        <NavButtons>
-          <Button
-            margin="sm"
-            onClick={() => setActiveSlide(activeSlide - 1)}
-            disabled={activeSlide === 0}
-          >
-            <BsArrowLeft size={30} />
-          </Button>
-          <Button
-            margin="sm"
-            onClick={() => setActiveSlide(activeSlide + 1)}
-            disabled={activeSlide === images.length - 1}
-          >
-            <BsArrowRight size={30} />
-          </Button>
-        </NavButtons>
-        <div className="pagination" />
-      </SlidesWrapper>
-      <ContentWrapper>
-        {images.map((image, index) => (
-          <ContentContainer
-            key={Math.random().toString(36).substring(2, 9)}
-            aria-hidden={index !== activeSlide}
-          >
-            <ContentDescription>
-              <h3>{image.title}</h3>
-              {image.description.map((line) => (
-                <p key={Math.random().toString(36).substring(2, 9)}>{line}</p>
-              ))}
-            </ContentDescription>
-            <ContentPills>
-              {images[activeSlide].interest.map((label) => (
-                <Badge
-                  color="blue"
-                  key={Math.random().toString(36).substring(2, 9)}
-                  label={label}
+      <SliderContainer>
+        <SlidesWrapper>
+          <Slides slide={activeSlide}>
+            {images.map((image) => (
+              <Slide key={Math.random().toString(36).substring(2, 7)}>
+                <Image
+                  src={image.src}
+                  height={300}
+                  width={400}
+                  layout="fixed"
+                  alt={image.alt}
                 />
-              ))}
-            </ContentPills>
-          </ContentContainer>
-        ))}
-      </ContentWrapper>
+              </Slide>
+            ))}
+          </Slides>
+          <SlideCount>{`${activeSlide + 1} / ${images.length}`}</SlideCount>
+          <NavButtons>
+            <Button
+              margin="sm"
+              onClick={() => setActiveSlide(activeSlide - 1)}
+              disabled={activeSlide === 0}
+            >
+              <BsArrowLeft size={30} />
+            </Button>
+            <Button
+              margin="sm"
+              onClick={() => setActiveSlide(activeSlide + 1)}
+              disabled={activeSlide === images.length - 1}
+            >
+              <BsArrowRight size={30} />
+            </Button>
+          </NavButtons>
+          <div className="pagination" />
+        </SlidesWrapper>
+        <ContentWrapper>
+          {images.map((image, index) => (
+            <ContentContainer
+              key={Math.random().toString(36).substring(2, 9)}
+              aria-hidden={index !== activeSlide}
+            >
+              <ContentDescription>
+                <h3>{image.title}</h3>
+                {image.description.map((line) => (
+                  <p key={Math.random().toString(36).substring(2, 9)}>{line}</p>
+                ))}
+              </ContentDescription>
+              <ContentPills>
+                {images[activeSlide].interest.map((label) => (
+                  <Badge
+                    color="blue"
+                    key={Math.random().toString(36).substring(2, 9)}
+                    label={label}
+                  />
+                ))}
+              </ContentPills>
+            </ContentContainer>
+          ))}
+        </ContentWrapper>
+      </SliderContainer>
     </GalleryWrapper>
   );
 };

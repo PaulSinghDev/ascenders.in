@@ -14,8 +14,10 @@ const JourneyHeading = styled.div`
     text-transform: uppercase;
   }
   p {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--dark-blue);
+    max-width: 500px;
+    line-height: 1.9;
   }
 `;
 
@@ -46,6 +48,7 @@ interface JourneysProps {
   disabledHeading?: boolean;
   showAll?: boolean;
   overrideJourneys?: Journey[];
+  description?: string[];
 }
 
 const JourneysCarousel: React.FC<JourneysProps> = ({
@@ -56,6 +59,7 @@ const JourneysCarousel: React.FC<JourneysProps> = ({
   disabledHeading,
   showAll,
   overrideJourneys,
+  description,
 }) => {
   const related = !interest
     ? null
@@ -65,10 +69,14 @@ const JourneysCarousel: React.FC<JourneysProps> = ({
       {disabledHeading ? null : (
         <JourneyHeading>
           <h2>{title || "Journeys"}</h2>
-          <p>
-            Interested in something a little different? Have a look at these
-            related journeys
-          </p>
+          {description?.map((line) => (
+            <p key={Math.random().toString(36).substring(2, 9)}>{line}</p>
+          )) || (
+            <p>
+              Interested in something a little different? Have a look at these
+              related journeys
+            </p>
+          )}
         </JourneyHeading>
       )}
       <JourneysCarouselContainer>

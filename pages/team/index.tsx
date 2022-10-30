@@ -4,16 +4,20 @@ import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { staff } from "data/staff";
+import { SectionHeading } from "@/components/Base/SectionHeading";
+import { Section } from "@/components/Base/Section";
 
-const DestinationsWrapper = styled.div`
+const TeamWrapper = styled(Section)`
   padding: var(--padding-lg);
   display flex;
   max-width: 100%;
   overflow: auto;
-
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `;
 
-const DestinationCard = styled.div`
+const TeamCard = styled.div`
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background-color: var(--light);
@@ -111,11 +115,16 @@ const DestinationCard = styled.div`
   }
 `;
 
-const DestinationsGrid = styled.div`
+const TeamGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-grow: 1;
+  width: 100%;
+`;
+
+const TeamHeading = styled(SectionHeading)`
+  max-width: 900px;
 `;
 
 const OurTeam: React.FC<{}> = () => (
@@ -130,26 +139,64 @@ const OurTeam: React.FC<{}> = () => (
       heading="Our Team"
       subheading="Please carefully read the following information which relates to our privacy policy."
     />
-    <DestinationsWrapper>
-      <DestinationsGrid>
-        {staff.map((person) => (
-          <DestinationCard key={Math.random().toString(36).substring(2, 7)}>
-            <Image
-              src={person.image.src}
-              alt=""
-              layout="fill"
-              objectFit="cover"
-            />
-            <Link href={`/team/${person.slug}`} passHref>
-              <a href={`/team/${person.slug}`}>
-                <span>{person.name}</span>
-                <span>Click for more info</span>
-              </a>
-            </Link>
-          </DestinationCard>
-        ))}
-      </DestinationsGrid>
-    </DestinationsWrapper>
+    <TeamWrapper>
+      <TeamHeading
+        title="Our Founders"
+        copy={[
+          "Ascenders was founded in 2019 by Aditya Siwach and Shantanu Chaudhary out of a mutual mission of conscious travelling by experiencing HEAL journeys that could unravel possibilities to GO BEYOND who we are.",
+        ]}
+      />
+      <TeamGrid>
+        {staff
+          .filter((member) => /founder/.test(member.role.slug))
+          .map((person) => (
+            <TeamCard key={Math.random().toString(36).substring(2, 7)}>
+              <Image
+                src={person.image.src}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+              <Link href={`/team/${person.slug}`} passHref>
+                <a href={`/team/${person.slug}`}>
+                  <span>{person.name}</span>
+                  <span>Click for more info</span>
+                </a>
+              </Link>
+            </TeamCard>
+          ))}
+      </TeamGrid>
+    </TeamWrapper>
+    <TeamWrapper>
+      <TeamHeading
+        title="Our Team"
+        copy={[
+          "Get to know our team members, who embody the core values of Ascenders' vision and mission.",
+          "Each individual has a different set of skills that they use to make the world a better place.",
+          "HEAL has been collectively designed by Ascenders Team to help you initiate a path to go beyond who you were.",
+        ]}
+      />
+      <TeamGrid>
+        {staff
+          .filter((member) => !/founder/.test(member.role.slug))
+          .map((person) => (
+            <TeamCard key={Math.random().toString(36).substring(2, 7)}>
+              <Image
+                src={person.image.src}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+              <Link href={`/team/${person.slug}`} passHref>
+                <a href={`/team/${person.slug}`}>
+                  <span>{person.name}</span>
+                  <span>Click for more info</span>
+                </a>
+              </Link>
+            </TeamCard>
+          ))}
+      </TeamGrid>
+    </TeamWrapper>
   </main>
 );
 

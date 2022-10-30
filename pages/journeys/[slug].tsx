@@ -12,6 +12,7 @@ import Head from "next/head";
 import { Journey } from "types/data.types";
 import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
 import { Section } from "@/components/Base/Section";
+import styled from "styled-components";
 
 const testLinks = [
   { label: "Overview", url: "#overview", title: "Skip to the overview" },
@@ -29,6 +30,26 @@ const testLinks = [
     title: "Skip to the what to bring section",
   },
 ];
+
+const IntroSection = styled(Section)`
+  p {
+    margin: 0 auto;
+    max-width: 700px;
+    margin-bottom: var(--margin-lg);
+    &:first-child {
+      margin-top: calc(var(--margin-xl) * 2);
+    }
+
+    &:last-child {
+      margin-bottom: calc(var(--margin-xl) * 2);
+    }
+  }
+`;
+
+const StaffSection = styled(Section)`
+  max-width: 800px;
+  margin: auto;
+`;
 
 const JourneyPage: React.FC<Journey> = ({
   title,
@@ -55,6 +76,12 @@ const JourneyPage: React.FC<Journey> = ({
         content={`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}
       />
       <link rel="icon" href="/favicon.ico" />
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossOrigin=""
+      />
     </Head>
     <Header
       type="hero"
@@ -67,15 +94,15 @@ const JourneyPage: React.FC<Journey> = ({
       description={tagline}
       backgroundUrl={thumbnail}
     />
-
-    <Section>
+    <IntroSection>
       <Text lines={description} />
       <QuickLinks links={testLinks} />
-    </Section>
+    </IntroSection>
     <JourneyOverview
       id="overview"
       bulletPoints={overviewBullets}
       brochureUrl="some-url"
+      destination={location}
     />
     <Gallery images={gallery} id="gallery" />
     <Accordion
@@ -91,7 +118,9 @@ const JourneyPage: React.FC<Journey> = ({
       description={importantInformation.description}
       items={importantInformation.items}
     />
-    <JourneyStaffCarousel staff={staff} />
+    <StaffSection>
+      <JourneyStaffCarousel staff={staff} />
+    </StaffSection>
     <Accordion
       title={inclusions.title}
       id="what-to-bring"
