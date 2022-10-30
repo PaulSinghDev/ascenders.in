@@ -32,6 +32,7 @@ const testLinks = [
 ];
 
 const IntroSection = styled(Section)`
+  margin: var(--margin-xl);
   p {
     margin: 0 auto;
     max-width: 700px;
@@ -98,35 +99,45 @@ const JourneyPage: React.FC<Journey> = ({
       <Text lines={description} />
       <QuickLinks links={testLinks} />
     </IntroSection>
-    <JourneyOverview
-      id="overview"
-      bulletPoints={overviewBullets}
-      brochureUrl="some-url"
-      destination={location}
-    />
-    <Gallery images={gallery} id="gallery" />
-    <Accordion
-      title={itinerary.title}
-      id="itinerary"
-      description={itinerary.description}
-      items={itinerary.days}
-    />
-    <HealBlock heal={heal} id="heal" />
-    <Accordion
-      title={importantInformation.title}
-      id="important-information"
-      description={importantInformation.description}
-      items={importantInformation.items}
-    />
+    <Section>
+      <JourneyOverview
+        id="overview"
+        bulletPoints={overviewBullets}
+        brochureUrl="some-url"
+        destination={location}
+      />
+    </Section>
+    <Section>
+      <Gallery images={gallery} id="gallery" />
+    </Section>
+    <Section>
+      <Accordion
+        title={itinerary.title}
+        id="itinerary"
+        description={itinerary.description}
+        items={itinerary.days}
+      />
+    </Section>
+    <Section>
+      <HealBlock heal={heal} id="heal" />
+      <Accordion
+        title={importantInformation.title}
+        id="important-information"
+        description={importantInformation.description}
+        items={importantInformation.items}
+      />
+    </Section>
     <StaffSection>
       <JourneyStaffCarousel staff={staff} />
     </StaffSection>
-    <Accordion
-      title={inclusions.title}
-      id="what-to-bring"
-      description={inclusions.description}
-      items={inclusions.items}
-    />
+    <Section>
+      <Accordion
+        title={inclusions.title}
+        id="what-to-bring"
+        description={inclusions.description}
+        items={inclusions.items}
+      />
+    </Section>
     <Section id="journeys">
       <JourneysCarousel interest={interest} level={level} location={location} />
     </Section>

@@ -8,13 +8,12 @@ import { SectionHeading } from "@/components/Base/SectionHeading";
 import { Section } from "@/components/Base/Section";
 
 const TeamWrapper = styled(Section)`
-  padding: var(--padding-lg);
+  margin:  var(--margin-xl);
   display flex;
   max-width: 100%;
   overflow: auto;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 `;
 
 const TeamCard = styled.div`
@@ -137,7 +136,7 @@ const OurTeam: React.FC<{}> = () => (
     <Header
       pageType="info"
       heading="Our Team"
-      subheading="Please carefully read the following information which relates to our privacy policy."
+      subheading="Get to know our team, all out members of staff are really excited to meet new people and show the beauty that India has to offer."
     />
     <TeamWrapper>
       <TeamHeading

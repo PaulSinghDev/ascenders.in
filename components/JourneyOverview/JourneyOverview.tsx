@@ -5,13 +5,13 @@ import { Destination } from "@/types/data.types";
 import { Button } from "../Base";
 import { SectionHeading } from "../Base/SectionHeading";
 
-const MapNoSSR = dynamic(() => import("./Map"), {ssr: false})
+const MapNoSSR = dynamic(() => import("./Map"), { ssr: false });
 
 interface JourneyOverviewProps {
   id?: string;
   bulletPoints: string[];
   brochureUrl: string;
-  destination: Destination
+  destination: Destination;
 }
 
 const JourneyOverviewWrapper = styled.div`
@@ -93,14 +93,16 @@ const JourneyOverviewMap = styled.div`
   width: 70%;
   border-radius: var(--border-radius-xl);
   overflow: hidden;
+  display: none;
+  @media screen and (min-width: 800px) {
+    display: block;
+  }
 `;
-
-
 
 const JourneyOverview: React.FC<JourneyOverviewProps> = ({
   id,
   bulletPoints,
-  destination
+  destination,
 }) => (
   <JourneyOverviewWrapper id={id}>
     <JourneyOverviewCard>
@@ -128,11 +130,12 @@ const JourneyOverview: React.FC<JourneyOverviewProps> = ({
       </JourneyOverviewActions>
     </JourneyOverviewCard>
     <JourneyOverviewMap>
-    <MapNoSSR 
-      lat={destination.mapData.lat} 
-      lng={destination.mapData.lng} 
-      zoom={destination.mapData.zoom}
-      tooltip={destination.mapData.tooltip}/>
+      <MapNoSSR
+        lat={destination.mapData.lat}
+        lng={destination.mapData.lng}
+        zoom={destination.mapData.zoom}
+        tooltip={destination.mapData.tooltip}
+      />
     </JourneyOverviewMap>
   </JourneyOverviewWrapper>
 );

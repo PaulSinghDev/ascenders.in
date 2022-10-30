@@ -6,8 +6,8 @@ import styled from "styled-components";
 import { Button } from "../Base";
 import { SectionHeading } from "../Base/SectionHeading";
 
-const AccordionWrapper = styled.section`
-  margin: calc(var(--margin-xl) * 3) var(--margin-xl);
+const AccordionWrapper = styled.div`
+  margin: var(--margin-xl);
   max-width: 800px;
   @media screen and (min-width: calc(850px)) {
     margin: calc(var(--margin-xl) * 2) auto;
@@ -93,6 +93,10 @@ const AccordionTitleIcon = styled.span`
   }
 `;
 
+const AccordionHeading = styled(SectionHeading)`
+  margin-top: 0;
+`;
+
 interface AccordionProps extends AccordionSection {
   id?: string;
 }
@@ -118,7 +122,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <AccordionWrapper id={id}>
-      <SectionHeading title={title} copy={description} />
+      <AccordionHeading title={title} copy={description} />
       <div className="container">
         <div className="nav" />
         <AccordionTriggers>

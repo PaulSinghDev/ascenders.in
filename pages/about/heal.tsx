@@ -13,6 +13,10 @@ const HealWrapper = styled.main`
   }
 `;
 
+const HealSection = styled(Section)`
+  margin: var(--margin-xl);
+`;
+
 const AboutHeal: React.FC = () => (
   <HealWrapper>
     <Head>
@@ -21,7 +25,7 @@ const AboutHeal: React.FC = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header pageType="info" heading="About HEAL" />
-    <Section>
+    <HealSection>
       <Text
         lines={[
           "The acronym H.E.A.L stand for Health, Earth, Adventure, Love; journeys that are based on learning to care for self-health and Earth's beauty.",
@@ -29,7 +33,7 @@ const AboutHeal: React.FC = () => (
           "Our highly skilled team members lead expeditions for small groups, private groups, families and solo travellers.",
         ]}
       />
-    </Section>
+    </HealSection>
     <HealBlock
       title="What is HEAL?"
       subtitle="The following are basic principles of the HEAL philosophy"

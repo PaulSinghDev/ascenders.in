@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { JourneyCard } from "../JourneyCard/JourneyCard";
 
 const JourneyHeading = styled.div`
-  margin: var(--margin-xl) var(--margin-lg);
+  margin: 0 0 var(--margin-lg) 0;
   h2 {
     margin-top: 0;
     margin-bottom: var(--margin-lg);
@@ -36,6 +36,7 @@ const JourneysCarouselContainer = styled.div`
 const JourneysCarouselWrapper = styled.div`
   max-width: 100%;
   overflow: hidden;
+  margin: var(--margin-xl);
 `;
 interface JourneysProps {
   interest?: Interest[];

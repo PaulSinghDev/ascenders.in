@@ -60,6 +60,7 @@ const MetaInfo = styled.div`
   > span:nth-child(odd) {
     width: 40%;
     font-weight: bold;
+    margin-right: 8px;
   }
   > span:nth-child(even) {
     width: 60%;
@@ -90,7 +91,6 @@ const JourneySection = styled(Section)`
   display: inline-flex;
   margin: auto;
   max-width: 100%;
-  padding: var(--margin-xl);
 `;
 
 const ContentWrapper = styled.div`

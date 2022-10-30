@@ -5,7 +5,7 @@ import Link from "next/link";
 import { SectionHeading } from "../Base/SectionHeading";
 
 const JourneyStaffWrapper = styled.div`
-  padding: calc(var(--padding-lg) * 2);
+  margin: var(--margin-xl);
   border-bottom: 1px solid rba(0, 0, 0, 0.1);
 `;
 

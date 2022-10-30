@@ -33,13 +33,15 @@ interface ImageCtaWithButton extends ImageCtaProps {
 
 const ImageCtaWrapper = styled.div`
   position: relative;
-  width: 100%;
-  padding: 0;
+  max-width: 100%;
+  padding: var(--padding-sm);
+  text-align: center;
   height: 100%;
   max-height: 500px;
   min-height: 300px;
   display: flex;
   border-radius: var(--border-radius-xl);
+  margin: var(--margin-xl);
 `;
 
 const ImageCtaImageWrapper = styled.div`
