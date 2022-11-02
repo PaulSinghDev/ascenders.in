@@ -14,7 +14,7 @@ const AccordionWrapper = styled.div`
   }
 `;
 
-const Content = styled.div<{ height?: number }>`
+const Content = styled.div`
   transition: 0.3s ease;
   overflow: hidden;
   height: 0;
@@ -120,21 +120,26 @@ interface AccordionProps extends AccordionSection {
   id?: string;
 }
 
+type TabRef = {
+  index: number;
+  element: HTMLElement;
+};
+
 const Accordion: React.FC<AccordionProps> = ({
   title,
   description,
   items,
   id,
 }) => {
-  const tabsRef = useRef<any[]>([]);
-  const indRef = useRef<any[]>([]);
+  const tabsRef = useRef<TabRef[]>([]);
+  const indRef = useRef<number[]>([]);
 
   const alterTabs = (newIndexes: number[]) => {
     tabsRef.current.forEach((tab) => {
       tab.element.style.setProperty(
         "height",
         newIndexes.includes(tab.index)
-          ? `${tab.element.firstElementChild.clientHeight}px`
+          ? `${tab?.element?.firstElementChild?.clientHeight}px`
           : "0px"
       );
       tab.element
@@ -182,7 +187,7 @@ const Accordion: React.FC<AccordionProps> = ({
                   ref={(element) => {
                     tabsRef.current[i] = {
                       index: i,
-                      element: element?.parentElement,
+                      element: element?.parentElement as HTMLElement,
                     };
                   }}
                 >
