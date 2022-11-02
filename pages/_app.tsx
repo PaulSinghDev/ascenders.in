@@ -48,6 +48,11 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
       router.events.off("hashChangeStart", handleHashRouteChange);
     };
   }, []);
+
+  if (typeof window !== "undefined") {
+    console.log(`Rendering page ${window?.location?.pathname}`);
+  }
+
   return (
     <>
       <GlobalFonts />

@@ -1,6 +1,6 @@
 import { AccordionSection } from "@/types/data.types";
 import { getIcon } from "utils/getIcon";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import { Button } from "../Base";
@@ -16,8 +16,8 @@ const AccordionWrapper = styled.div`
 
 const Content = styled.div<{ height?: number }>`
   transition: 0.3s ease;
-  height: ${({ height }) => height}px;
   overflow: hidden;
+  height: 0;
 `;
 
 const ContentInner = styled.div`
@@ -54,6 +54,25 @@ const ContentInner = styled.div`
 `;
 
 const AccordionTriggers = styled.div``;
+
+const AccordionTriggerWrapper = styled.div`
+  &[aria-expanded="true"] {
+    button > svg:nth-of-type(1) {
+      display: block;
+    }
+    button > svg:nth-of-type(2) {
+      display: none;
+    }
+  }
+  &[aria-expanded="false"] {
+    button > svg:nth-of-type(1) {
+      display: none;
+    }
+    button > svg:nth-of-type(2) {
+      display: block;
+    }
+  }
+`;
 
 const AccordionTrigger = styled.div`
   margin: calc(var(--margin-sm)) 0;
@@ -107,47 +126,65 @@ const Accordion: React.FC<AccordionProps> = ({
   items,
   id,
 }) => {
-  const [activeDay, setActiveDay] = useState<number | null>(null);
-  // const activeDay = useRef<null | number>(null);
-  const activeDayElement = useRef<null | HTMLDivElement>(null);
+  const tabsRef = useRef<any[]>([]);
+  const indRef = useRef<any[]>([]);
+
+  const alterTabs = (newIndexes: number[]) => {
+    tabsRef.current.forEach((tab) => {
+      tab.element.style.setProperty(
+        "height",
+        newIndexes.includes(tab.index) ? `${tab.height}px` : "0px"
+      );
+      tab.element
+        ?.closest("[aria-expanded]")
+        ?.setAttribute("aria-expanded", `${newIndexes.includes(tab.index)}`);
+    });
+  };
 
   const selectDay: React.MouseEventHandler = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    const newActiveDay = Number(event.currentTarget.dataset.index);
-    setActiveDay(newActiveDay === activeDay ? null : newActiveDay);
-    activeDayElement.current = event.currentTarget.parentElement
-      ?.nextElementSibling?.firstElementChild as HTMLDivElement;
+    const trigger = event.currentTarget;
+    trigger?.setAttribute("disabled", "true");
+    const triggeredIndex = Number(trigger.dataset.index);
+    const newIndexes = indRef.current.includes(triggeredIndex)
+      ? [...indRef.current.filter((index) => index !== triggeredIndex)]
+      : [...indRef.current, triggeredIndex];
+    alterTabs(newIndexes);
+    indRef.current = newIndexes;
+    trigger?.removeAttribute("disabled");
   };
 
   return (
     <AccordionWrapper id={id}>
       <AccordionHeading title={title} copy={description} />
       <div className="container">
-        <div className="nav" />
         <AccordionTriggers>
           {items.map((item, i) => (
-            <div key={Math.random().toString(36).substring(2, 9)}>
+            <AccordionTriggerWrapper
+              key={Math.random().toString(36).substring(2, 9)}
+              data-index={i}
+              aria-expanded="false"
+            >
               <AccordionTrigger>
                 <Button margin="sm" data-index={i} onClick={selectDay}>
                   <AccordionTitleIcon>
                     {item.icon && getIcon(item.icon)}
                     {item.title}
                   </AccordionTitleIcon>
-                  {i !== null && i === activeDay
-                    ? getIcon("minus", 10)
-                    : getIcon("plus", 10)}
+                  {[getIcon("minus", 10), getIcon("plus", 10)]}
                 </Button>
               </AccordionTrigger>
-              <Content
-                style={{
-                  height:
-                    i !== null && i === activeDay
-                      ? activeDayElement.current?.clientHeight
-                      : 0,
-                }}
-              >
-                <ContentInner ref={i === activeDay ? activeDayElement : null}>
+              <Content>
+                <ContentInner
+                  ref={(element) => {
+                    tabsRef.current[i] = {
+                      height: element?.clientHeight,
+                      index: i,
+                      element: element?.parentElement,
+                    };
+                  }}
+                >
                   <ReactMarkdown
                     key={Math.random().toString(36).substring(2, 9)}
                   >
@@ -155,7 +192,7 @@ const Accordion: React.FC<AccordionProps> = ({
                   </ReactMarkdown>
                 </ContentInner>
               </Content>
-            </div>
+            </AccordionTriggerWrapper>
           ))}
         </AccordionTriggers>
       </div>
