@@ -133,7 +133,9 @@ const Accordion: React.FC<AccordionProps> = ({
     tabsRef.current.forEach((tab) => {
       tab.element.style.setProperty(
         "height",
-        newIndexes.includes(tab.index) ? `${tab.height}px` : "0px"
+        newIndexes.includes(tab.index)
+          ? `${tab.element.firstElementChild.clientHeight}px`
+          : "0px"
       );
       tab.element
         ?.closest("[aria-expanded]")
@@ -179,7 +181,6 @@ const Accordion: React.FC<AccordionProps> = ({
                 <ContentInner
                   ref={(element) => {
                     tabsRef.current[i] = {
-                      height: element?.clientHeight,
                       index: i,
                       element: element?.parentElement,
                     };
