@@ -49,7 +49,7 @@ const Slide = styled.div`
   flex-shrink: 0;
   flex-basis: 100%;
   border-radius: var(--border-radius-xl);
-  overflow: hidden;
+  position: relative;
   > span {
     min-width: 100%;
     width: 100%;
@@ -205,10 +205,9 @@ const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
             {images.map((image) => (
               <Slide key={Math.random().toString(36).substring(2, 7)}>
                 <Image
+                  loading="eager"
                   src={image.src}
-                  height={300}
-                  width={400}
-                  layout="fixed"
+                  layout="fill"
                   alt={image.alt}
                 />
               </Slide>
