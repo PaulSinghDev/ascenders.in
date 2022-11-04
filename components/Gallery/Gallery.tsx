@@ -38,7 +38,6 @@ const Slides = styled.div<{ slide: number }>`
   transition: 0.3s ease-in-out;
   transform: translateX(calc(-100% * ${({ slide }) => slide}));
   min-width: 100%;
-  border-radius: var(--border-radius-xl);
 `;
 
 const Slide = styled.div`
@@ -50,7 +49,7 @@ const Slide = styled.div`
   flex-shrink: 0;
   flex-basis: 100%;
   border-radius: var(--border-radius-xl);
-
+  overflow: hidden;
   > span {
     min-width: 100%;
     width: 100%;
