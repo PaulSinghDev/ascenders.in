@@ -48,7 +48,7 @@ const StyledHeader = styled.header`
   padding: calc(var(--padding-lg) * 2);
   display: flex;
   flex-direction: column;
-  background-image: url("/assets/images/journeys/galleries/deoria-tal-chadrishila/chandrashilla-peak.jpg");
+  background-image: url("/assets/images/galleries/deoria-tal-chadrishila/chandrashilla-peak.jpg");
   background-size: cover;
   background-position: center;
   justify-content: flex-end;
