@@ -38,6 +38,7 @@ const Slides = styled.div<{ slide: number }>`
   transition: 0.3s ease-in-out;
   transform: translateX(calc(-100% * ${({ slide }) => slide}));
   min-width: 100%;
+  border-radius: var(--border-radius-xl);
 `;
 
 const Slide = styled.div`
