@@ -47,10 +47,10 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
       router.events.off("routeChangeStart", handleRouteChange);
       router.events.off("hashChangeStart", handleHashRouteChange);
     };
-  }, []);
+  }, [router.events]);
 
   if (typeof window !== "undefined") {
-    console.log(`Rendering page ${window?.location?.pathname}`);
+    console.info(`Rendering page ${window?.location?.pathname}`);
   }
 
   return (

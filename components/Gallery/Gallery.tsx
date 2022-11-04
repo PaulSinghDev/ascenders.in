@@ -26,10 +26,9 @@ const SlidesWrapper = styled.div`
   max-width: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  border-radius: var(--border-radius-xl);
   @media screen and (min-width: 700px) {
     margin-bottom: 0;
-    border-radius: var(--border-radius-xl) 0 0 var(--border-radius-xl);
     width: 50%;
   }
 `;
@@ -124,7 +123,6 @@ const NavButtons = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  background-color: var(--light-grey);
   padding: var(--padding-lg);
   text-align: center;
   margin: 0 0 calc(var(--margin-lg) * 2) 0;
@@ -134,7 +132,7 @@ const ContentWrapper = styled.div`
   @media screen and (min-width: 700px) {
     margin-bottom: 0;
     border-radius: 0 var(--border-radius-xl) var(--border-radius-xl) 0;
-      width: 50%;
+    width: 50%;
   }
 `;
 
@@ -186,11 +184,13 @@ const ContentContainer = styled.div`
 `;
 
 const SliderContainer = styled.div`
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius-xl);
   @media screen and (min-width: 700px) {
     display: flex;
     height: 400px;
   }
-`
+`;
 
 const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
   const [activeSlide, setActiveSlide] = useState<number>(0);

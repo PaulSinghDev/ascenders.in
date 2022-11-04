@@ -23,10 +23,12 @@ const PersonCard = styled.div`
   align-self: flex-start;
   flex-grow: 1;
   max-width: 600px;
+  margin-top: 0;
 
   @media screen and (min-width: 1256px) {
     position: sticky;
     top: 70px;
+    margin-top: calc(var(--margin-xl) * 2);
   }
 `;
 
@@ -69,6 +71,13 @@ const MetaInfo = styled.div`
   a {
     text-decoration: underline;
     text-underline-offset: 3px;
+    text-decoration-color: var(--blue);
+    text-decoration-thickness: 3px;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: var(--blue);
+      color: var(--light);
+    }
   }
 `;
 
@@ -91,6 +100,9 @@ const JourneySection = styled(Section)`
   display: inline-flex;
   margin: auto;
   max-width: 100%;
+  @media screen and (min-width: 800px) {
+    margin: auto var(--margin-xl);
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -148,10 +160,6 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
             <Image src={image.src} layout="fill" alt={`Image of ${name}`} />
           </ImageWrapper>
           <MetaWrapper>
-            <MetaInfo>
-              <span>Name:</span>
-              <span>{`${name}`}</span>
-            </MetaInfo>
             <MetaInfo>
               <span>Top Place:</span>
               <span>

@@ -11,7 +11,6 @@ const StyledHeader = styled.header<{ type?: string; backgroundImg?: string }>`
         margin: var(--margin-xl) var(--margin-lg);
         min-height: ${type === "hero" ? "calc(var(--vh) * 100)" : "600px"};
         background-color: var(--light-teal);
-        padding: calc(var(--padding-lg) * 2);
         display: flex;
         flex-direction: column;
         background-image: url("${
@@ -24,48 +23,58 @@ const StyledHeader = styled.header<{ type?: string; backgroundImg?: string }>`
         z-index: 0;
         border-radius: 40px;
         overflow: hidden;
-        
-        &::before {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          content: "";
-          backdrop-filter: blur(1px) brightness(0.5);
-          z-index: -1;
-        }
         `;
   }}
 `;
 
 const PdpHeaderWrapper = styled.div`
+  padding: calc(var(--padding-lg) * 2);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
-
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    z-index: -1;
+    background-image: linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(0, 0, 0, 0.9) 70%
+    );
+  }
 `;
 
 const TitleWrapper = styled.div`
   text-align: center;
   margin-top: auto;
-  margin-bottom: auto;
   h1 {
     color: var(--light);
-    font-weight: 400;
-    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.7rem;
     letter-spacing: 1px;
     position: relative;
+    text-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.4);
   }
   > span {
-    padding-top: var(--padding-lg);
+    padding-top: var(--padding-sm);
     display: block;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 400;
     color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: var(--blue);
+    text-decoration-thickness: 4px;
   }
 `;
 
@@ -74,7 +83,7 @@ const IconsWrapper = styled.div`
   color: #fff;
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: calc(var(--margin-xl) * 2);
 `;
 
@@ -83,6 +92,13 @@ const HeaderIcon = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 0 var(--margin-lg);
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
   svg {
     width: 30px;
   }

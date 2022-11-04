@@ -179,7 +179,10 @@ const Accordion: React.FC<AccordionProps> = ({
                     {item.icon && getIcon(item.icon)}
                     {item.title}
                   </AccordionTitleIcon>
-                  {[getIcon("minus", 10), getIcon("plus", 10)]}
+                  <>
+                    {getIcon("minus", 10)}
+                    {getIcon("plus", 10)}
+                  </>
                 </Button>
               </AccordionTrigger>
               <Content>

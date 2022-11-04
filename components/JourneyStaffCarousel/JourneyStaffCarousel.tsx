@@ -104,8 +104,6 @@ const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => (
             >
               <JourneyStaffThumb>
                 <Image
-                  width={200}
-                  height={200}
                   layout="fill"
                   alt={person.image.alt}
                   src={person.image.src}

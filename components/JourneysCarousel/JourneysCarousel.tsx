@@ -50,6 +50,7 @@ interface JourneysProps {
   showAll?: boolean;
   overrideJourneys?: Journey[];
   description?: string[];
+  className?: string;
 }
 
 const JourneysCarousel: React.FC<JourneysProps> = ({
@@ -61,12 +62,13 @@ const JourneysCarousel: React.FC<JourneysProps> = ({
   showAll,
   overrideJourneys,
   description,
+  className,
 }) => {
   const related = !interest
     ? null
     : getRelatedJourneys(interest, location, level);
   return (
-    <JourneysCarouselWrapper>
+    <JourneysCarouselWrapper className={className}>
       {disabledHeading ? null : (
         <JourneyHeading>
           <h2>{title || "Journeys"}</h2>

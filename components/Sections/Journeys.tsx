@@ -38,7 +38,10 @@ const StyledHeading = styled.div`
 const StyledJourneysWrapper = styled.div`
   display inline-flex;
   max-width: 100%;
+`;
 
+const StyledJourneyCarousel = styled(JourneysCarousel)`
+  margin: var(--margin-lg);
 `;
 
 const JourneysSection: React.FC = () => (
@@ -51,7 +54,7 @@ const JourneysSection: React.FC = () => (
       </Link>
     </StyledHeading>
     <StyledJourneysWrapper>
-      <JourneysCarousel showAll disabledHeading />
+      <StyledJourneyCarousel showAll disabledHeading />
     </StyledJourneysWrapper>
   </StyledSection>
 );

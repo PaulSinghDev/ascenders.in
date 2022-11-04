@@ -13,7 +13,6 @@ interface InterestPageProps extends Interest {
 
 const GridWrapper = styled.div`
   border-radius: var(--border-radius-xl);
-  margin: var(--margin-xl);
 
   > div:first-child {
     margin: 0;

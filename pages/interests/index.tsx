@@ -18,18 +18,17 @@ const InterestCard = styled.div`
   border-radius: var(--border-radius-md);
   overflow: hidden;
   background-color: var(--light);
-  max-width: 90%;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   margin: 14px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  flex-grow: 1;
+  flex-grow: 0;
   display: block;
   position: relative;
-  width: 90%;
-  max-width: 500px;
+  width: 300px;
+  max-width: 90%;
   min-width: 200px;
   height: 300px;
 
