@@ -14,7 +14,13 @@ const HealWrapper = styled.main`
 `;
 
 const HealSection = styled(Section)`
-  margin: var(--margin-xl);
+  margin-top: 0;
+  margin-left: var(--margin-xl);
+  margin-right: var(--margin-xl);
+  @media screen and (min-width: 800px) {
+    margin-left: calc(var(--margin-xl) * 2);
+    margin-right: calc(var(--margin-xl) * 2);
+  }
 `;
 
 const AboutHeal: React.FC = () => (
@@ -34,47 +40,49 @@ const AboutHeal: React.FC = () => (
         ]}
       />
     </HealSection>
-    <HealBlock
-      title="What is HEAL?"
-      subtitle="The following are basic principles of the HEAL philosophy"
-      heal={{
-        h: {
-          title: "HEALTH",
-          copy: [
-            "Hatha yoga",
-            "Dhanya classes",
-            "Sattvic food",
-            "Ayurveda lectures",
-            "Enrichment programs",
-          ],
-        },
-        e: {
-          title: "EARTH",
-          copy: [
-            "Exploration and conservation of EArth's beauty",
-            "Environmental awareness",
-          ],
-        },
-        a: {
-          title: "ADVENTURE",
-          copy: [
-            "Camping",
-            "trekking",
-            "Photography",
-            "Homestay",
-            "Himalayan Life",
-          ],
-        },
-        l: {
-          title: "LOVE",
-          copy: [
-            "A loving journey full of festivities",
-            "Celebrations",
-            "Togetherness",
-          ],
-        },
-      }}
-    />
+    <Section>
+      <HealBlock
+        title="What is HEAL?"
+        subtitle="The following are basic principles of the HEAL philosophy"
+        heal={{
+          h: {
+            title: "HEALTH",
+            copy: [
+              "Hatha yoga",
+              "Dhanya classes",
+              "Sattvic food",
+              "Ayurveda lectures",
+              "Enrichment programs",
+            ],
+          },
+          e: {
+            title: "EARTH",
+            copy: [
+              "Exploration and conservation of EArth's beauty",
+              "Environmental awareness",
+            ],
+          },
+          a: {
+            title: "ADVENTURE",
+            copy: [
+              "Camping",
+              "trekking",
+              "Photography",
+              "Homestay",
+              "Himalayan Life",
+            ],
+          },
+          l: {
+            title: "LOVE",
+            copy: [
+              "A loving journey full of festivities",
+              "Celebrations",
+              "Togetherness",
+            ],
+          },
+        }}
+      />
+    </Section>
     <Gallery
       images={[
         {

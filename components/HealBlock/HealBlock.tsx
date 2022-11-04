@@ -1,7 +1,6 @@
 import { HealOverview } from "types/data.types";
 import styled from "styled-components";
 import Image from "next/image";
-import { Section } from "components/Base/Section";
 import Link from "next/link";
 
 const HealCard = styled.div`
@@ -10,6 +9,9 @@ const HealCard = styled.div`
   background-color: var(--light-grey);
   border-radius: var(--border-radius-lg);
   max-width: 600px;
+  @media screen and (min-width: 800px) {
+    margin-right: 0;
+  }
 `;
 
 const HealHeading = styled.div`
@@ -75,9 +77,9 @@ const HealContent = styled.div`
   }
 `;
 
-const HealSection = styled(Section)`
+const HealSection = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 
 const HealDescription = styled.div`

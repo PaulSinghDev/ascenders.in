@@ -94,6 +94,9 @@ const TeamMemberSection = styled(Section)`
       display: none;
     }
   }
+  @media screen and (min-width: 800px) {
+    margin: calc(var(--margin-xl) * 4) var(--margin-xl);
+  }
 `;
 
 const JourneySection = styled(Section)`
@@ -142,7 +145,7 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
   const memberJourneys = journeys.filter((journey) =>
     journey.staff.find((member) => member.slug === slug)
   );
-  console.log(memberJourneys);
+
   return (
     <Main role="main">
       <Head>

@@ -16,7 +16,7 @@ const JourneyHeading = styled.div`
   p {
     font-size: 16px;
     color: var(--dark-blue);
-    max-width: 500px;
+    max-width: 700px;
     line-height: 1.9;
   }
 `;
