@@ -48,6 +48,7 @@ const Slide = styled.div`
   width: 100%;
   flex-shrink: 0;
   flex-basis: 100%;
+  border-radius: var(--border-radius-xl);
 
   > span {
     min-width: 100%;
