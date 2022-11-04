@@ -33,10 +33,9 @@ const SlidesWrapper = styled.div`
   }
 `;
 
-const Slides = styled.div<{ slide: number }>`
+const Slides = styled.div`
   display: flex;
   transition: 0.3s ease-in-out;
-  transform: translateX(calc(-100% * ${({ slide }) => slide}));
   min-width: 100%;
 `;
 
@@ -201,7 +200,9 @@ const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
       <SectionHeading title="Gallery" />
       <SliderContainer>
         <SlidesWrapper>
-          <Slides slide={activeSlide}>
+          <Slides
+            style={{ transform: `translateX(calc(-100% * ${activeSlide}))` }}
+          >
             {images.map((image) => (
               <Slide key={Math.random().toString(36).substring(2, 7)}>
                 <Image
@@ -217,14 +218,18 @@ const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
           <NavButtons>
             <Button
               margin="sm"
-              onClick={() => setActiveSlide(activeSlide - 1)}
+              onClick={() => {
+                setActiveSlide(activeSlide - 1);
+              }}
               disabled={activeSlide === 0}
             >
               <BsArrowLeft size={30} />
             </Button>
             <Button
               margin="sm"
-              onClick={() => setActiveSlide(activeSlide + 1)}
+              onClick={() => {
+                setActiveSlide(activeSlide + 1);
+              }}
               disabled={activeSlide === images.length - 1}
             >
               <BsArrowRight size={30} />

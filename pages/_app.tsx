@@ -53,6 +53,7 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
     console.info(`Rendering page ${window?.location?.pathname}`);
   }
 
+  console.log("app");
   return (
     <>
       <GlobalFonts />
