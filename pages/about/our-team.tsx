@@ -1,14 +1,15 @@
 import { Accordion } from "@/components/Accordion/Accordion";
+import Meta from "@/components/Base/Meta";
 import { Header } from "components/Header";
-import Head from "next/head";
 
 const OurTime: React.FC<{}> = () => (
   <main role="main">
-    <Head>
-      <title>Our Team | Ascenders</title>
-      <meta name="description" content="Our Team | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="About Our Team | Ascenders"
+      description="About Our Team | Ascenders"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/about/our-team`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="Our Team"

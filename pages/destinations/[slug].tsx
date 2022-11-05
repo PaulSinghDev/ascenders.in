@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { Destination, Journey } from "types/data.types";
 import { getRelatedJourneys } from "services/journey.service";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
-import Head from "next/head";
+import Meta from "@/components/Base/Meta";
 
 interface DestinationPageProps extends Destination {
   journeys: Journey[];
@@ -13,13 +13,15 @@ interface DestinationPageProps extends Destination {
 const DestinationPage: React.FC<DestinationPageProps> = ({
   title,
   journeys,
+  slug,
 }) => (
   <main role="main">
-    <Head>
-      <title>{`Journeys in ${title} | Ascenders`}</title>
-      <meta name="description" content={`Journeys in ${title} | Ascenders`} />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title={`Journeys in ${title} | Ascenders`}
+      description={`Journeys in ${title} | Ascenders`}
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/destinations/${slug}`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading={title}

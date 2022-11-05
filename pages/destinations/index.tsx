@@ -1,10 +1,10 @@
 import { Header } from "@/components/Header";
 import { destinations } from "data/destinations";
-import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { getRelatedJourneys } from "services/journey.service";
+import Meta from "@/components/Base/Meta";
 
 const DestinationsWrapper = styled.div`
   padding: var(--padding-lg);
@@ -117,11 +117,12 @@ const DestinationsGrid = styled.div`
 
 const DestinationsPage: React.FC = () => (
   <main role="main">
-    <Head>
-      <title>Destinations | Ascenders</title>
-      <meta name="description" content="Destinations | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Destinations | Ascenders"
+      description="Destinations | Ascenders"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/destinations`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="All Destinations"

@@ -1,8 +1,8 @@
 import { Header } from "@/components/Header";
 import { journeys } from "data/journeys";
-import Head from "next/head";
 import styled from "styled-components";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
+import Meta from "@/components/Base/Meta";
 
 const StyledJourneysWrapper = styled.div`
   display flex;
@@ -14,11 +14,12 @@ const StyledJourneysWrapper = styled.div`
 
 const JourneysPage: React.FC = () => (
   <main role="main">
-    <Head>
-      <title>Journeys | Ascenders</title>
-      <meta name="description" content="Journeys | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Journeys | Ascenders | Go Beyond | H.E.A.L"
+      description="Journeys | H.E.A.L"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/journeys`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="All Journeys"

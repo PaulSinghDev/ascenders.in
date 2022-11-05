@@ -1,7 +1,7 @@
+import Meta from "@/components/Base/Meta";
 import { Gallery } from "@/components/Gallery/Gallery";
 import { Interests } from "@/components/Sections/Interests";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { Header, JourneysSection, WhyTravelWithUs } from "../components";
 import { GalleryImage } from "../types";
 
@@ -62,11 +62,12 @@ const gallery: GalleryImage[] = [
 
 const Home: NextPage = () => (
   <main role="main">
-    <Head>
-      <title>Home | Ascenders | Go Beyond | H.E.A.L</title>
-      <meta name="description" content="Ascenders | H.E.A.L" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Home | Ascenders | Go Beyond | H.E.A.L"
+      description="Ascenders | H.E.A.L"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}`}
+      favicon="/favicon.ico"
+    />
     <Header type="hero" pageType="home" />
     <WhyTravelWithUs />
     <JourneysSection />

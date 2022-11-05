@@ -1,10 +1,10 @@
 import { Header } from "@/components/Header";
 import { interests } from "data/interests";
-import Head from "next/head";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { getRelatedJourneys } from "services/journey.service";
+import Meta from "@/components/Base/Meta";
 
 const InterestsWrapper = styled.div`
   padding: var(--padding-lg);
@@ -120,11 +120,12 @@ const InterestsGrid = styled.div`
 
 const InterestsPage: React.FC = () => (
   <main role="main">
-    <Head>
-      <title>Interests | Ascenders</title>
-      <meta name="description" content="Interests | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Interests | Ascenders"
+      description="Interests | Ascenders"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/interests`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="All Interests"

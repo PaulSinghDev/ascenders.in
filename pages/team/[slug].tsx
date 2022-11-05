@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Staff } from "types/data.types";
-import Head from "next/head";
 import { staff } from "data/staff";
 import Image from "next/image";
 import { Section } from "@/components/Base/Section";
@@ -10,6 +9,7 @@ import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import { journeys } from "data";
 import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
+import Meta from "@/components/Base/Meta";
 
 interface TeamMemberPageProps extends Staff {}
 
@@ -148,14 +148,12 @@ const TeamMemberPage: React.FC<TeamMemberPageProps> = ({
 
   return (
     <Main role="main">
-      <Head>
-        <title>{`About ${name} | ${role.label} | Staff | Ascenders | Go Beyond | H.E.A.L`}</title>
-        <meta
-          name="description"
-          content={`About ${name} | ${role} | Staff | Ascenders | Go Beyond | H.E.A.L`}
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta
+        title={`About ${name} | ${role.label} | Staff | Ascenders | Go Beyond | H.E.A.L`}
+        description={`About ${name} | ${role.label} | Staff | Ascenders | Go Beyond | H.E.A.L`}
+        url={`${process.env.NEXT_PUBLIC_BASE_URL}/team/${slug}`}
+        favicon="/favicon.ico"
+      />
       <TeamMemberSection>
         <Header pageType="info" heading={name} />
         <PersonCard>

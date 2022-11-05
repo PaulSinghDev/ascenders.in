@@ -1,8 +1,8 @@
+import Meta from "@/components/Base/Meta";
 import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
 import { Header } from "components/Header";
 import { journeys as journeyData } from "data";
 import { GetServerSideProps } from "next";
-import Head from "next/head";
 import { Journey } from "../types";
 
 const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
@@ -10,14 +10,12 @@ const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
   searchTerm,
 }) => (
   <main role="main">
-    <Head>
-      <title>{`You searched for '${searchTerm}' | Ascenders`}</title>
-      <meta
-        name="description"
-        content={`You searched for '${searchTerm}' | Ascenders`}
-      />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      favicon="/favicon.ico"
+      title={`You searched for '${searchTerm}' | Ascenders`}
+      description={`You searched for '${searchTerm}' | Ascenders`}
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/search`}
+    />
     <Header
       pageType="info"
       heading={`You searched for '${searchTerm}'`}

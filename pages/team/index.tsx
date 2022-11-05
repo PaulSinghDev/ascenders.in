@@ -1,11 +1,11 @@
 import { Header } from "components/Header";
-import Head from "next/head";
 import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
 import { staff } from "data/staff";
 import { SectionHeading } from "@/components/Base/SectionHeading";
 import { Section } from "@/components/Base/Section";
+import Meta from "@/components/Base/Meta";
 
 const TeamWrapper = styled(Section)`
   margin:  var(--margin-xl);
@@ -128,11 +128,12 @@ const TeamHeading = styled(SectionHeading)`
 
 const OurTeam: React.FC<{}> = () => (
   <main role="main">
-    <Head>
-      <title>Our Team | Ascenders</title>
-      <meta name="description" content="Our Team | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Our Team | Ascenders | Go Beyond | H.E.A.L"
+      description="Our Team | H.E.A.L"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/team`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="Our Team"

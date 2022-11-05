@@ -1,15 +1,16 @@
 import { Accordion } from "@/components/Accordion/Accordion";
 import { Header } from "components/Header";
-import Head from "next/head";
 import { terms } from "data/terms";
+import Meta from "@/components/Base/Meta";
 
 const TermsConditions: React.FC<{}> = () => (
   <main role="main">
-    <Head>
-      <title>Terms & Conditions | Ascenders</title>
-      <meta name="description" content="Terms & Conditions | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="Terms & Conditions | Ascenders"
+      description="Terms & Conditions | Ascenders"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/about/terms-conditions`}
+      favicon="/favicon.ico"
+    />
     <Header
       pageType="info"
       heading="Terms and Conditions"

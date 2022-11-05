@@ -8,11 +8,11 @@ import { Text } from "components/Base";
 import { Header } from "components/Header";
 import { journeys } from "data";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
 import { Journey } from "types/data.types";
 import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel";
 import { Section } from "@/components/Base/Section";
 import styled from "styled-components";
+import Meta from "@/components/Base/Meta";
 
 const testLinks = [
   { label: "Overview", url: "#overview", title: "Skip to the overview" },
@@ -70,14 +70,12 @@ const JourneyPage: React.FC<Journey> = ({
   overviewBullets,
 }) => (
   <main role="main">
-    <Head>
-      <title>{`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}</title>
-      <meta
-        name="description"
-        content={`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}
-      />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title={`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}
+      description={`${title} | Journeys | Ascenders | Go Beyond | H.E.A.L`}
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/journeys`}
+      favicon="/favicon.ico"
+    />
     <Header
       type="hero"
       pageType="pdp"

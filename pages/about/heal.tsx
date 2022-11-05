@@ -2,8 +2,8 @@ import { Section } from "@/components/Base/Section";
 import { Gallery } from "@/components/Gallery/Gallery";
 import { ImageCta } from "@/components/ImageCta/ImageCta";
 import { HealBlock } from "@/components/HealBlock/HealBlock";
-import Head from "next/head";
 import styled from "styled-components";
+import Meta from "@/components/Base/Meta";
 import { Header, Text } from "../../components";
 
 const HealWrapper = styled.main`
@@ -25,11 +25,12 @@ const HealSection = styled(Section)`
 
 const AboutHeal: React.FC = () => (
   <HealWrapper>
-    <Head>
-      <title>About HEAL | Ascenders</title>
-      <meta name="description" content="About HEAL | Ascenders" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <Meta
+      title="About HEAL | Ascenders"
+      description="About HEAL | Ascenders"
+      url={`${process.env.NEXT_PUBLIC_BASE_URL}/about/heal`}
+      favicon="/favicon.ico"
+    />
     <Header pageType="info" heading="About HEAL" />
     <HealSection>
       <Text
