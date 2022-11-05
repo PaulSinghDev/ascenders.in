@@ -1,5 +1,8 @@
 import { SocialData } from "types";
 
+// https://twitter.com/intent/follow?screen_name=ascenders_in
+// https://www.facebook.com/sharer/sharer.php?u=#url
+
 export const socialData: SocialData = {
   twitter: {
     url: "https://twitter.com/ascenders_in",

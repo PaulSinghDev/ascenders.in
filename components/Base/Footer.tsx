@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { SocialIcons } from "../SocialIcons";
 
 const StyledFooter = styled.footer`
   background-color: var(--light-grey);
@@ -24,7 +25,8 @@ const StyledFooterColumn = styled.div`
   flex-grow: 1;
   margin: 8px;
   flex-basis: 150px;
-  > h4 {
+  > h2 {
+    font-size: 16px;
     color: var(--orange);
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -41,7 +43,7 @@ const Footer: React.FC = () => (
   <StyledFooter>
     <StyledFooterContainer>
       <StyledFooterColumn>
-        <h4>Find a Journey</h4>
+        <h2>Find a Journey</h2>
         <ul>
           <li>
             <Link href="/journeys" title="View our journeys">
@@ -51,7 +53,7 @@ const Footer: React.FC = () => (
         </ul>
       </StyledFooterColumn>
       <StyledFooterColumn>
-        <h4>Support</h4>
+        <h2>Support</h2>
         <ul>
           <li>
             <Link href="tel:+919536017975" title="Call us on +91 9536017975">
@@ -74,7 +76,7 @@ const Footer: React.FC = () => (
         </ul>
       </StyledFooterColumn>
       <StyledFooterColumn>
-        <h4>Company</h4>
+        <h2>Company</h2>
         <ul>
           <li>
             <Link href="/about" title="View our about us page">
@@ -97,7 +99,8 @@ const Footer: React.FC = () => (
         </ul>
       </StyledFooterColumn>
       <StyledFooterColumn>
-        <h4>Follow Us</h4>
+        <h2>Follow Us</h2>
+        <SocialIcons />
       </StyledFooterColumn>
     </StyledFooterContainer>
   </StyledFooter>

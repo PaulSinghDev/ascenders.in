@@ -5,17 +5,18 @@ import { IconType } from "react-icons";
 import Link from "next/link";
 import { SocialData } from "types";
 
-const StyledSocialIcons = styled.div`
-  margin: 1.5rem 0;
-
+const StyledSocialIcons = styled.div<{ theme: string }>`
   ul {
     display: flex;
 
     li {
-      margin: 0 0.5rem;
       transition: 0.3s ease;
       display: inline-flex;
       border-radius: 5px;
+      padding: var(--padding-sm);
+      cursor: pointer;
+      color: ${({ theme }) =>
+        theme === "light" ? "var(--light)" : "var(--dark-blue)"};
 
       > a {
         padding: 0.5rem;
@@ -26,6 +27,7 @@ const StyledSocialIcons = styled.div`
 
       &:hover {
         background-color: var(--blue);
+        color: var(--light);
       }
     }
   }
@@ -44,8 +46,10 @@ const getNetworkIcon = (name: string): IconType => {
   }
 };
 
-export const SocialIcons: React.FC = () => (
-  <StyledSocialIcons>
+export const SocialIcons: React.FC<{ theme?: "light" | "dark" }> = ({
+  theme,
+}) => (
+  <StyledSocialIcons theme={theme}>
     <ul>
       {Object.keys(socialData).map((network) => {
         const Icon = getNetworkIcon(network);
@@ -60,7 +64,7 @@ export const SocialIcons: React.FC = () => (
               href={socialData[network as keyof SocialData].url}
               passHref
             >
-              <Icon size={30} color="var(--light)" />
+              <Icon size={30} />
             </Link>
           </li>
         );
