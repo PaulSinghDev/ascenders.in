@@ -94,7 +94,7 @@ const AboutHeal: React.FC = () => (
             "This is a description of this image",
             "This is a description of this image",
           ],
-          interest: ["trekking", "camping"],
+          tags: ["trekking", "camping"],
         },
         {
           src: "/assets/images/random/young-boy-laughing.jpeg",
@@ -104,7 +104,7 @@ const AboutHeal: React.FC = () => (
             "This is a description of this image",
             "This is a description of this image",
           ],
-          interest: ["trekking", "camping"],
+          tags: ["trekking", "camping"],
         },
       ]}
     />

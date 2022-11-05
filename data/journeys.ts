@@ -28,7 +28,7 @@ const journeys: Journey[] = [
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/sari-village.jpg",
         title: "Sari Village",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         alt: "Green fields within a mountain range",
         description: [
           "This is where the adventuresome HEAL journey begins - Sari village.",
@@ -37,7 +37,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/devariya-lake-trek.jpg",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         title: "Devariya Lake Trek",
         alt: "A bustling green forest on the Devariya Lake path",
         description: [
@@ -47,7 +47,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/devariya-tal.jpg",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         title: "Devariya Tal Lake",
         alt: "Teh Devariya Tal lake with a field beside it",
         description: [
@@ -56,7 +56,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/devariya-tal-2.jpg",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         title: "Devariya Tal Lake",
         alt: "Teh Devariya Tal lake surrounded by trees",
         description: [
@@ -67,7 +67,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/devariya-tal-3.jpg",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         title: "Devariya Tal Lake",
         alt: "Teh Devariya Tal lake shot from an angle showing mountain tips in the background",
         description: [
@@ -77,7 +77,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/rohini-bugyal.jpg",
-        interest: ["trekking", "sightseeing"],
+        tags: ["trekking", "sightseeing"],
         title: "Rohini Bugyal",
         alt: "A person sat on top of a stone which is on top of the Rohini Bigyal mountain",
         description: [
@@ -87,7 +87,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/chopta.jpg",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         title: "Chopta",
         alt: "A person walking in a deep snowy path",
         description: [
@@ -97,7 +97,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/tungnath-winter-trek.jpg",
-        interest: ["trekking", "sightseeing", "mountains", "snow"],
+        tags: ["trekking", "sightseeing", "mountains", "snow"],
         title: "Tungnath Winter Trek",
         alt: "A deep snowy path in the mountains",
         description: [
@@ -107,7 +107,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/tungnath-temple.jpg",
-        interest: ["trekking", "sightseeing", "mountains", "snow", "temples"],
+        tags: ["trekking", "sightseeing", "mountains", "snow", "temples"],
         title: "Tunganth Temple",
         alt: "A snow covered Tungnath temple with a person standing next to it",
         description: [
@@ -117,7 +117,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/chandrashilla-peak.jpg",
-        interest: ["trekking", "sightseeing", "mountains", "snow", "sunrise"],
+        tags: ["trekking", "sightseeing", "mountains", "snow", "sunrise"],
         title: "Chandrishila Peak",
         alt: "The sun rising over the horizon while a person looks at it over the mountain peak",
         description: [
@@ -126,7 +126,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/pathless-descent.jpg",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         title: "Pathless Descent",
         alt: "A person walking down a pathless trail",
         description: [
@@ -136,7 +136,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/shaneshwar-temple.jpg",
-        interest: ["trekking", "sightseeing", "temples"],
+        tags: ["trekking", "sightseeing", "temples"],
         title: "Shaneshwar Temple",
         alt: "A temple made with old large stones",
         description: [
@@ -146,7 +146,7 @@ const journeys: Journey[] = [
       },
       {
         src: "/assets/images/galleries/deoria-tal-chadrishila/rishikesh-ganga.jpg",
-        interest: ["trekking", "sightseeing", "rivers"],
+        tags: ["trekking", "sightseeing", "rivers"],
         title: "Rishikesh Ganga",
         alt: "Large stones by the side of the river Ganga",
         description: [
@@ -406,7 +406,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal.jpg",
         title: "Ali Bugyal",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Three people standing on the top of a mountain",
         description: [
           "At 3500 meters, India's most beautiful meadow lies beneath the icy summits of the world's highest mountains.",
@@ -416,7 +416,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal-morning.jpg",
         title: "Sunrise",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Golden sunlight shining on snowcapped mountains",
         description: [
           "Golden rays of dawn pierce the crowns of snow-covered peaks in the early morning hours.",
@@ -426,7 +426,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal-sunset.jpg",
         title: "Sunset",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Orange sunlight crowning distant mountains",
         description: [
           "Seeing the sun paint the tops of the peaks pink and orange in the evening is a magical experience for nature lovers.",
@@ -435,7 +435,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal-ridgelines.jpg",
         title: "Ridgelines",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Long shot from the top of a snowy mountain",
         description: [
           "The sheer grandeur of this vast grassland surrounded by stunning ridgelines creates a serene Himalayan landscape. Although no camera can capture the full magnitude and sublimity of the great Himalayas.",
@@ -444,7 +444,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal-top.jpg",
         title: "Mt. Trishul",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Dirt path leading to the top of Mt. Trishul",
         description: [
           "This is the beauty point of the meadow that offers an incredible landscape of the region.",
@@ -453,7 +453,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/chaukhamba.jpg",
         title: "Icy Summits",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Snow capped mountains at sunset",
         description: [
           "This meadow offers views of icy, towering mountains.",
@@ -463,7 +463,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/roopkund-lake.jpg",
         title: "Snow Blanketed",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Bright sunlight, clear blue sky and mountain tops",
         description: [
           "The snow blankets the green grassland during the winter months between October and March, burying the paths under snow and making the trek more difficult.",
@@ -472,7 +472,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/icy-desert.jpg",
         title: "Icy Desert",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Footprints in the snow with a clouded sun",
         description: [
           "One's heart pumps out of thrill when regular paths of the meadow are buried by snowfall and there is no certainty to reach the destination but that's what adds thrills to the journey.",
@@ -481,7 +481,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/ali-bugyal-campsite.jpg",
         title: "Boundless Accommodation",
-        interest: ["trekking", "sightseeing", "mountains"],
+        tags: ["trekking", "sightseeing", "mountains"],
         alt: "Autumnal grass on a mountain top",
         description: [
           "No other place can compare to the feeling of a campsite in the middle of the wilderness.",
@@ -491,7 +491,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
       {
         src: "/assets/images/galleries/ali-bedni-bugyal/forest.jpg",
         title: "The Scent and Stillness",
-        interest: ["trekking", "sightseeing", "mountains", "forests"],
+        tags: ["trekking", "sightseeing", "mountains", "forests"],
         alt: "Two people hiking in a snowy forest",
         description: [
           "In this jungle, your senses are completely seized by the sublime taste of stillness and the smell of the soothing aroma. Sunlight beams cutting through the trees create a dramatic scene of highlights and shadows.",
@@ -683,7 +683,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
         src: "/assets/images/galleries/kedarnath-yatra/brahma-kamal.jpg",
         title: "Brahma Flower",
         alt: "Close up picture of a brahma flower",
-        interest: ["trekking", "nature"],
+        tags: ["trekking", "nature"],
         description: [
           "Brahma Kamal is a rare shrub found only along the high Himalayan ridges.",
           "It is famed for its auspicious, divine, and therapeutic properties.",
@@ -694,7 +694,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
         src: "/assets/images/galleries/kedarnath-yatra/vasuki-tal.jpg",
         title: "Vasuki Lake",
         alt: "Vasuki lake with a mountain backdrop",
-        interest: ["trekking", "sightseeing", "nature"],
+        tags: ["trekking", "sightseeing", "nature"],
         description: [
           "Vasuki Tal located above Kedarnath at a height of 4,135 metres, is a blue icy lake that provides a spectacular base for Mt Satopanth and Mt Vasuki.",
           "Both spiritual and thrill seekers visit the lake.",
@@ -704,7 +704,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
         src: "/assets/images/galleries/kedarnath-yatra/kedarnath-valley.jpg",
         title: "Kedarnath Valley",
         alt: "View of Kedarnath Valley mountain range",
-        interest: ["trekking", "sightseeing", "nature"],
+        tags: ["trekking", "sightseeing", "nature"],
         description: [
           "This valley is filled with the divine mysticism of Yogis, with the Kedarnath peak(6,940m) overlooking the temple and enhancing the surroundings.",
         ],
@@ -713,7 +713,7 @@ Any kind of entry fees anywhere if not mentioned \n`,
         src: "/assets/images/galleries/kedarnath-yatra/kedarnath-temple-3.jpg",
         title: "Kedarnath Template",
         alt: "View of Kedarnath temple",
-        interest: ["trekking", "sightseeing", "nature", "spirituality"],
+        tags: ["trekking", "sightseeing", "nature", "spirituality"],
         description: [
           "The most revered temple of the first Yogi Shiva, situated in a remote Himalayan town.",
           "Surrounded by magnificent snow-capped mountains in the Indian state of Uttarkhand.",

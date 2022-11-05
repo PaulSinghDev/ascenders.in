@@ -183,7 +183,7 @@ export interface GalleryImage {
   src: string;
   srcset?: string[];
   title: string;
-  interest: string[];
+  tags: string[];
   alt: string;
   description: string[];
 }
@@ -211,11 +211,11 @@ export interface Destination {
   slug: string;
   thumbnail: ImageType;
   mapData: {
-    lng: number,
-    lat: number,
-    tooltip: string,
-    zoom: number
-  }
+    lng: number;
+    lat: number;
+    tooltip: string;
+    zoom: number;
+  };
 }
 
 export const roles = [

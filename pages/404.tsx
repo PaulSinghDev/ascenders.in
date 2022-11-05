@@ -61,9 +61,9 @@ const Custom404: React.FC = () => {
   ) => {
     event.preventDefault();
     router.push({
-      pathname: "/search",
+      pathname: "/search/journeys",
       query: {
-        journeys: searchTerm,
+        q: searchTerm,
       },
     });
     setSearchTerm("");

@@ -250,7 +250,7 @@ const Gallery: React.FC<GalleryProps> = ({ images, id }) => {
                 ))}
               </ContentDescription>
               <ContentPills>
-                {images[activeSlide].interest.map((label) => (
+                {images[activeSlide].tags.map((label) => (
                   <Badge
                     color="blue"
                     key={Math.random().toString(36).substring(2, 9)}

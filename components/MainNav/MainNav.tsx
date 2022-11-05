@@ -216,7 +216,7 @@ const MainNav: React.FC = () => {
     router.push({
       pathname: "/search",
       query: {
-        journeys: searchTerm,
+        q: searchTerm,
       },
     });
     toggleNav(event);

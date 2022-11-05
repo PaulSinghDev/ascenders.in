@@ -3,7 +3,7 @@ import JourneysGrid from "@/components/JourneysGrid/JourneysGrid";
 import { Header } from "components/Header";
 import { journeys as journeyData } from "data";
 import { GetServerSideProps } from "next";
-import { Journey } from "../types";
+import { Journey } from "@/types/data.types";
 
 const Search: React.FC<{ journeys: Journey[]; searchTerm: string }> = ({
   journeys,
@@ -30,7 +30,7 @@ export default Search;
 // Generate the static props to pass to the page component
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const journeysArray = journeyData.filter((journey) => {
-    const journeyQuery = `${query?.journeys}`.toLowerCase();
+    const journeyQuery = `${query?.q}`.toLowerCase();
     const queryRegex = new RegExp(journeyQuery, "ig");
 
     const matchAccommodation = !!journey.accommodation.type.find((acc) =>
@@ -64,7 +64,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   return {
     props: {
       journeys: journeysArray || [],
-      searchTerm: query?.journeys || "",
+      searchTerm: query?.q || "",
     },
   };
 };
