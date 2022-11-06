@@ -36,6 +36,7 @@
   },
   "ignorePatterns": [
     "next.config.js",
+    "next-sitemap.config.js",
     "jest.config.ts",
     "jest.setup.ts",
     "next-env.d.ts"

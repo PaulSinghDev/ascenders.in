@@ -67,7 +67,7 @@ const Footer: React.FC = () => (
           </li>
           <li>
             <Link
-              href="/frequently-asked-questions"
+              href="/about/faqs"
               title="View our frequently asked questions"
             >
               FAQ

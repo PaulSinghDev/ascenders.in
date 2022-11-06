@@ -13,7 +13,7 @@ const PrivacyPolicy: React.FC<{}> = () => (
     <Header
       pageType="info"
       heading="Privacy Policy"
-      subheading="Please carefully read the following information which relates to our privacy policy."
+      subheading="The following information relates to how we use your data within Ascenders. Please read it carefully and feel free to reach out for any clarification."
     />
     <Accordion title="" description={[]} items={[]} />
   </main>
