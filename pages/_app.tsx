@@ -1,5 +1,6 @@
 import { MainNav } from "@/components/MainNav/MainNav";
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { GlobalStyles, GlobalFonts } from "styles";
@@ -49,13 +50,25 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
     };
   }, [router.events]);
 
-  if (typeof window !== "undefined") {
-    console.info(`Rendering page ${window?.location?.pathname}`);
-  }
-
-  console.log("app");
   return (
     <>
+      <Head>
+        <script type="application/ld+json">
+          {`{
+              "@context": "https://schema.org",
+              "@type": "TravelAgency",
+              "name": "Ascenders",
+              "openingHours": [
+                "Mo-Su 00:00-23:59",
+              ],
+              "currenciesAccepted":"INR",
+              "paymentAccepted":"Cash",
+              "priceRange": "$",
+              "telephone": "+919536017975",
+              "url": "${process.env.NEXT_PUBLIC_BASE_URL}"
+            }`}
+        </script>
+      </Head>
       <GlobalFonts />
       <GlobalStyles />
       <span id="loader" />

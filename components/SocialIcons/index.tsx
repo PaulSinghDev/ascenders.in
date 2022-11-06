@@ -62,6 +62,8 @@ export const SocialIcons: React.FC<{ theme?: "light" | "dark" }> = ({
             <Link
               title={`Follow us on ${network}`}
               href={socialData[network as keyof SocialData].url}
+              target="_blank"
+              rel="noreferrer noopener"
               passHref
             >
               <Icon size={30} />
