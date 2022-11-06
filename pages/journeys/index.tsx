@@ -23,7 +23,7 @@ const JourneysPage: React.FC = () => (
     <Header
       pageType="info"
       heading="All Journeys"
-      subheading="For travellers looking to get fully immersed in the lap of the might Himalayas, out hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded sel transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!"
+      subheading="For travellers looking to get fully immersed in the lap of the might Himalayas, our hiking expeditions offer the ultimate opportunity to get exposed to this heal-loaded sel transformative voyage. The gateway to epic hikes, survival, uncertainty, fun and rest. Let's go!"
     />
     <StyledJourneysWrapper>
       <JourneysGrid journeys={journeys} />

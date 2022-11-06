@@ -210,6 +210,7 @@ export interface Destination {
   title: string;
   slug: string;
   thumbnail: ImageType;
+  description: string[];
   mapData: {
     lng: number;
     lat: number;
@@ -232,4 +233,11 @@ export interface Role {
   slug: RoleType;
   id: RoleType;
   label: string;
+}
+
+export interface Page {
+  title: string;
+  description: string;
+  thumbnail: string;
+  path: string;
 }
