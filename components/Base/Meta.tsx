@@ -9,6 +9,7 @@ interface MetaProps {
   siteName?: string;
   image?: string;
   creator?: string;
+  touchIcon?: string;
 }
 
 const Meta: React.FC<MetaProps> = ({
@@ -19,6 +20,7 @@ const Meta: React.FC<MetaProps> = ({
   favicon,
   image,
   creator,
+  touchIcon,
 }) => (
   <Head>
     <meta name="robots" content="index, follow" />
@@ -35,6 +37,7 @@ const Meta: React.FC<MetaProps> = ({
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     <link rel="icon" href={favicon || "/favicon.ico"} />
+    <link rel="apple-touch-icon" href={touchIcon} />
     <meta property="og:image" content={image} />
   </Head>
 );
@@ -44,6 +47,7 @@ Meta.defaultProps = {
   siteName: "Ascenders, Go Beyond",
   image: `${process.env.NEXT_PUBLIC_BASE_URL}/assets/images/random/ascenders-social-share.jpeg`,
   creator: "@ascenders_in",
+  touchIcon: `${process.env.NEXT_PUBLIC_BASE_URL}/heal-h.png`,
 };
 
 export default Meta;

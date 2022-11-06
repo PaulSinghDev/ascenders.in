@@ -6,6 +6,18 @@ import { useEffect } from "react";
 import { GlobalStyles, GlobalFonts } from "styles";
 import { Footer } from "../components";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: "Ascenders",
+  openingHours: ["Mo-Su 00:00-23:59"],
+  currenciesAccepted: "INR",
+  paymentAccepted: "Cash",
+  priceRange: "$",
+  telephone: "+919536017975",
+  url: process.env.NEXT_PUBLIC_BASE_URL,
+};
+
 const Ascenders = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
@@ -53,21 +65,7 @@ const Ascenders = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <script type="application/ld+json">
-          {`{
-              "@context": "https://schema.org",
-              "@type": "TravelAgency",
-              "name": "Ascenders",
-              "openingHours": [
-                "Mo-Su 00:00-23:59",
-              ],
-              "currenciesAccepted":"INR",
-              "paymentAccepted":"Cash",
-              "priceRange": "$",
-              "telephone": "+919536017975",
-              "url": "${process.env.NEXT_PUBLIC_BASE_URL}"
-            }`}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
       </Head>
       <GlobalFonts />
       <GlobalStyles />
