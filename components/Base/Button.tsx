@@ -31,12 +31,13 @@ const StyledButton = styled.button<{ color: string; margin: string }>`
 `;
 
 const Button: React.FC<ButtonProps> = ({
+  className,
   color = "orange",
   margin = "md",
   children,
   ...rest
 }) => (
-  <StyledButton color={color} margin={margin} {...rest}>
+  <StyledButton className={className} color={color} margin={margin} {...rest}>
     {children}
   </StyledButton>
 );

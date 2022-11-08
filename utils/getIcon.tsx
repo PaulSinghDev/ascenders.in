@@ -17,11 +17,20 @@ import {
   FaBriefcaseMedical,
   FaHome,
   FaLeaf,
+  FaTwitter,
+  FaInstagram,
+  FaFacebook,
 } from "react-icons/fa";
 import { AvailableIcons } from "types/data.types";
 
 const getIcon = (name: AvailableIcons, size?: number): React.ReactNode => {
   switch (name) {
+    case "twitter":
+      return <FaTwitter size={size} />;
+    case "facebook":
+      return <FaFacebook size={size} />;
+    case "instagram":
+      return <FaInstagram size={size} />;
     case "expect":
       return <BsFillBookmarkStarFill size={size} />;
     case "essentials":

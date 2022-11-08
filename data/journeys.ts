@@ -11,6 +11,12 @@ const journeys: Journey[] = [
       "While here you will find yourself in a space which rewarding both physically and mentally.",
       "You will spend you nights in a variety of accommodations including homestays and campsites. ",
     ],
+    availableDates: [
+      ["2022-12-12", "2022-12-16"],
+      ["2022-12-18", "2022-12-24"],
+      ["2023-1-12", "2023-1-16"],
+      ["2023-2-12", "2023-2-16"],
+    ],
     tagline: "Soak up the spirituality",
     slug: "deoria-tal-chandrashilla-trek",
     thumbnail:
@@ -376,6 +382,12 @@ Any kind of entry fees anywhere if not mentioned \n`,
       "Capture spectacular dusk and dawn, shooting alongside an Ascenders photographer",
       "Enjoy the presence of Mt. Trishul that towers over you with unrelenting grace",
     ],
+    availableDates: [
+      ["2022-12-12", "2022-12-16"],
+      ["2022-12-18", "2022-12-24"],
+      ["2023-1-12", "2023-1-16"],
+      ["2023-2-12", "2023-2-16"],
+    ],
     tagline: "Encounter the vast grasslands",
     heal: {
       h: {
@@ -675,6 +687,12 @@ Any kind of entry fees anywhere if not mentioned \n`,
       "Venture to the Vasuki Lake flanked by snow-clad mountain peaks",
       "Sleep under the shadow of mighty Himalayan peaks ",
       "Pray at Gaurikund Temple on your way to Kedarnath",
+    ],
+    availableDates: [
+      ["2022-12-12", "2022-12-16"],
+      ["2022-12-18", "2022-12-24"],
+      ["2023-1-12", "2023-1-16"],
+      ["2023-2-12", "2023-2-16"],
     ],
     tagline: "The Best Dose of Spirituality",
     slug: "kedarnath-yatra",

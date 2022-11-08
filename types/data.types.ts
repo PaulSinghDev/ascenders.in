@@ -142,6 +142,7 @@ export interface AccordionSection {
 
 export interface Journey {
   title: string;
+  availableDates: [string, string][];
   itinerary: ItineraryInterface;
   interest: Interest[];
   tagline: string;
@@ -204,6 +205,9 @@ export type AvailableIcons =
   | "location"
   | "home"
   | "leaf"
+  | "facebook"
+  | "twitter"
+  | "instagram"
   | "menu";
 
 export interface Destination {
