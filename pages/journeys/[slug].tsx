@@ -13,6 +13,7 @@ import { JourneysCarousel } from "@/components/JourneysCarousel/JourneysCarousel
 import { Section } from "@/components/Base/Section";
 import styled from "styled-components";
 import Meta from "@/components/Base/Meta";
+import { BookingForm } from "@/components/BookingForm/BookingForm";
 
 const testLinks = [
   { label: "Overview", url: "#overview", title: "Skip to the overview" },
@@ -68,6 +69,7 @@ const JourneyPage: React.FC<Journey> = ({
   interest,
   thumbnail,
   overviewBullets,
+  availableDates,
 }) => (
   <main role="main">
     <Meta
@@ -97,6 +99,17 @@ const JourneyPage: React.FC<Journey> = ({
         bulletPoints={overviewBullets}
         brochureUrl="some-url"
         destination={location}
+      />
+    </Section>
+    <Section>
+      <BookingForm
+        bookingTitle={title}
+        dates={availableDates}
+        groupSize={group}
+        copy={[
+          `Use the form below to enquire about booking ${title}.`,
+          "We will do our utmost to respond to you within 48 hours.",
+        ]}
       />
     </Section>
     <Section>
