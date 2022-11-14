@@ -26,6 +26,7 @@ const FormInputWrapper = styled.div`
   flex-grow: 1;
   margin: var(--margin-md);
   justify-content: flex-end;
+  min-width: 150px;
 `;
 
 const FormLabel = styled.label``;
@@ -33,6 +34,7 @@ const FormLabel = styled.label``;
 const FormInputRow = styled.div`
   display: flex;
   align-items: fex-end;
+  flex-wrap: wrap;
 `;
 const FormInput = styled.input`
   font-size: 16px;
@@ -63,6 +65,7 @@ const FormSelect = styled.select`
   border-width: 1px;
   border-radius: var(--border-radius-md);
   border-color: rgba(0, 0, 0, 0.2);
+  appearance: none;
   &:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
   }
@@ -265,12 +268,14 @@ const BookingForm: React.FC<BookingFormProps> = ({
     handleChange: handleFitnessChange,
     handleBlur: handleFitnessBlur,
     isValid: fitnessIsValid,
+    isDirty: fitnessIsDirty,
   } = useSelect("default");
   const {
     value: date,
     handleChange: handleDateChange,
     handleBlur: handleDateBlur,
     isValid: dateIsValid,
+    isDirty: dateIsDirty,
   } = useSelect("default");
 
   const [isLoading, setIsLoading] = useState(false);
@@ -417,7 +422,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
               value={fitness}
               onChange={handleFitnessChange}
               onBlur={handleFitnessBlur}
-              data-valid={fitnessIsValid}
+              data-valid={!fitnessIsDirty ? undefined : fitnessIsValid}
             >
               <option value="default">Select level</option>
               <option value="low">Low</option>
@@ -451,7 +456,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
               value={date}
               onChange={handleDateChange}
               onBlur={handleDateBlur}
-              data-valid={dateIsValid}
+              data-valid={!dateIsDirty ? undefined : dateIsValid}
             >
               <option value="default">Select date</option>
               {filteredDates.map((_date) => (
