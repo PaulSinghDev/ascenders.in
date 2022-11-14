@@ -3,6 +3,7 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 const useSelect = (defaultValue: string, allowDefault?: boolean) => {
   const [value, setValue] = useState<string>(defaultValue);
   const [isValid, setIsValid] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
 
   const handleChange: ChangeEventHandler = (
     event: ChangeEvent<HTMLSelectElement>
@@ -12,6 +13,9 @@ const useSelect = (defaultValue: string, allowDefault?: boolean) => {
       setIsValid(false);
     } else {
       setIsValid(true);
+    }
+    if (!isDirty) {
+      setIsDirty(true);
     }
   };
 
@@ -26,6 +30,7 @@ const useSelect = (defaultValue: string, allowDefault?: boolean) => {
   return {
     value,
     isValid,
+    isDirty,
     setIsValid,
     handleBlur,
     handleChange,
