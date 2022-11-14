@@ -45,6 +45,8 @@ const FormInput = styled.input`
   border-width: 1px;
   border-radius: var(--border-radius-md);
   border-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--light);
+
   &[data-valid="false"] {
     outline: var(--red) auto 1px;
     + [data-error] {
@@ -66,6 +68,8 @@ const FormSelect = styled.select`
   border-radius: var(--border-radius-md);
   border-color: rgba(0, 0, 0, 0.2);
   appearance: none;
+  background-color: var(--light);
+
   &:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
   }
