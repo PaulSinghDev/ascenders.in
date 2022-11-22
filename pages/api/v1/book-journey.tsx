@@ -6,8 +6,12 @@ const validateField = (value: string, field: string): boolean => {
   switch (field) {
     case "name":
       return /^[\w -]+$/.test(value) && value.length > 2;
+    case "days":
+      return /^[0-9]+$/.test(value);
     case "phone":
       return /^[\d]+$/.test(value) && value.length === 11;
+    case "date":
+      return /^[\d] [a-z]+ 2022|3$/i.test(value);
     case "email":
       return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         value
@@ -68,6 +72,7 @@ const Contact: NextApiHandler = async (
 
   // Validate the body
   Object.keys(body).forEach((key) => {
+    if (/^isCustom$/.test(key)) return;
     const field = body[key];
     const isValid = validateField(field, key);
     if (!isValid) {
@@ -90,11 +95,15 @@ const Contact: NextApiHandler = async (
     message.html += `<p>Group Size: ${body.group}</p>`;
     message.html += `<p>Preferred Tour Date: ${body.date}</p>`;
     message.text = `Name: ${body.name}\n\n`;
-    message.html += `Email: ${body.email}\n\n`;
-    message.html += `Phone: ${body.phone}\n\n`;
-    message.html += `Activity Level: ${body.fitness}\n\n`;
-    message.html += `Group Size: ${body.group}\n\n`;
-    message.html += `Preferred Tour Date: ${body.date}\n\n`;
+    message.text += `Email: ${body.email}\n\n`;
+    message.text += `Phone: ${body.phone}\n\n`;
+    message.text += `Activity Level: ${body.fitness}\n\n`;
+    message.text += `Group Size: ${body.group}\n\n`;
+    message.text += `Preferred Tour Date: ${body.date}\n\n`;
+    if (body.isCustom) {
+      message.text += `Preferred Tour Length: ${body.days}\n\n`;
+      message.html += `<p>Preferred Tour Length: ${body.days}</p>`;
+    }
     message.subject = `New Booking for ${body.journey}`;
 
     await new Promise((resolve, reject) => {

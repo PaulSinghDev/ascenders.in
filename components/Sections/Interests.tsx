@@ -89,15 +89,19 @@ const StyledHeading = styled.div`
     font-weight: 400;
     font-size: 2rem;
   }
-  > button {
-    background-color: transparent;
-    color: var(--blue);
+  > a {
+    display: inline-block;
+    margin-top: var(--margin-md);
+    background-color: var(--blue);
+    color: var(--light);
+    border-radius: var(--border-radius-md);
     border: 2px solid var(--blue);
     font-size: 0.75rem;
-    padding: var(--padding-sm);
-
+    padding: 4px 12px;
+    transition: 0.3s ease;
     &:hover {
-      background-color: var(--blue);
+      border-color: var(--dark-blue);
+      background-color: var(--dark-blue);
       color: var(--light);
     }
   }

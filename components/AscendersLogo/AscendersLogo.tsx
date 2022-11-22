@@ -2,12 +2,10 @@ import styled from "styled-components";
 import Link from "next/link";
 
 const AscendersLogoWrapper = styled.div<{ size?: "small" }>`
-  text-align: center;
   padding: var(--padding-sm);
   a {
     display: inline-flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
   }
 

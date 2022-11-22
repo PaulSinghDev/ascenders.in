@@ -50,6 +50,21 @@ const Footer: React.FC = () => (
               Find Journeys
             </Link>
           </li>
+          <li>
+            <Link href="/destinations" title="View our destinations">
+              Find Destinations
+            </Link>
+          </li>
+          <li>
+            <Link href="/interests" title="View our interests">
+              Find Interests
+            </Link>
+          </li>
+          <li>
+            <Link href="/about/heal" title="View our HEAL concept">
+              Why travel with us?
+            </Link>
+          </li>
         </ul>
       </StyledFooterColumn>
       <StyledFooterColumn>

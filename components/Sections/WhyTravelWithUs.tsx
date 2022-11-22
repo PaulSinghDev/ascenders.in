@@ -87,19 +87,7 @@ const WhyTravelWithUs: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
       <h2>Why Travel With Us</h2>
       <Text
         lines={[
-          `We offer conscious and self-transformative HEAL journeys that are all
-        about learning to care for Self-Health and Earth in a journey full of
-        Adventure and Love. Our journeys have been designed to engage you in
-        actions that help you go beyond who you already are.`,
-        ]}
-      />
-      <h2>Why we do it</h2>
-      <Text
-        lines={[
-          `It's a step to promote conscious travel, improve health, generate
-        employment, empower women, free education, nature conservation, sattvic
-        life, Ayurveda, and self-enhancement. Let's take a HEAL journey of a
-        lifetime.`,
+          `We offer a conscious travel experience called "H.E.A.L" which stands for Health-conscious, Earth-conscious, Adventurous, and Loving; journeys incorporating the spirit of yoga, camping, nature conservation, exploration, culture, art, and festivals in serene locations amidst forests, mountains, and oceans. Ascenders is the way to GO BEYOND for anyone seeking a change and visiting the new you.`,
         ]}
       />
     </TitleWrapper>

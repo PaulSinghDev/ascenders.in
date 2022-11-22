@@ -102,17 +102,6 @@ const JourneyPage: React.FC<Journey> = ({
       />
     </Section>
     <Section>
-      <BookingForm
-        bookingTitle={title}
-        dates={availableDates}
-        groupSize={group}
-        copy={[
-          `Use the form below to enquire about booking ${title}.`,
-          "We will do our utmost to respond to you within 48 hours.",
-        ]}
-      />
-    </Section>
-    <Section>
       <Gallery images={gallery} id="gallery" />
     </Section>
     <Section>
@@ -141,6 +130,17 @@ const JourneyPage: React.FC<Journey> = ({
         id="what-to-bring"
         description={inclusions.description}
         items={inclusions.items}
+      />
+    </Section>
+    <Section>
+      <BookingForm
+        bookingTitle={title}
+        dates={availableDates}
+        groupSize={group}
+        copy={[
+          `Use the form below to enquire about booking ${title}.`,
+          "We will do our utmost to respond to you within 48 hours.",
+        ]}
       />
     </Section>
     <Section id="journeys">

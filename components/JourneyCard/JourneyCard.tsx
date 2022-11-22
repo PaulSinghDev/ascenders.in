@@ -24,12 +24,13 @@ const JourneyCardWrapper = styled.div`
   }
 `;
 
-const JourneyCardThumb = styled.div`
+const JourneyCardThumb = styled.a`
   overflow: hidden;
   position: relative;
   width: 300px;
   min-height: 200px;
   height: 100%;
+  display: block;
 
   img {
     border-radius: var(--border-radius-md);
@@ -125,7 +126,7 @@ const JourneyCard: React.FC<{ journey: Journey }> = ({
   journey: { thumbnail, title, duration, price, level, location, group, slug },
 }) => (
   <JourneyCardWrapper>
-    <JourneyCardThumb>
+    <JourneyCardThumb href={`/journeys/${slug}`} title={`View ${title}`}>
       <Image src={thumbnail} alt={title} layout="fill" />
     </JourneyCardThumb>
     <JourneyCardContent>

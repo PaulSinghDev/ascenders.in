@@ -51,4 +51,22 @@ export const terms: AccordionContent[] = [
     content:
       "By signing up for a Journey, a participant confirms that he or she is aware that travel, including the Journey, may involve potentially hazardous activities, some in remote locations around the world, with a risk of illness (including contagious diseases), injury, or death that may be brought on by natural catastrophes, illness, willful or criminal actions on the part of the others, or by terrorist acts. The participant further accepts that, during some or all of the time that he or she is participating in the Journey, there may be severe, disfavored, and/or uncomfortable weather patterns, and that, when medical services or facilities are available, they may not always be of the finest quality or be consistent with International standards.",
   },
+  {
+    title: "Cancellation/Refund",
+    content: `**By Guest/Travellers:** The following cancellation policy will apply in case of postponing a journey by you. The cancellation will take effect as of the day we receive your notice by e_mail, call or Ascenders user account on the website. Guest/Travellers will not be entitled to any form of refund for any unused/remaining days or for late arrivals or early departures from a Journey, regardless of the reason. Oct 2022, is the start date for this policy.
+
+ - Cancel 40 days prior to departure: 0% cancellation penalty
+ - Cancel 39 - 30 days prior to departure: 10% cancellation penalty
+ - Cancel 29 - 20 days prior to departure: 25% cancellation penalty
+ - Cancel 19 - 10 days prior to departure: 50% cancellation penalty
+ - Cancel 9 - 0 days prior to departure: 75% cancellation penalty
+ - Absence: 100% cancelation penalty
+ -
+ 
+ **By Ascenders:**
+
+FULL REFUND: A journey may be cancelled due to a variety of reasons. Travellers will receive a full refund if we cancel a journey before departure due to insufficient bookings, commercial viability concerns, or unforeseen situations.
+
+VOUCHER: If the entire journey cancellation is due to unforeseen circumstances(accidents, war, riots, natural disasters such as rainfall, floods, snowfall, landslides, storms, or quakes) that make it impossible to operate the journey as scheduled, the Guest will instead receive a voucher toward a future journey in an amount equal to the amount paid. We can also provide you with an alternative route/journey in such cases if circumstances allow.`,
+  },
 ];

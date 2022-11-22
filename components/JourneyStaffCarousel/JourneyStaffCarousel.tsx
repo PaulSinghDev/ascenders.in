@@ -86,9 +86,12 @@ const StaffHeading = styled(SectionHeading)`
   margin-top: 0;
 `;
 
-const JourneyStaffCarousel: React.FC<{ staff: Staff[] }> = ({ staff }) => (
+const JourneyStaffCarousel: React.FC<{ staff: Staff[]; heading?: string }> = ({
+  staff,
+  heading,
+}) => (
   <JourneyStaffWrapper>
-    <StaffHeading title="Experts On The Trip" />
+    <StaffHeading title={heading || "Experts On The Trip"} />
     <JourneyStaffCardsWrapper>
       <JourneyStaffCards>
         {staff.map((person) => (

@@ -35,6 +35,7 @@ const JourneyOverviewBullets = styled.div`
 `;
 const JourneyOverviewActions = styled.div`
   margin: var(--margin-xl) 0 0;
+  display: none;
   button {
     padding: var(--padding-sm) var(--padding-md);
     font-size: 10px;

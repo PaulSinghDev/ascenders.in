@@ -1,6 +1,8 @@
 import Meta from "@/components/Base/Meta";
 import { Gallery } from "@/components/Gallery/Gallery";
+import { JourneyStaffCarousel } from "@/components/JourneyStaffCarousel/JourneyStaffCarousel";
 import { Interests } from "@/components/Sections/Interests";
+import { staff } from "data/staff";
 import type { NextPage } from "next";
 import { Header, JourneysSection, WhyTravelWithUs } from "../components";
 import { GalleryImage } from "../types";
@@ -96,6 +98,7 @@ const Home: NextPage = () => (
     <JourneysSection />
     <Gallery images={gallery} />
     <Interests />
+    <JourneyStaffCarousel heading="Our experts" staff={staff} />
   </main>
 );
 

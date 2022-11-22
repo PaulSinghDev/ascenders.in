@@ -12,7 +12,7 @@ const FormWrapper = styled.div`
 `;
 
 const Form = styled.form`
-  padding: var(--margin-xl);
+  padding: var(--padding-md);
   background-color: var(--light-grey);
   border-radius: var(--border-radius-xl);
   max-width: 800px;
@@ -27,14 +27,19 @@ const FormInputWrapper = styled.div`
   margin: var(--margin-md);
   justify-content: flex-end;
   min-width: 150px;
+  flex-basis: 200px;
 `;
 
-const FormLabel = styled.label``;
+const FormLabel = styled.label`
+  margin-left: 8px;
+`;
 
 const FormInputRow = styled.div`
   display: flex;
   align-items: fex-end;
   flex-wrap: wrap;
+  line-height: 2.5;
+  letter-spacing: 0.7px;
 `;
 const FormInput = styled.input`
   font-size: 16px;
@@ -69,6 +74,7 @@ const FormSelect = styled.select`
   border-color: rgba(0, 0, 0, 0.2);
   appearance: none;
   background-color: #fff;
+  max-width: 100%;
 
   &:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
@@ -87,6 +93,7 @@ const FormSelect = styled.select`
 
 const FormHeading = styled(SectionHeading)`
   margin-top: 0;
+  margin: var(--margin-lg);
 `;
 
 const Underlay = styled.div`
@@ -208,6 +215,83 @@ const CloseModal = styled(Button)`
   min-width: 100px;
 `;
 
+const Toggle = styled.label`
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--margin-md);
+
+  input {
+    height: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    position: absolute;
+  }
+
+  input:checked + span {
+    background-color: var(--blue);
+
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+  input:checked ~ span:last-of-type {
+    opacity: 1;
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+
+  span:first-of-type {
+    width: 44px;
+    height: 24px;
+    position: relative;
+    border-radius: 24px;
+    background-color: var(--grey);
+    transition: 0.3s ease;
+    content: "";
+    display: block;
+    cursor: pointer;
+
+    &::before {
+      border-radius: 50%;
+      transition: 0.3s ease;
+      width: 20px;
+      height: 20px;
+      top: 2px;
+      left: 2px;
+      transform: translateX(0);
+      background-color: #fff;
+      content: "";
+      position: absolute;
+    }
+  }
+
+  span:last-of-type {
+    transition: 0.3s ease;
+    margin-left: 12px;
+    opacity: 0.4;
+    font-weight: bold;
+  }
+`;
+
+const CustomDateRow = styled.div`
+  display: flex;
+  input {
+    flex-grow: 0.5;
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+  }
+  select:first-of-type {
+    flex-grow: 1;
+    border-radius: 0;
+  }
+  select:last-of-type {
+    flex-grow: 0.5;
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+  }
+`;
+
 interface BookingFormProps {
   bookingTitle: string;
   copy?: string[];
@@ -268,11 +352,30 @@ const BookingForm: React.FC<BookingFormProps> = ({
     isValid: groupIsValid,
   } = useInput<string>("number", "");
   const {
+    value: customDay,
+    handleInput: handleCustomDayInput,
+    handleBlur: handleCustomDayBlur,
+    isValid: customDayIsValid,
+  } = useInput<string>("number", "");
+  const {
+    value: customLength,
+    handleInput: handleCustomLengthInput,
+    handleBlur: handleCustomLengthBlur,
+    isValid: customLengthIsValid,
+  } = useInput<string>("number", "");
+  const {
     value: fitness,
     handleChange: handleFitnessChange,
     handleBlur: handleFitnessBlur,
     isValid: fitnessIsValid,
     isDirty: fitnessIsDirty,
+  } = useSelect("default");
+  const {
+    value: customMonth,
+    handleChange: handleCustomMonthChange,
+    handleBlur: handleCustomMonthBlur,
+    isValid: customMonthIsValid,
+    isDirty: customMonthIsDirty,
   } = useSelect("default");
   const {
     value: date,
@@ -281,7 +384,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
     isValid: dateIsValid,
     isDirty: dateIsDirty,
   } = useSelect("default");
+  const {
+    value: customYear,
+    handleChange: handleCustomYearChange,
+    handleBlur: handleCustomYearBlur,
+    isValid: customYearIsValid,
+    isDirty: customYearIsDirty,
+  } = useSelect("default");
 
+  const [isToggled, setIsToggled] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const messageRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -312,6 +423,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
   const submit = async (event: any) => {
     try {
       event.preventDefault();
+      const validDate =
+        (isToggled &&
+          customDayIsValid &&
+          customLengthIsValid &&
+          customMonthIsValid &&
+          customYearIsValid) ||
+        dateIsValid;
       // ensure valid before request
       if (
         [
@@ -319,11 +437,21 @@ const BookingForm: React.FC<BookingFormProps> = ({
           phoneIsValid,
           emailIsValid,
           groupIsValid,
-          dateIsValid,
+          validDate,
           fitnessIsValid,
         ].includes(false)
       )
         return;
+      console.log(`${customMonth + 1}-${customDay}-${customYear}`);
+      const dateToUse = isToggled
+        ? new Date(
+            `${Number(customMonth) + 1}-${customDay}-${customYear}`
+          ).toLocaleDateString("en-GB", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })
+        : date;
 
       setIsLoading(true);
       const body = JSON.stringify({
@@ -332,8 +460,10 @@ const BookingForm: React.FC<BookingFormProps> = ({
         phone,
         fitness,
         group,
-        date,
+        date: dateToUse,
         journey: bookingTitle,
+        isCustom: isToggled,
+        days: customLength,
       });
       const req = await fetch("/api/v1/book-journey", {
         method: "POST",
@@ -473,6 +603,119 @@ const BookingForm: React.FC<BookingFormProps> = ({
               ))}
             </FormSelect>
             <ValidationError data-error>Please select a date</ValidationError>
+          </FormInputWrapper>
+        </FormInputRow>
+        <FormInputRow>
+          <FormInputWrapper style={{ alignSelf: "flex-start" }}>
+            <Toggle htmlFor="check">
+              <input
+                defaultChecked={isToggled}
+                id="check"
+                type="checkbox"
+                name="check"
+                onChange={() => setIsToggled(!isToggled)}
+              />
+              <span />
+              <span>Select custom date</span>
+            </Toggle>
+            <CustomDateRow
+              style={{
+                transition: "0.3s ease",
+                flexDirection: "column",
+                width: "100%",
+                opacity: isToggled ? 1 : 0.3,
+                pointerEvents: !isToggled ? "none" : "unset",
+              }}
+            >
+              <FormLabel>Number of days</FormLabel>
+              <FormInput
+                style={{
+                  width: "100%",
+                  borderRadius: "var(--border-radius-lg",
+                }}
+                name="custom-length"
+                value={customLength}
+                type="number"
+                min={1}
+                max={14}
+                onChange={handleCustomLengthInput}
+                onBlur={handleCustomLengthBlur}
+                data-valid={customLengthIsValid}
+                inputMode="numeric"
+              />
+            </CustomDateRow>
+          </FormInputWrapper>
+          <FormInputWrapper
+            style={{
+              transition: "0.3s ease",
+              opacity: isToggled ? 1 : 0.3,
+              pointerEvents: !isToggled ? "none" : "unset",
+            }}
+          >
+            <FormLabel>Starting date</FormLabel>
+            <CustomDateRow>
+              <FormInput
+                name="custom-day"
+                value={customDay}
+                type="number"
+                min={1}
+                max={31}
+                onChange={handleCustomDayInput}
+                onBlur={handleCustomDayBlur}
+                data-valid={customDayIsValid}
+                inputMode="numeric"
+                placeholder="Day"
+              />
+              <FormSelect
+                name="custom-month"
+                value={customMonth}
+                onChange={handleCustomMonthChange}
+                onBlur={handleCustomMonthBlur}
+                data-valid={
+                  !customMonthIsDirty ? undefined : customMonthIsValid
+                }
+              >
+                <option value="default">Month</option>
+                {Array(12)
+                  .fill(undefined)
+                  .map((u, i) => {
+                    const timestamp = new Date().setMonth(i);
+                    const month = new Date(timestamp).toLocaleString("en-GB", {
+                      month: "short",
+                    });
+
+                    return (
+                      <option
+                        key={Math.random().toString(36).substring(2, 9)}
+                        value={i}
+                      >
+                        {month}
+                      </option>
+                    );
+                  })}
+              </FormSelect>
+              <FormSelect
+                name="custom-year"
+                value={customYear}
+                onChange={handleCustomYearChange}
+                onBlur={handleCustomYearBlur}
+                data-valid={!customYearIsDirty ? undefined : customYearIsValid}
+              >
+                <option value="default">Year</option>
+                <option
+                  key={Math.random().toString(36).substring(2, 9)}
+                  value={22}
+                >
+                  22
+                </option>
+                <option
+                  key={Math.random().toString(36).substring(2, 9)}
+                  value={23}
+                >
+                  23
+                </option>
+              </FormSelect>
+            </CustomDateRow>
           </FormInputWrapper>
         </FormInputRow>
         <Button color="blue">Enquire Now</Button>
