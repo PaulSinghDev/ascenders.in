@@ -311,21 +311,10 @@ const BookingForm: React.FC<BookingFormProps> = ({
 }) => {
   const dateStringOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   };
-  const filteredDates = dates
-    .filter((date) => new Date() < new Date(date[0]))
-    .map(
-      (date) =>
-        `${new Date(date[0]).toLocaleDateString(
-          "en-GB",
-          dateStringOptions
-        )} - ${new Date(date[1]).toLocaleDateString(
-          "en-GB",
-          dateStringOptions
-        )}`
-    );
+  const filteredDates = dates.filter((date) => new Date() < new Date(date[0]));
 
   const {
     value: name,
@@ -443,15 +432,18 @@ const BookingForm: React.FC<BookingFormProps> = ({
       )
         return;
       // We're valid
-      const dateToUse = isToggled
+      const customDate = isToggled
         ? new Date(
             `${Number(customMonth) + 1}-${customDay}-${customYear}`
-          ).toLocaleDateString("en-GB", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })
-        : date;
+          ).toLocaleDateString("en-GB", dateStringOptions)
+        : null;
+      const presetDateSplit = date?.split("-");
+      const presetStartDate = presetDateSplit
+        ? new Date(presetDateSplit[0]).toLocaleDateString(
+            "en-GB",
+            dateStringOptions
+          )
+        : null;
 
       setIsLoading(true);
       const body = JSON.stringify({
@@ -460,7 +452,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
         phone,
         fitness,
         group,
-        date: dateToUse,
+        date: isToggled ? customDate : presetStartDate,
         journey: bookingTitle,
         isCustom: isToggled,
         days: customLength,
@@ -598,9 +590,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
               {filteredDates.map((_date) => (
                 <option
                   key={Math.random().toString(36).substring(2, 9)}
-                  value={_date}
+                  value={`${_date[0]}-${_date[1]}`}
                 >
-                  {_date}
+                  {`${new Date(_date[0]).toLocaleDateString(
+                    "en-GB",
+                    dateStringOptions
+                  )} - ${new Date(_date[1]).toLocaleDateString(
+                    "en-GB",
+                    dateStringOptions
+                  )}`}
                 </option>
               ))}
             </FormSelect>
