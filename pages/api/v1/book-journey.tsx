@@ -70,19 +70,15 @@ const Contact: NextApiHandler = async (
     journey
    */
 
+  const keys = Object.keys(body).filter((key) =>
+    body.isCustom ? !/isCustom/.test(key) : !/days|isCustom/.test(key)
+  );
   // Validate the body
-  Object.keys(body).forEach((key) => {
-    if (/^isCustom$/.test(key)) return;
-    // Only validate the correct date
-    if (body.isCustom) {
-      // Custom date
-    } else if (key !== "days") {
-      // Set Date
-      const field = body[key];
-      const isValid = validateField(field, key);
-      if (!isValid) {
-        errors.push({ field: key, value: field });
-      }
+  keys.forEach((key) => {
+    const field = body[key];
+    const isValid = validateField(field, key);
+    if (!isValid) {
+      errors.push({ field: key, value: field });
     }
   });
   console.log(errors);
