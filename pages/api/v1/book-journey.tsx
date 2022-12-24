@@ -9,7 +9,7 @@ const validateField = (value: string, field: string): boolean => {
     case "days":
       return /^[0-9]+$/.test(value);
     case "phone":
-      return /^[\d]+$/.test(value) && value.length === 11;
+      return /^[\d]+$/.test(value) && value.length === 9;
     case "date":
       return /^[\d] [a-z]+ 2022|3$/i.test(value);
     case "email":

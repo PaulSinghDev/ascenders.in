@@ -5,8 +5,9 @@ const EMAIL_REGEX =
   /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const NUMBER_REGEX = /^[.,\d-]+$/;
 
-const validate = <T,>(type: string, value: T): boolean => {
+const validate = <T,>(type: string, value: T, minLength?: number): boolean => {
   let valid = false;
+  if (minLength && `${value}`.length < minLength) return valid;
   if (type === "text") {
     valid = TEXT_REGEX.test(`${value}`);
   }
@@ -27,7 +28,8 @@ const validate = <T,>(type: string, value: T): boolean => {
 
 const useInput = <T,>(
   type: "text" | "email" | "number" | "alpha" | "alphanumerical",
-  defaultValue: T
+  defaultValue: T,
+  minLength?: number
 ) => {
   const [value, setValue] = useState<T>(defaultValue);
   const [isValid, setIsValid] = useState<boolean>();
@@ -45,7 +47,7 @@ const useInput = <T,>(
   };
 
   const handleBlur = () => {
-    if (validate<T>(type, value)) {
+    if (validate<T>(type, value, minLength)) {
       setIsValid(true);
     } else {
       setIsValid(false);

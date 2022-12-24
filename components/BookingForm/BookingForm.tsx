@@ -344,7 +344,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
     handleInput: handlePhoneInput,
     handleBlur: handlePhoneBlur,
     isValid: phoneIsValid,
-  } = useInput<string>("number", "");
+  } = useInput<string>("number", "", 9);
   const {
     value: group,
     handleInput: handleGroupInput,
@@ -442,7 +442,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
         ].includes(false)
       )
         return;
-      console.log(`${customMonth + 1}-${customDay}-${customYear}`);
+      // We're valid
       const dateToUse = isToggled
         ? new Date(
             `${Number(customMonth) + 1}-${customDay}-${customYear}`
@@ -480,7 +480,6 @@ const BookingForm: React.FC<BookingFormProps> = ({
       }
       setIsLoading(false);
     } catch (e) {
-      console.error(e);
       setMessage(
         "Sorry, we seem to be having an issue at the moment. Please refresh the page and try again."
       );
@@ -542,12 +541,15 @@ const BookingForm: React.FC<BookingFormProps> = ({
               name="phone"
               type="number"
               inputMode="tel"
+              minLength={9}
               value={phone}
               onChange={handlePhoneInput}
               onBlur={handlePhoneBlur}
               data-valid={phoneIsValid}
             />
-            <ValidationError data-error>Numbers only</ValidationError>
+            <ValidationError data-error>
+              Numbers only, minimum 9 digits
+            </ValidationError>
           </FormInputWrapper>
           <FormInputWrapper>
             <FormLabel>Activity Level</FormLabel>
