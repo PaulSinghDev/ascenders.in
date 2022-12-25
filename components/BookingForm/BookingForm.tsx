@@ -314,7 +314,9 @@ const BookingForm: React.FC<BookingFormProps> = ({
     month: "short",
     day: "numeric",
   };
-  const filteredDates = dates.filter((date) => new Date() < new Date(date[0]));
+  const filteredDates = dates.filter(
+    (date) => new Date() < new Date(date[0].replace(/-/g, "/"))
+  );
 
   const {
     value: name,
