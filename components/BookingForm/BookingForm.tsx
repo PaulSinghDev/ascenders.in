@@ -5,6 +5,9 @@ import styled from "styled-components";
 import { Button } from "../Base";
 import { SectionHeading } from "../Base/SectionHeading";
 
+const now = new Date();
+const thisYear = now.getFullYear();
+
 const FormWrapper = styled.div`
   margin-left: var(--margin-xl);
   margin-right: var(--margin-xl);
@@ -405,8 +408,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
       if (error.field === "fitness") {
         handleFitnessBlur();
       }
-      if (error.field === "date") {
+      if (error.field === "date" && !isToggled) {
         handleDateBlur();
+      }
+      if (error.field === "date" && isToggled) {
+        handleCustomDayBlur();
+        handleCustomMonthBlur();
+        handleCustomYearBlur();
       }
     });
   };
@@ -708,13 +716,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
                   key={Math.random().toString(36).substring(2, 9)}
                   value={22}
                 >
-                  22
+                  {thisYear}
                 </option>
                 <option
                   key={Math.random().toString(36).substring(2, 9)}
                   value={23}
                 >
-                  23
+                  {thisYear + 1}
                 </option>
               </FormSelect>
             </CustomDateRow>

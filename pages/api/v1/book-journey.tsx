@@ -3,6 +3,7 @@ import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
 const validateField = (value: string, field: string): boolean => {
+  let dateValid;
   switch (field) {
     case "name":
       return /^[\w -]+$/.test(value) && value.length > 2;
@@ -11,7 +12,13 @@ const validateField = (value: string, field: string): boolean => {
     case "phone":
       return /^[\d]+$/.test(value) && value.length >= 9;
     case "date":
-      return /^[\d] [a-z]+ 2022|3$/i.test(value);
+      try {
+        const date = new Date(value);
+        dateValid = date > new Date();
+      } catch (e) {
+        dateValid = false;
+      }
+      return dateValid;
     case "email":
       return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         value
