@@ -68,6 +68,7 @@ const Custom404: React.FC = () => {
     });
     setSearchTerm("");
   };
+  console.log("whoops");
   return (
     <MainSection>
       <Meta
