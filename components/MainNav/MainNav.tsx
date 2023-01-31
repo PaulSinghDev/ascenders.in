@@ -125,6 +125,7 @@ const NavDrawerLinksListItem = styled.li`
     margin-left: var(--margin-md);
     padding: calc(var(--padding-sm) / 2) var(--padding-sm);
     font-size: 18px;
+    flex-grow: 1;
   }
 `;
 
