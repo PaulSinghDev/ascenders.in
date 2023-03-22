@@ -9,7 +9,7 @@ interface SectionProps {
 const StyledSection = styled.section`
   margin: calc(var(--margin-lg) * 3) 0;
   @media screen and (min-width: 800px) {
-    margin: calc(var(--margin-xl) * 4) calc(var(--margin-xl) * 2);
+    margin: calc(var(--margin-lg) * 3) calc(var(--margin-xl) * 2);
   }
 `;
 

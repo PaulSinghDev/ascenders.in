@@ -81,7 +81,7 @@ const HealSection = styled.div`
   background-color: var(--light-grey);
   border-radius: var(--border-radius-lg);
   padding: var(--padding-lg);
-  margin: var(--margin-xl) calc(var(--margin-lg) * 2);
+  margin: calc(var(--margin-xl) * 2) calc(var(--margin-lg) * 2);
 `;
 
 const HealDescription = styled.div`

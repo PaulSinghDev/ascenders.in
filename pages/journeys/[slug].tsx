@@ -33,7 +33,6 @@ const testLinks = [
 ];
 
 const IntroSection = styled(Section)`
-  margin: var(--margin-xl);
   p {
     margin: 0 auto;
     max-width: 700px;
@@ -105,6 +104,7 @@ const JourneyPage: React.FC<Journey> = ({
       <Gallery images={gallery} id="gallery" />
       <HealBlock heal={heal} id="heal" />
     </Section>
+
     <Section>
       <Accordion
         title={itinerary.title}
