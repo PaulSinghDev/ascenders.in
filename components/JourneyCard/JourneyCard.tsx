@@ -36,7 +36,7 @@ const JourneyCardThumb = styled.a`
     border-radius: var(--border-radius-md);
     width: 100%;
     height: 100%;
-    object-fot: cover;
+    object-fit: cover;
   }
 `;
 
