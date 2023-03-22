@@ -9,7 +9,7 @@ const Section = styled.section`
   min-height: 500px;
   display: flex;
   flex-direction: column;
-  padding: calc(var(--padding-lg) * 8) calc(var(--padding-lg) * 2);
+  padding: calc(var(--padding-lg) * 4) calc(var(--padding-lg) * 2);
   justify-content: space-evenly;
   max-width: 800px;
   margin: auto;
@@ -43,7 +43,7 @@ const TitleWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   text-align: center;
-  margin: calc(var(--margin-xl) * 2) 0 0 0;
+  margin: var(--margin-xl) 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;

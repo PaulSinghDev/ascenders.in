@@ -5,7 +5,6 @@ import Link from "next/link";
 const StyledSection = styled.section`
   padding: calc(var(--padding-lg) * 4) var(--padding-lg);
   text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
 const StyledHeading = styled.div`

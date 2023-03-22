@@ -6,8 +6,6 @@ import Link from "next/link";
 const HealCard = styled.div`
   margin: var(--margin-xl);
   padding: var(--padding-lg);
-  background-color: var(--light-grey);
-  border-radius: var(--border-radius-lg);
   max-width: 600px;
   @media screen and (min-width: 800px) {
     margin-right: 0;
@@ -80,14 +78,23 @@ const HealContent = styled.div`
 const HealSection = styled.div`
   display: flex;
   justify-content: center;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius-lg);
+  padding: var(--padding-lg);
+  margin: var(--margin-xl) calc(var(--margin-lg) * 2);
 `;
 
 const HealDescription = styled.div`
   max-width: 500px;
   width: 50%;
+  flex-direction: column;
+  justify-content: center;
   display: none;
+  padding: var(--padding-lg);
+  align-items: flex-start;
+
   @media screen and (min-width: 800px) {
-    display: block;
+    display: flex;
   }
 
   h2 {

@@ -103,6 +103,7 @@ const JourneyPage: React.FC<Journey> = ({
     </Section>
     <Section>
       <Gallery images={gallery} id="gallery" />
+      <HealBlock heal={heal} id="heal" />
     </Section>
     <Section>
       <Accordion
@@ -113,7 +114,6 @@ const JourneyPage: React.FC<Journey> = ({
       />
     </Section>
     <Section>
-      <HealBlock heal={heal} id="heal" />
       <Accordion
         title={importantInformation.title}
         id="important-information"

@@ -44,6 +44,7 @@ const FormInputRow = styled.div`
   line-height: 2.5;
   letter-spacing: 0.7px;
 `;
+
 const FormInput = styled.input`
   font-size: 16px;
   padding: var(--padding-sm);
@@ -66,6 +67,7 @@ const FormInput = styled.input`
     outline: var(--green) auto 1px;
   }
 `;
+
 const FormSelect = styled.select`
   font-size: 16px;
   padding: var(--padding-sm);

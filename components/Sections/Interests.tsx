@@ -4,7 +4,7 @@ import { InterestCarousel } from "../InterestCarousel/InterestCarousel";
 
 const StyledInterestsSection = styled.section`
   padding-top: 80px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
   .interests-wrapper {
     overflow: hidden;
 
