@@ -44,7 +44,6 @@ const FormInputRow = styled.div`
   line-height: 2.5;
   letter-spacing: 0.7px;
 `;
-
 const FormInput = styled.input`
   font-size: 16px;
   padding: var(--padding-sm);
@@ -67,7 +66,6 @@ const FormInput = styled.input`
     outline: var(--green) auto 1px;
   }
 `;
-
 const FormSelect = styled.select`
   font-size: 16px;
   padding: var(--padding-sm);
@@ -716,13 +714,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
                 <option value="default">Year</option>
                 <option
                   key={Math.random().toString(36).substring(2, 9)}
-                  value={22}
+                  value={new Date().getFullYear()}
                 >
                   {thisYear}
                 </option>
                 <option
                   key={Math.random().toString(36).substring(2, 9)}
-                  value={23}
+                  value={new Date().getFullYear() + 1}
                 >
                   {thisYear + 1}
                 </option>
